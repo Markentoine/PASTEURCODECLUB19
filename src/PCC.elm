@@ -55,7 +55,7 @@ viewMain =
                     , h1 [ Html.Attributes.class "annonce" ] [ Html.text "LUNDI 12h30-13h15"]
                 ]
                 , section [ Html.Attributes.class "shadow-pop-tl" ] [
-                    h1 [ Html.Attributes.class "annonce" ] [ Html.text "----- NOUVELLE SALLE -----"]
+                    h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVELLE SALLE ----"]
                     , h1 [ Html.Attributes.class "annonce" ] [ Html.text "203"]
                 ]
             ]

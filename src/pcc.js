@@ -5046,7 +5046,7 @@ var author$project$PCC$viewMain = A2(
 								]),
 							_List_fromArray(
 								[
-									elm$html$Html$text('----- NOUVELLE SALLE -----')
+									elm$html$Html$text('---- NOUVELLE SALLE ----')
 								])),
 							A2(
 							elm$html$Html$h1,
