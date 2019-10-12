@@ -4976,7 +4976,7 @@ var author$project$PCC$viewMain = A2(
 					elm$html$Html$section,
 					_List_fromArray(
 						[
-							elm$html$Html$Attributes$class('shadow-pop-tl')
+							elm$html$Html$Attributes$id('saison')
 						]),
 					_List_fromArray(
 						[
@@ -5005,7 +5005,7 @@ var author$project$PCC$viewMain = A2(
 					elm$html$Html$section,
 					_List_fromArray(
 						[
-							elm$html$Html$Attributes$class('shadow-pop-tl')
+							elm$html$Html$Attributes$id('horaire')
 						]),
 					_List_fromArray(
 						[
@@ -5034,7 +5034,7 @@ var author$project$PCC$viewMain = A2(
 					elm$html$Html$section,
 					_List_fromArray(
 						[
-							elm$html$Html$Attributes$class('shadow-pop-tl')
+							elm$html$Html$Attributes$id('salle')
 						]),
 					_List_fromArray(
 						[

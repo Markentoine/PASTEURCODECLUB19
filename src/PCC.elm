@@ -46,15 +46,15 @@ viewMain =
     Html.main_ [] [
         
             div [ Html.Attributes.class "submain"] [
-                section [ Html.Attributes.class "shadow-pop-tl" ] [
+                section [ Html.Attributes.id "saison"] [
                     h1 [ Html.Attributes.class "annonce"] [ Html.text "---- NOUVELLE SAISON ----" ]
                     , h1 [ Html.Attributes.class "annonce"] [ Html.text "2019-2020"]
                 ]
-                , section [ Html.Attributes.class "shadow-pop-tl" ] [
+                , section [ Html.Attributes.id "horaire" ] [
                     h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVEL HORAIRE ----"]
                     , h1 [ Html.Attributes.class "annonce" ] [ Html.text "LUNDI 12h30-13h15"]
                 ]
-                , section [ Html.Attributes.class "shadow-pop-tl" ] [
+                , section [ Html.Attributes.id "salle" ] [
                     h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVELLE SALLE ----"]
                     , h1 [ Html.Attributes.class "annonce" ] [ Html.text "203"]
                 ]

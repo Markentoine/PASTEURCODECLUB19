@@ -90,6 +90,27 @@ section {
     border: 2px dotted chartreuse;
 }
 
+#saison {
+    animation: shadow-pop-tl .2s linear .5s  1;
+    /*Set our animation play state to paused initially */
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+#horaire {
+    animation: shadow-pop-tl .2s linear 1s  1;
+    /*Set our animation play state to paused initially */
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+#salle {
+    animation: shadow-pop-tl .2s linear 1.5s  1;
+    /*Set our animation play state to paused initially */
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
 .explanations {
     display: flex;
     flex-direction: column;
