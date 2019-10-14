@@ -13,18 +13,26 @@ html {
     box-sizing: inherit;
 }
 
-.wrapper {
+body {
     display: flex;
     flex-direction: column;
-    background-color: black;
     width: 100vw;
-    height: 100vh;
-    color: chartreuse;
 }
 
-.blinking {
-    animation: blinking .8s infinite;
+.wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: black;
+    position: relative;
+    z-index: 0;
 }
+
+.inscriptions {
+    width: 100vw;
+    height: 100vw;
+}
+
 
 /*-- HEADER --*/
 
@@ -43,11 +51,15 @@ header {
     height: 8vh;
     background-color: black;
     border-bottom: 2px dotted chartreuse;
-    margin-left: .5rem;
+    z-index: 2;
 }
 
 header p {
     font-size: 3rem;
+}
+
+.bigTitle {
+    margin-left: .5rem;
 }
 
 .editorCode {
@@ -63,12 +75,11 @@ main {
     align-items: center;
     width: 100%;
     margin-top: 10vh;
-    margin-left: 1rem;
     margin-bottom: 6vh;
-}
-
-.annonce {
-    
+    background-color: black;
+    color: chartreuse;
+    position: relative;
+    z-index: 1;
 }
 
 .submain {
@@ -76,7 +87,6 @@ main {
     flex-direction: column;
     align-items: center;
     border-bottom: 2px dotted chartreuse;
-    margin: 2rem 0;
     padding-bottom: 2rem;
 }
 
@@ -85,7 +95,7 @@ section {
     width: 40vw;
     flex-direction: column;
     align-items: center;
-    margin: 1rem 0;
+    margin: 2rem 0;
     padding: .5rem;
     border: 2px dotted chartreuse;
 }
@@ -97,43 +107,25 @@ section {
     animation-play-state: running;
 }
 
-#horaire {
-    animation: shadow-pop-tl .2s linear 1s  1;
+#langage {
+    animation: shadow-pop-tl .2s linear 1s 1;
     /*Set our animation play state to paused initially */
     animation-fill-mode: forwards;
     animation-play-state: running;
 }
 
-#salle {
+#horaire {
     animation: shadow-pop-tl .2s linear 1.5s  1;
     /*Set our animation play state to paused initially */
     animation-fill-mode: forwards;
     animation-play-state: running;
 }
 
-.explanations {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 45vw;
-    height: 15vh;
-    margin-top: .5rem;
-}
-
-
-.presentation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 98vw;
-}
-
-.line {
-    display: flex;
-    align-items: flex-end;
-}
-
-span {
-    margin-left: .5rem;
+#salle {
+    animation: shadow-pop-tl .2s linear 2s  1;
+    /*Set our animation play state to paused initially */
+    animation-fill-mode: forwards;
+    animation-play-state: running;
 }
 
 /*-----FORM--------*/
@@ -229,15 +221,16 @@ input[type="submit"] {
 
 footer {
     position: fixed;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 6vh;
+    height: 8vh;
     border-top: 2px dotted chartreuse;
     background-color: black;
-    margin-top: 94vh;
-    margin-left: .5rem;
+    margin-top: 92vh;
+    color: chartreuse;
 }
 
 .github {
@@ -262,15 +255,10 @@ a:first-of-type {
 
 .container {
     display: flex;
-}
-
-.container div {
-    display: flex;
-    margin-right: .5rem;
-}
-
-.lessons p {
-    margin: 2rem 0;
+    justify-content: space-between;
+    width : 92%;
+    margin-left: .5rem;
+    margin-top: .5rem;
 }
 
 .navigation ul {
@@ -298,10 +286,16 @@ button {
         transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
-    margin: .5rem;
     animation: shadow-pop-tl .2s linear 1;
     /*Set our animation play state to paused initially */
     animation-play-state: paused;
+}
+
+button.nav {
+    background-color: black;
+    border: .1rem solid chartreuse;
+    width: 20%;
+
 }
 
 button:hover,

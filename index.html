@@ -10,10 +10,20 @@
     <title>PASTEURCODECLUB</title>
 </head>
 <body>
-    <script src="./src/pcc.js"></script>
+    
+    <div id="nouveau">okokok</div>
+    <div id="inscription">okokok</div>
+
+    <script src="./src/js/pcc.js"></script>
+    <script src="./src/js/inscription.js"></script>
     <script>
         let app = Elm.PCC.init({
-            node: document.body
+            node: document.getElementById("nouveau")
+        })
+    </script>
+    <script>
+        let inscription = Elm.Inscription.init({
+            node: document.getElementById("inscription")
         })
     </script>
 </body>

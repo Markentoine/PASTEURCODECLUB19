@@ -4310,7 +4310,7 @@ function _Browser_load(url)
 		}
 	}));
 }
-var author$project$PCC$initialModel = {};
+var author$project$Inscription$initialModel = {};
 var elm$core$Basics$False = {$: 'False'};
 var elm$core$Basics$True = {$: 'True'};
 var elm$core$Result$isOk = function (result) {
@@ -4788,9 +4788,9 @@ var elm$json$Json$Decode$errorToStringHelp = F2(
 	});
 var elm$core$Platform$Cmd$batch = _Platform_batch;
 var elm$core$Platform$Cmd$none = elm$core$Platform$Cmd$batch(_List_Nil);
-var author$project$PCC$update = F2(
+var author$project$Inscription$update = F2(
 	function (msg, model) {
-		return _Utils_Tuple2(model, elm$core$Platform$Cmd$none);
+		return _Utils_Tuple2(author$project$Inscription$initialModel, elm$core$Platform$Cmd$none);
 	});
 var elm$core$Basics$identity = function (x) {
 	return x;
@@ -4810,9 +4810,8 @@ var elm$virtual_dom$VirtualDom$toHandlerInt = function (handler) {
 			return 3;
 	}
 };
-var elm$html$Html$a = _VirtualDom_node('a');
 var elm$html$Html$div = _VirtualDom_node('div');
-var elm$html$Html$footer = _VirtualDom_node('footer');
+var elm$html$Html$h1 = _VirtualDom_node('h1');
 var elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var elm$html$Html$text = elm$virtual_dom$VirtualDom$text;
 var elm$json$Json$Encode$string = _Json_wrap;
@@ -4824,266 +4823,23 @@ var elm$html$Html$Attributes$stringProperty = F2(
 			elm$json$Json$Encode$string(string));
 	});
 var elm$html$Html$Attributes$class = elm$html$Html$Attributes$stringProperty('className');
-var elm$html$Html$Attributes$href = function (url) {
-	return A2(
-		elm$html$Html$Attributes$stringProperty,
-		'href',
-		_VirtualDom_noJavaScriptUri(url));
-};
-var elm$html$Html$Attributes$target = elm$html$Html$Attributes$stringProperty('target');
-var elm$svg$Svg$trustedNode = _VirtualDom_nodeNS('http://www.w3.org/2000/svg');
-var elm$svg$Svg$path = elm$svg$Svg$trustedNode('path');
-var elm$svg$Svg$svg = elm$svg$Svg$trustedNode('svg');
-var elm$svg$Svg$text = elm$virtual_dom$VirtualDom$text;
-var elm$svg$Svg$title = elm$svg$Svg$trustedNode('title');
-var elm$svg$Svg$Attributes$d = _VirtualDom_attribute('d');
-var elm$svg$Svg$Attributes$viewBox = _VirtualDom_attribute('viewBox');
-var elm$svg$Svg$Attributes$xmlSpace = A2(_VirtualDom_attributeNS, 'http://www.w3.org/XML/1998/namespace', 'xml:space');
-var author$project$PCC$viewFooter = A2(
-	elm$html$Html$footer,
-	_List_Nil,
-	_List_fromArray(
-		[
-			A2(
-			elm$html$Html$div,
-			_List_fromArray(
-				[
-					elm$html$Html$Attributes$class('container')
-				]),
-			_List_fromArray(
-				[
-					elm$html$Html$text('1ERE SEANCE : LUNDI 4 NOVEMBRE')
-				])),
-			A2(
-			elm$html$Html$a,
-			_List_fromArray(
-				[
-					elm$html$Html$Attributes$href('https://github.com/Markentoine'),
-					elm$html$Html$Attributes$target('_blank')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					elm$html$Html$div,
-					_List_fromArray(
-						[
-							elm$html$Html$Attributes$class('github')
-						]),
-					_List_fromArray(
-						[
-							A2(
-							elm$svg$Svg$svg,
-							_List_fromArray(
-								[
-									elm$svg$Svg$Attributes$viewBox('0 0 24 24'),
-									elm$svg$Svg$Attributes$xmlSpace('http://www.w3.org/2000/svg')
-								]),
-							_List_fromArray(
-								[
-									A2(
-									elm$svg$Svg$title,
-									_List_Nil,
-									_List_fromArray(
-										[
-											elm$svg$Svg$text('GitHub icon')
-										])),
-									A2(
-									elm$svg$Svg$path,
-									_List_fromArray(
-										[
-											elm$svg$Svg$Attributes$d('M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12')
-										]),
-									_List_Nil)
-								]))
-						]))
-				]))
-		]));
-var elm$html$Html$header = _VirtualDom_node('header');
-var elm$html$Html$p = _VirtualDom_node('p');
-var elm$html$Html$Attributes$id = elm$html$Html$Attributes$stringProperty('id');
-var author$project$PCC$viewHeader = A2(
-	elm$html$Html$header,
-	_List_Nil,
-	_List_fromArray(
-		[
-			A2(
-			elm$html$Html$div,
-			_List_fromArray(
-				[
-					elm$html$Html$Attributes$class('bigTitle')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					elm$html$Html$a,
-					_List_fromArray(
-						[
-							elm$html$Html$Attributes$href('https://pasteurcodeclub.net')
-						]),
-					_List_fromArray(
-						[
-							A2(
-							elm$html$Html$p,
-							_List_fromArray(
-								[
-									elm$html$Html$Attributes$id('title')
-								]),
-							_List_fromArray(
-								[
-									elm$html$Html$text('PASTEURCODECLUB')
-								]))
-						]))
-				])),
-			A2(
-			elm$html$Html$div,
-			_List_fromArray(
-				[
-					elm$html$Html$Attributes$class('editorCode')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					elm$html$Html$a,
-					_List_fromArray(
-						[
-							elm$html$Html$Attributes$href('https://ellie-app.com/new'),
-							elm$html$Html$Attributes$target('_blank')
-						]),
-					_List_fromArray(
-						[
-							elm$html$Html$text('>>> ELLIE <<<')
-						]))
-				]))
-		]));
-var elm$html$Html$button = _VirtualDom_node('button');
-var elm$html$Html$h1 = _VirtualDom_node('h1');
-var elm$html$Html$main_ = _VirtualDom_node('main');
-var elm$html$Html$section = _VirtualDom_node('section');
-var author$project$PCC$viewMain = A2(
-	elm$html$Html$main_,
-	_List_Nil,
-	_List_fromArray(
-		[
-			A2(
-			elm$html$Html$div,
-			_List_fromArray(
-				[
-					elm$html$Html$Attributes$class('submain')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					elm$html$Html$section,
-					_List_fromArray(
-						[
-							elm$html$Html$Attributes$id('saison')
-						]),
-					_List_fromArray(
-						[
-							A2(
-							elm$html$Html$h1,
-							_List_fromArray(
-								[
-									elm$html$Html$Attributes$class('annonce')
-								]),
-							_List_fromArray(
-								[
-									elm$html$Html$text('---- NOUVELLE SAISON ----')
-								])),
-							A2(
-							elm$html$Html$h1,
-							_List_fromArray(
-								[
-									elm$html$Html$Attributes$class('annonce')
-								]),
-							_List_fromArray(
-								[
-									elm$html$Html$text('2019-2020')
-								]))
-						])),
-					A2(
-					elm$html$Html$section,
-					_List_fromArray(
-						[
-							elm$html$Html$Attributes$id('horaire')
-						]),
-					_List_fromArray(
-						[
-							A2(
-							elm$html$Html$h1,
-							_List_fromArray(
-								[
-									elm$html$Html$Attributes$class('annonce')
-								]),
-							_List_fromArray(
-								[
-									elm$html$Html$text('---- NOUVEL HORAIRE ----')
-								])),
-							A2(
-							elm$html$Html$h1,
-							_List_fromArray(
-								[
-									elm$html$Html$Attributes$class('annonce')
-								]),
-							_List_fromArray(
-								[
-									elm$html$Html$text('LUNDI 12h30-13h15')
-								]))
-						])),
-					A2(
-					elm$html$Html$section,
-					_List_fromArray(
-						[
-							elm$html$Html$Attributes$id('salle')
-						]),
-					_List_fromArray(
-						[
-							A2(
-							elm$html$Html$h1,
-							_List_fromArray(
-								[
-									elm$html$Html$Attributes$class('annonce')
-								]),
-							_List_fromArray(
-								[
-									elm$html$Html$text('---- NOUVELLE SALLE ----')
-								])),
-							A2(
-							elm$html$Html$h1,
-							_List_fromArray(
-								[
-									elm$html$Html$Attributes$class('annonce')
-								]),
-							_List_fromArray(
-								[
-									elm$html$Html$text('203')
-								]))
-						]))
-				])),
-			A2(
-			elm$html$Html$button,
-			_List_Nil,
-			_List_fromArray(
-				[
-					elm$html$Html$text('INSCRIPTION')
-				])),
-			A2(
-			elm$html$Html$p,
-			_List_Nil,
-			_List_fromArray(
-				[
-					elm$html$Html$text('Le nombre de places est limité : seulement 5 places pour les nouveaux inscrits...')
-				]))
-		]));
-var author$project$PCC$view = function (model) {
+var author$project$Inscription$view = function (model) {
 	return A2(
 		elm$html$Html$div,
 		_List_fromArray(
 			[
-				elm$html$Html$Attributes$class('wrapper')
+				elm$html$Html$Attributes$class('inscriptions')
 			]),
 		_List_fromArray(
-			[author$project$PCC$viewHeader, author$project$PCC$viewMain, author$project$PCC$viewFooter]));
+			[
+				A2(
+				elm$html$Html$h1,
+				_List_Nil,
+				_List_fromArray(
+					[
+						elm$html$Html$text('inscriptions')
+					]))
+			]));
 };
 var elm$browser$Browser$External = function (a) {
 	return {$: 'External', a: a};
@@ -5383,16 +5139,16 @@ var elm$url$Url$fromString = function (str) {
 var elm$browser$Browser$element = _Browser_element;
 var elm$core$Platform$Sub$batch = _Platform_batch;
 var elm$core$Platform$Sub$none = elm$core$Platform$Sub$batch(_List_Nil);
-var author$project$PCC$main = elm$browser$Browser$element(
+var author$project$Inscription$main = elm$browser$Browser$element(
 	{
 		init: function (_n0) {
-			return _Utils_Tuple2(author$project$PCC$initialModel, elm$core$Platform$Cmd$none);
+			return _Utils_Tuple2(author$project$Inscription$initialModel, elm$core$Platform$Cmd$none);
 		},
 		subscriptions: function (_n1) {
 			return elm$core$Platform$Sub$none;
 		},
-		update: author$project$PCC$update,
-		view: author$project$PCC$view
+		update: author$project$Inscription$update,
+		view: author$project$Inscription$view
 	});
-_Platform_export({'PCC':{'init':author$project$PCC$main(
+_Platform_export({'Inscription':{'init':author$project$Inscription$main(
 	elm$json$Json$Decode$succeed(_Utils_Tuple0))(0)}});}(this));
