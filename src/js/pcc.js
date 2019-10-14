@@ -5127,20 +5127,6 @@ var author$project$PCC$viewMain = A2(
 									elm$html$Html$text('203')
 								]))
 						]))
-				])),
-			A2(
-			elm$html$Html$button,
-			_List_Nil,
-			_List_fromArray(
-				[
-					elm$html$Html$text('INSCRIPTION')
-				])),
-			A2(
-			elm$html$Html$p,
-			_List_Nil,
-			_List_fromArray(
-				[
-					elm$html$Html$text('Le nombre de places est limité : seulement 5 places pour les nouveaux inscrits.')
 				]))
 		]));
 var author$project$PCC$view = function (model) {
