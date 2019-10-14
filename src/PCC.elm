@@ -3,12 +3,21 @@ module PCC exposing (..)
 import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Html.Events exposing (onClick)
 import Svg exposing (..)
 import Svg.Attributes exposing (..)
 
 
 type alias Model =
-    {}
+    { main : List (Html Msg) }
+
+
+type Msg
+    = Landing
+    | WhatisIt
+    | When
+    | WhatToDo
+    | SignIn
 
 
 
@@ -17,16 +26,97 @@ type alias Model =
 
 initialModel : Model
 initialModel =
-    {}
+    { main =
+        [ div [ Html.Attributes.class "submain" ]
+            [ section [ Html.Attributes.id "saison" ]
+                [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVELLE SAISON ----" ]
+                , h1 [ Html.Attributes.class "annonce" ] [ Html.text "2019-2020" ]
+                ]
+            , section
+                [ Html.Attributes.id "langage" ]
+                [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVEAU LANGAGE ----" ]
+                , h1 [ Html.Attributes.class "annonce" ] [ Html.text "ELM" ]
+                ]
+            , section [ Html.Attributes.id "horaire" ]
+                [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVEL HORAIRE ----" ]
+                , h1 [ Html.Attributes.class "annonce" ] [ Html.text "LUNDI 12h30-13h15" ]
+                ]
+            , section [ Html.Attributes.id "salle" ]
+                [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVELLE SALLE ----" ]
+                , h1 [ Html.Attributes.class "annonce" ] [ Html.text "203" ]
+                ]
+            ]
+        ]
+    }
 
 
 
 -- UPDATE
 
 
-update : msg -> Model -> ( Model, Cmd msg )
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    ( model, Cmd.none )
+    case msg of
+        Landing ->
+            let
+                newMain =
+                    [ div [ Html.Attributes.class "submain" ]
+                        [ section [ Html.Attributes.id "saison" ]
+                            [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVELLE SAISON ----" ]
+                            , h1 [ Html.Attributes.class "annonce" ] [ Html.text "2019-2020" ]
+                            ]
+                        , section
+                            [ Html.Attributes.id "langage" ]
+                            [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVEAU LANGAGE ----" ]
+                            , h1 [ Html.Attributes.class "annonce" ] [ Html.text "ELM" ]
+                            ]
+                        , section [ Html.Attributes.id "horaire" ]
+                            [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVEL HORAIRE ----" ]
+                            , h1 [ Html.Attributes.class "annonce" ] [ Html.text "LUNDI 12h30-13h15" ]
+                            ]
+                        , section [ Html.Attributes.id "salle" ]
+                            [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVELLE SALLE ----" ]
+                            , h1 [ Html.Attributes.class "annonce" ] [ Html.text "203" ]
+                            ]
+                        ]
+                    ]
+            in
+            ( { model | main = newMain }, Cmd.none )
+
+        WhatisIt ->
+            let
+                newMain =
+                    [ div [ Html.Attributes.class "submain" ]
+                        [ section [ Html.Attributes.id "saison" ]
+                            [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "Un Club" ]
+                            , h1 [ Html.Attributes.class "annonce" ] [ Html.text "d'une dizaine d'élèves" ]
+                            ]
+                        , section
+                            [ Html.Attributes.id "langage" ]
+                            [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "Qui se réunit tous les lundis" ]
+                            , h1 [ Html.Attributes.class "annonce" ] [ Html.text "Entre 12h30 et 13h15" ]
+                            ]
+                        , section [ Html.Attributes.id "horaire" ]
+                            [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "Dans une salle" ]
+                            , h1 [ Html.Attributes.class "annonce" ] [ Html.text "peuplée d'ordinateurs" ]
+                            ]
+                        , section [ Html.Attributes.id "salle" ]
+                            [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "Pour apprendre joyeusement " ]
+                            , h1 [ Html.Attributes.class "annonce" ] [ Html.text "A coder, programmer, créer" ]
+                            ]
+                        ]
+                    ]
+            in
+            ( { model | main = newMain }, Cmd.none )
+
+        When ->
+            ( model, Cmd.none )
+
+        WhatToDo ->
+            ( model, Cmd.none )
+
+        SignIn ->
+            ( model, Cmd.none )
 
 
 
@@ -49,36 +139,16 @@ viewHeader =
         ]
 
 
-viewMain : Html msg
-viewMain =
-    Html.main_ []
-        [ div [ Html.Attributes.class "submain" ]
-            [ section [ Html.Attributes.id "saison" ]
-                [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVELLE SAISON ----" ]
-                , h1 [ Html.Attributes.class "annonce" ] [ Html.text "2019-2020" ]
-                ]
-            , section
-                [ Html.Attributes.id "langage" ]
-                [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVEAU LANGAGE ----" ]
-                , h1 [ Html.Attributes.class "annonce" ] [ Html.text "ELM" ]
-                ]
-            , section [ Html.Attributes.id "horaire" ]
-                [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVEL HORAIRE ----" ]
-                , h1 [ Html.Attributes.class "annonce" ] [ Html.text "LUNDI 12h30-13h15" ]
-                ]
-            , section [ Html.Attributes.id "salle" ]
-                [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "---- NOUVELLE SALLE ----" ]
-                , h1 [ Html.Attributes.class "annonce" ] [ Html.text "203" ]
-                ]
-            ]
-        ]
+viewMain : Model -> Html Msg
+viewMain model =
+    Html.main_ [] model.main
 
 
-viewFooter : Html msg
+viewFooter : Html Msg
 viewFooter =
     footer []
         [ div [ Html.Attributes.class "container" ]
-            [ button [ Html.Attributes.class "nav" ] [ Html.text "C'est quoi ?" ]
+            [ button [ Html.Attributes.class "nav", onClick WhatisIt ] [ Html.text "C'est quoi?" ]
             , button [ Html.Attributes.class "nav" ] [ Html.text "On fait quoi?" ]
             , button [ Html.Attributes.class "nav" ] [ Html.text "Je m'inscris!" ]
             , button [ Html.Attributes.class "nav" ] [ Html.text "On commence quand?" ]
@@ -94,11 +164,11 @@ viewFooter =
         ]
 
 
-view : Model -> Html msg
+view : Model -> Html Msg
 view model =
     div [ Html.Attributes.class "wrapper" ]
         [ viewHeader
-        , viewMain
+        , viewMain model
         , viewFooter
         ]
 
@@ -107,7 +177,7 @@ view model =
 -- MAIN
 
 
-main : Program () Model msg
+main : Program () Model Msg
 main =
     Browser.element
         { init = \_ -> ( initialModel, Cmd.none )
