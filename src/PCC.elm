@@ -71,8 +71,6 @@ viewMain =
                 , h1 [ Html.Attributes.class "annonce" ] [ Html.text "203" ]
                 ]
             ]
-        , button [] [ Html.text "INSCRIPTION" ]
-        , p [] [ Html.text "Le nombre de places est limité : seulement 5 places pour les nouveaux inscrits." ]
         ]
 
 
