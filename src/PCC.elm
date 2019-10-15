@@ -263,7 +263,15 @@ viewForm form =
 
 viewInput : String -> String -> String -> String -> (String -> msg) -> Html msg
 viewInput t p n v toMsg =
-    input [ Html.Attributes.type_ t, placeholder p, Html.Attributes.name n, value v, onInput toMsg ] []
+    input
+        [ Html.Attributes.type_ t
+        , placeholder p
+        , Html.Attributes.name n
+        , value v
+        , onInput toMsg
+        , Html.Attributes.pattern "[A-Za-z]+"
+        ]
+        []
 
 
 

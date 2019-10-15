@@ -4963,6 +4963,7 @@ var author$project$PCC$Mail = function (a) {
 };
 var elm$html$Html$input = _VirtualDom_node('input');
 var elm$html$Html$Attributes$name = elm$html$Html$Attributes$stringProperty('name');
+var elm$html$Html$Attributes$pattern = elm$html$Html$Attributes$stringProperty('pattern');
 var elm$html$Html$Attributes$placeholder = elm$html$Html$Attributes$stringProperty('placeholder');
 var elm$html$Html$Attributes$type_ = elm$html$Html$Attributes$stringProperty('type');
 var elm$html$Html$Attributes$value = elm$html$Html$Attributes$stringProperty('value');
@@ -5065,7 +5066,8 @@ var author$project$PCC$viewInput = F5(
 					elm$html$Html$Attributes$placeholder(p),
 					elm$html$Html$Attributes$name(n),
 					elm$html$Html$Attributes$value(v),
-					elm$html$Html$Events$onInput(toMsg)
+					elm$html$Html$Events$onInput(toMsg),
+					elm$html$Html$Attributes$pattern('[A-Za-z]+')
 				]),
 			_List_Nil);
 	});
