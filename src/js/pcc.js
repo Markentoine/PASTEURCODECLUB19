@@ -5160,12 +5160,10 @@ var author$project$PCC$viewForm = function (form) {
 					elm$html$Html$input,
 					_List_fromArray(
 						[
-							elm$html$Html$Attributes$type_('submit')
+							elm$html$Html$Attributes$type_('submit'),
+							elm$html$Html$Attributes$value('Je veux m\'inscrire')
 						]),
-					_List_fromArray(
-						[
-							elm$html$Html$text('C\'est parti!')
-						]))
+					_List_Nil)
 				]))
 		]);
 };

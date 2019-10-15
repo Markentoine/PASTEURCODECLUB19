@@ -253,7 +253,7 @@ viewForm form =
         , viewInput "text" "Classe" "class" form.class Class
         , viewInput "mail" "Mail" "mail" form.mail Mail
         , input [ Html.Attributes.type_ "hidden", Html.Attributes.name "form-name", value "inscription" ] []
-        , input [ Html.Attributes.type_ "submit" ] [ Html.text "C'est parti!" ]
+        , input [ Html.Attributes.type_ "submit", value "Je veux m'inscrire" ] []
         ]
     ]
 
