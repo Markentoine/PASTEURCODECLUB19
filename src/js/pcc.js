@@ -4963,7 +4963,6 @@ var author$project$PCC$Mail = function (a) {
 };
 var elm$html$Html$input = _VirtualDom_node('input');
 var elm$html$Html$Attributes$name = elm$html$Html$Attributes$stringProperty('name');
-var elm$html$Html$Attributes$pattern = elm$html$Html$Attributes$stringProperty('pattern');
 var elm$html$Html$Attributes$placeholder = elm$html$Html$Attributes$stringProperty('placeholder');
 var elm$html$Html$Attributes$type_ = elm$html$Html$Attributes$stringProperty('type');
 var elm$html$Html$Attributes$value = elm$html$Html$Attributes$stringProperty('value');
@@ -5066,8 +5065,7 @@ var author$project$PCC$viewInput = F5(
 					elm$html$Html$Attributes$placeholder(p),
 					elm$html$Html$Attributes$name(n),
 					elm$html$Html$Attributes$value(v),
-					elm$html$Html$Events$onInput(toMsg),
-					elm$html$Html$Attributes$pattern('[A-Za-z]+')
+					elm$html$Html$Events$onInput(toMsg)
 				]),
 			_List_Nil);
 	});
@@ -5149,7 +5147,7 @@ var author$project$PCC$viewForm = function (form) {
 					A5(author$project$PCC$viewInput, 'text', 'Prénom', 'firstname', form.firstName, author$project$PCC$FirstName),
 					A5(author$project$PCC$viewInput, 'text', 'Nom', 'lastname', form.lastName, author$project$PCC$LastName),
 					A5(author$project$PCC$viewInput, 'text', 'Classe', 'class', form._class, author$project$PCC$Class),
-					A5(author$project$PCC$viewInput, 'text', 'Mail', 'mail', form.mail, author$project$PCC$Mail),
+					A5(author$project$PCC$viewInput, 'mail', 'Mail', 'mail', form.mail, author$project$PCC$Mail),
 					A2(
 					elm$html$Html$button,
 					_List_Nil,

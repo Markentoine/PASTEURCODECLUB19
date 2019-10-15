@@ -251,7 +251,7 @@ viewForm form =
         [ viewInput "text" "Prénom" "firstname" form.firstName FirstName
         , viewInput "text" "Nom" "lastname" form.lastName LastName
         , viewInput "text" "Classe" "class" form.class Class
-        , viewInput "text" "Mail" "mail" form.mail Mail
+        , viewInput "mail" "Mail" "mail" form.mail Mail
         , button [] [ Html.text "C'est parti!" ]
         ]
     ]
@@ -269,7 +269,6 @@ viewInput t p n v toMsg =
         , Html.Attributes.name n
         , value v
         , onInput toMsg
-        , Html.Attributes.pattern "[A-Za-z]+"
         ]
         []
 
