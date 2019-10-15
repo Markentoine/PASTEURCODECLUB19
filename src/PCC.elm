@@ -245,14 +245,14 @@ viewForm form =
         [ Html.Attributes.method "POST"
         , action ""
         , Html.Attributes.name "inscription"
-        --, attribute "netlify-honeypot" "bot-field"
-        --, attribute "data-netlify" "true"
+        , attribute "netlify-honeypot" "bot-field"
+        , attribute "data-netlify" "true"
         ]
         [ viewInput "text" "Prénom" "firstname" form.firstName FirstName
         , viewInput "text" "Nom" "lastname" form.lastName LastName
         , viewInput "text" "Classe" "class" form.class Class
         , viewInput "mail" "Mail" "mail" form.mail Mail
-        , button [] [ Html.text "C'est parti!" ]
+        , button [ Html.Attributes.type_ "submit" ] [ Html.text "C'est parti!" ]
         ]
     ]
 
