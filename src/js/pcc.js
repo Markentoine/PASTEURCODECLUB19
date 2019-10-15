@@ -4819,6 +4819,7 @@ var elm$html$Html$Attributes$stringProperty = F2(
 var elm$html$Html$Attributes$class = elm$html$Html$Attributes$stringProperty('className');
 var elm$html$Html$Attributes$id = elm$html$Html$Attributes$stringProperty('id');
 var author$project$PCC$initialModel = {
+	form: {_class: '', firstName: '', lastName: '', mail: ''},
 	main: _List_fromArray(
 		[
 			A2(
@@ -4947,6 +4948,215 @@ var author$project$PCC$initialModel = {
 						]))
 				]))
 		])
+};
+var author$project$PCC$Class = function (a) {
+	return {$: 'Class', a: a};
+};
+var author$project$PCC$FirstName = function (a) {
+	return {$: 'FirstName', a: a};
+};
+var author$project$PCC$LastName = function (a) {
+	return {$: 'LastName', a: a};
+};
+var author$project$PCC$Mail = function (a) {
+	return {$: 'Mail', a: a};
+};
+var elm$html$Html$input = _VirtualDom_node('input');
+var elm$html$Html$Attributes$name = elm$html$Html$Attributes$stringProperty('name');
+var elm$html$Html$Attributes$placeholder = elm$html$Html$Attributes$stringProperty('placeholder');
+var elm$html$Html$Attributes$type_ = elm$html$Html$Attributes$stringProperty('type');
+var elm$html$Html$Attributes$value = elm$html$Html$Attributes$stringProperty('value');
+var elm$html$Html$Events$alwaysStop = function (x) {
+	return _Utils_Tuple2(x, true);
+};
+var elm$virtual_dom$VirtualDom$MayStopPropagation = function (a) {
+	return {$: 'MayStopPropagation', a: a};
+};
+var elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
+var elm$html$Html$Events$stopPropagationOn = F2(
+	function (event, decoder) {
+		return A2(
+			elm$virtual_dom$VirtualDom$on,
+			event,
+			elm$virtual_dom$VirtualDom$MayStopPropagation(decoder));
+	});
+var elm$core$List$foldrHelper = F4(
+	function (fn, acc, ctr, ls) {
+		if (!ls.b) {
+			return acc;
+		} else {
+			var a = ls.a;
+			var r1 = ls.b;
+			if (!r1.b) {
+				return A2(fn, a, acc);
+			} else {
+				var b = r1.a;
+				var r2 = r1.b;
+				if (!r2.b) {
+					return A2(
+						fn,
+						a,
+						A2(fn, b, acc));
+				} else {
+					var c = r2.a;
+					var r3 = r2.b;
+					if (!r3.b) {
+						return A2(
+							fn,
+							a,
+							A2(
+								fn,
+								b,
+								A2(fn, c, acc)));
+					} else {
+						var d = r3.a;
+						var r4 = r3.b;
+						var res = (ctr > 500) ? A3(
+							elm$core$List$foldl,
+							fn,
+							acc,
+							elm$core$List$reverse(r4)) : A4(elm$core$List$foldrHelper, fn, acc, ctr + 1, r4);
+						return A2(
+							fn,
+							a,
+							A2(
+								fn,
+								b,
+								A2(
+									fn,
+									c,
+									A2(fn, d, res))));
+					}
+				}
+			}
+		}
+	});
+var elm$core$List$foldr = F3(
+	function (fn, acc, ls) {
+		return A4(elm$core$List$foldrHelper, fn, acc, 0, ls);
+	});
+var elm$json$Json$Decode$field = _Json_decodeField;
+var elm$json$Json$Decode$at = F2(
+	function (fields, decoder) {
+		return A3(elm$core$List$foldr, elm$json$Json$Decode$field, decoder, fields);
+	});
+var elm$json$Json$Decode$string = _Json_decodeString;
+var elm$html$Html$Events$targetValue = A2(
+	elm$json$Json$Decode$at,
+	_List_fromArray(
+		['target', 'value']),
+	elm$json$Json$Decode$string);
+var elm$html$Html$Events$onInput = function (tagger) {
+	return A2(
+		elm$html$Html$Events$stopPropagationOn,
+		'input',
+		A2(
+			elm$json$Json$Decode$map,
+			elm$html$Html$Events$alwaysStop,
+			A2(elm$json$Json$Decode$map, tagger, elm$html$Html$Events$targetValue)));
+};
+var author$project$PCC$viewInput = F5(
+	function (t, p, n, v, toMsg) {
+		return A2(
+			elm$html$Html$input,
+			_List_fromArray(
+				[
+					elm$html$Html$Attributes$type_(t),
+					elm$html$Html$Attributes$placeholder(p),
+					elm$html$Html$Attributes$name(n),
+					elm$html$Html$Attributes$value(v),
+					elm$html$Html$Events$onInput(toMsg)
+				]),
+			_List_Nil);
+	});
+var elm$html$Html$button = _VirtualDom_node('button');
+var elm$html$Html$form = _VirtualDom_node('form');
+var elm$html$Html$p = _VirtualDom_node('p');
+var elm$html$Html$Attributes$action = function (uri) {
+	return A2(
+		elm$html$Html$Attributes$stringProperty,
+		'action',
+		_VirtualDom_noJavaScriptUri(uri));
+};
+var elm$virtual_dom$VirtualDom$attribute = F2(
+	function (key, value) {
+		return A2(
+			_VirtualDom_attribute,
+			_VirtualDom_noOnOrFormAction(key),
+			_VirtualDom_noJavaScriptOrHtmlUri(value));
+	});
+var elm$html$Html$Attributes$attribute = elm$virtual_dom$VirtualDom$attribute;
+var elm$html$Html$Attributes$method = elm$html$Html$Attributes$stringProperty('method');
+var author$project$PCC$viewForm = function (form) {
+	return _List_fromArray(
+		[
+			A2(
+			elm$html$Html$h1,
+			_List_Nil,
+			_List_fromArray(
+				[
+					elm$html$Html$text('Inscris-toi')
+				])),
+			A2(
+			elm$html$Html$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					elm$html$Html$text('Une adresse mail est nécessaire pour te répondre afin que tu saches si tu fais partie du club')
+				])),
+			A2(
+			elm$html$Html$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					elm$html$Html$text('Confidentialité: ')
+				])),
+			A2(
+			elm$html$Html$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					elm$html$Html$text('Cette adresse ne sera utilisée que pour te répondre et ne sera pas stockée ensuite.')
+				])),
+			A2(
+			elm$html$Html$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					elm$html$Html$text('Toutes les données entrées ici ne seront ni stockées ni utilisées ailleurs.')
+				])),
+			A2(
+			elm$html$Html$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					elm$html$Html$text('ATTENTION : Le nombre de places est limité à 10 en tout.')
+				])),
+			A2(
+			elm$html$Html$form,
+			_List_fromArray(
+				[
+					elm$html$Html$Attributes$method('post'),
+					elm$html$Html$Attributes$action(''),
+					elm$html$Html$Attributes$name('signIn'),
+					A2(elm$html$Html$Attributes$attribute, 'netlify-honeypot', 'bot-field'),
+					A2(elm$html$Html$Attributes$attribute, 'data-netlify', 'true')
+				]),
+			_List_fromArray(
+				[
+					A5(author$project$PCC$viewInput, 'text', 'Prénom', 'firstname', form.firstName, author$project$PCC$FirstName),
+					A5(author$project$PCC$viewInput, 'text', 'Nom', 'lastname', form.lastName, author$project$PCC$LastName),
+					A5(author$project$PCC$viewInput, 'text', 'Classe', 'class', form._class, author$project$PCC$Class),
+					A5(author$project$PCC$viewInput, 'text', 'Mail', 'mail', form.mail, author$project$PCC$Mail),
+					A2(
+					elm$html$Html$button,
+					_List_Nil,
+					_List_fromArray(
+						[
+							elm$html$Html$text('C\'est parti!')
+						]))
+				]))
+		]);
 };
 var elm$core$Platform$Cmd$batch = _Platform_batch;
 var elm$core$Platform$Cmd$none = elm$core$Platform$Cmd$batch(_List_Nil);
@@ -5489,15 +5699,64 @@ var author$project$PCC$update = F2(
 						model,
 						{main: newMain}),
 					elm$core$Platform$Cmd$none);
+			case 'SignIn':
+				var newMain = author$project$PCC$viewForm(model.form);
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{main: newMain}),
+					elm$core$Platform$Cmd$none);
+			case 'FirstName':
+				var fname = msg.a;
+				var currentForm = model.form;
+				var newForm = _Utils_update(
+					currentForm,
+					{firstName: fname});
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{form: newForm}),
+					elm$core$Platform$Cmd$none);
+			case 'LastName':
+				var lname = msg.a;
+				var currentForm = model.form;
+				var newForm = _Utils_update(
+					currentForm,
+					{lastName: lname});
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{form: newForm}),
+					elm$core$Platform$Cmd$none);
+			case 'Class':
+				var _class = msg.a;
+				var currentForm = model.form;
+				var newForm = _Utils_update(
+					currentForm,
+					{_class: _class});
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{form: newForm}),
+					elm$core$Platform$Cmd$none);
 			default:
-				return _Utils_Tuple2(model, elm$core$Platform$Cmd$none);
+				var mail = msg.a;
+				var currentForm = model.form;
+				var newForm = _Utils_update(
+					currentForm,
+					{mail: mail});
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{form: newForm}),
+					elm$core$Platform$Cmd$none);
 		}
 	});
+var author$project$PCC$SignIn = {$: 'SignIn'};
 var author$project$PCC$WhatToDo = {$: 'WhatToDo'};
 var author$project$PCC$WhatisIt = {$: 'WhatisIt'};
 var author$project$PCC$When = {$: 'When'};
 var elm$html$Html$a = _VirtualDom_node('a');
-var elm$html$Html$button = _VirtualDom_node('button');
 var elm$html$Html$footer = _VirtualDom_node('footer');
 var elm$html$Html$Attributes$href = function (url) {
 	return A2(
@@ -5509,7 +5768,6 @@ var elm$html$Html$Attributes$target = elm$html$Html$Attributes$stringProperty('t
 var elm$virtual_dom$VirtualDom$Normal = function (a) {
 	return {$: 'Normal', a: a};
 };
-var elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
 var elm$html$Html$Events$on = F2(
 	function (event, decoder) {
 		return A2(
@@ -5570,7 +5828,8 @@ var author$project$PCC$viewFooter = A2(
 					elm$html$Html$button,
 					_List_fromArray(
 						[
-							elm$html$Html$Attributes$class('nav')
+							elm$html$Html$Attributes$class('nav'),
+							elm$html$Html$Events$onClick(author$project$PCC$SignIn)
 						]),
 					_List_fromArray(
 						[
@@ -5634,7 +5893,6 @@ var author$project$PCC$viewFooter = A2(
 		]));
 var author$project$PCC$Landing = {$: 'Landing'};
 var elm$html$Html$header = _VirtualDom_node('header');
-var elm$html$Html$p = _VirtualDom_node('p');
 var author$project$PCC$viewHeader = A2(
 	elm$html$Html$header,
 	_List_Nil,
@@ -5731,61 +5989,6 @@ var elm$core$Task$Perform = function (a) {
 };
 var elm$core$Task$succeed = _Scheduler_succeed;
 var elm$core$Task$init = elm$core$Task$succeed(_Utils_Tuple0);
-var elm$core$List$foldrHelper = F4(
-	function (fn, acc, ctr, ls) {
-		if (!ls.b) {
-			return acc;
-		} else {
-			var a = ls.a;
-			var r1 = ls.b;
-			if (!r1.b) {
-				return A2(fn, a, acc);
-			} else {
-				var b = r1.a;
-				var r2 = r1.b;
-				if (!r2.b) {
-					return A2(
-						fn,
-						a,
-						A2(fn, b, acc));
-				} else {
-					var c = r2.a;
-					var r3 = r2.b;
-					if (!r3.b) {
-						return A2(
-							fn,
-							a,
-							A2(
-								fn,
-								b,
-								A2(fn, c, acc)));
-					} else {
-						var d = r3.a;
-						var r4 = r3.b;
-						var res = (ctr > 500) ? A3(
-							elm$core$List$foldl,
-							fn,
-							acc,
-							elm$core$List$reverse(r4)) : A4(elm$core$List$foldrHelper, fn, acc, ctr + 1, r4);
-						return A2(
-							fn,
-							a,
-							A2(
-								fn,
-								b,
-								A2(
-									fn,
-									c,
-									A2(fn, d, res))));
-					}
-				}
-			}
-		}
-	});
-var elm$core$List$foldr = F3(
-	function (fn, acc, ls) {
-		return A4(elm$core$List$foldrHelper, fn, acc, 0, ls);
-	});
 var elm$core$List$map = F2(
 	function (f, xs) {
 		return A3(

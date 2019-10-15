@@ -135,7 +135,7 @@ section {
 /*-----FORM--------*/
 
 form {
-    visibility: hidden;
+    /*visibility: hidden;*/
     display: flex;
     flex-direction: column;
     height: 80%;
@@ -219,6 +219,10 @@ input[type="submit"] {
 
 .redLight {
     border: 3px solid red;
+}
+
+p { 
+    margin: .4rem 0;
 }
 
 /*-------------------------------------*/

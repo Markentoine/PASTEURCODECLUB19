@@ -3,13 +3,23 @@ module PCC exposing (..)
 import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (onClick)
+import Html.Events exposing (onClick, onInput)
 import Svg exposing (..)
 import Svg.Attributes exposing (..)
 
 
 type alias Model =
-    { main : List (Html Msg) }
+    { main : List (Html Msg)
+    , form : Form
+    }
+
+
+type alias Form =
+    { firstName : String
+    , lastName : String
+    , class : String
+    , mail : String
+    }
 
 
 type Msg
@@ -18,6 +28,10 @@ type Msg
     | When
     | WhatToDo
     | SignIn
+    | FirstName String
+    | LastName String
+    | Class String
+    | Mail String
 
 
 
@@ -47,6 +61,12 @@ initialModel =
                 ]
             ]
         ]
+    , form =
+        { firstName = ""
+        , lastName = ""
+        , class = ""
+        , mail = ""
+        }
     }
 
 
@@ -162,7 +182,88 @@ update msg model =
             ( { model | main = newMain }, Cmd.none )
 
         SignIn ->
-            ( model, Cmd.none )
+            let
+                newMain =
+                    viewForm model.form
+            in
+            ( { model | main = newMain }, Cmd.none )
+
+        FirstName fname ->
+            let
+                currentForm =
+                    model.form
+
+                newForm =
+                    { currentForm | firstName = fname }
+            in
+            ( { model | form = newForm }, Cmd.none )
+
+        LastName lname ->
+            let
+                currentForm =
+                    model.form
+
+                newForm =
+                    { currentForm | lastName = lname }
+            in
+            ( { model | form = newForm }, Cmd.none )
+
+        Class class ->
+            let
+                currentForm =
+                    model.form
+
+                newForm =
+                    { currentForm | class = class }
+            in
+            ( { model | form = newForm }, Cmd.none )
+
+        Mail mail ->
+            let
+                currentForm =
+                    model.form
+
+                newForm =
+                    { currentForm | mail = mail }
+            in
+            ( { model | form = newForm }, Cmd.none )
+
+
+
+-- FORM
+
+
+viewForm : Form -> List (Html Msg)
+viewForm form =
+    [ h1 [] [ Html.text "Inscris-toi" ]
+    , p [] [ Html.text "Une adresse mail est nécessaire pour te répondre afin que tu saches si tu fais partie du club" ]
+    , p [] [ Html.text "Confidentialité: " ]
+    , p [] [ Html.text "Cette adresse ne sera utilisée que pour te répondre et ne sera pas stockée ensuite." ]
+    , p [] [ Html.text "Toutes les données entrées ici ne seront ni stockées ni utilisées ailleurs." ]
+    , p [] [ Html.text "ATTENTION : Le nombre de places est limité à 10 en tout." ]
+    , Html.form
+        [ Html.Attributes.method "post"
+        , action ""
+        , Html.Attributes.name "signIn"
+        , attribute "netlify-honeypot" "bot-field"
+        , attribute "data-netlify" "true"
+        ]
+        [ viewInput "text" "Prénom" "firstname" form.firstName FirstName
+        , viewInput "text" "Nom" "lastname" form.lastName LastName
+        , viewInput "text" "Classe" "class" form.class Class
+        , viewInput "text" "Mail" "mail" form.mail Mail
+        , button [] [ Html.text "C'est parti!" ]
+        ]
+    ]
+
+
+
+-- <form action="" name="signIn" method='POST' netlify-honeypot="bot-field" data-netlify="true" novalidate>
+
+
+viewInput : String -> String -> String -> String -> (String -> msg) -> Html msg
+viewInput t p n v toMsg =
+    input [ Html.Attributes.type_ t, placeholder p, Html.Attributes.name n, value v, onInput toMsg ] []
 
 
 
@@ -196,7 +297,7 @@ viewFooter =
         [ div [ Html.Attributes.class "container" ]
             [ button [ Html.Attributes.class "nav", onClick WhatisIt ] [ Html.text "C'est quoi?" ]
             , button [ Html.Attributes.class "nav", onClick WhatToDo ] [ Html.text "On fait quoi?" ]
-            , button [ Html.Attributes.class "nav" ] [ Html.text "Je m'inscris!" ]
+            , button [ Html.Attributes.class "nav", onClick SignIn ] [ Html.text "Je m'inscris!" ]
             , button [ Html.Attributes.class "nav", onClick When ] [ Html.text "On commence quand?" ]
             ]
         , Html.a [ href "https://github.com/Markentoine/PASTEURCODECLUB19", Html.Attributes.target "_blank" ]
