@@ -242,7 +242,7 @@ viewForm form =
     , p [] [ Html.text "Toutes les données entrées ici ne seront ni stockées ni utilisées ailleurs." ]
     , p [] [ Html.text "ATTENTION : Le nombre de places est limité à 10 en tout." ]
     , Html.form
-        [ Html.Attributes.method "post"
+        [ Html.Attributes.method "POST"
         , action ""
         , Html.Attributes.name "inscription"
         , attribute "netlify-honeypot" "bot-field"
