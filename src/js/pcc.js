@@ -5078,14 +5078,6 @@ var elm$html$Html$Attributes$action = function (uri) {
 		'action',
 		_VirtualDom_noJavaScriptUri(uri));
 };
-var elm$virtual_dom$VirtualDom$attribute = F2(
-	function (key, value) {
-		return A2(
-			_VirtualDom_attribute,
-			_VirtualDom_noOnOrFormAction(key),
-			_VirtualDom_noJavaScriptOrHtmlUri(value));
-	});
-var elm$html$Html$Attributes$attribute = elm$virtual_dom$VirtualDom$attribute;
 var elm$html$Html$Attributes$method = elm$html$Html$Attributes$stringProperty('method');
 var author$project$PCC$viewForm = function (form) {
 	return _List_fromArray(
@@ -5138,9 +5130,7 @@ var author$project$PCC$viewForm = function (form) {
 				[
 					elm$html$Html$Attributes$method('POST'),
 					elm$html$Html$Attributes$action(''),
-					elm$html$Html$Attributes$name('inscription'),
-					A2(elm$html$Html$Attributes$attribute, 'netlify-honeypot', 'bot-field'),
-					A2(elm$html$Html$Attributes$attribute, 'data-netlify', 'true')
+					elm$html$Html$Attributes$name('inscription')
 				]),
 			_List_fromArray(
 				[

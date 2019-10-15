@@ -245,8 +245,8 @@ viewForm form =
         [ Html.Attributes.method "POST"
         , action ""
         , Html.Attributes.name "inscription"
-        , attribute "netlify-honeypot" "bot-field"
-        , attribute "data-netlify" "true"
+        --, attribute "netlify-honeypot" "bot-field"
+        --, attribute "data-netlify" "true"
         ]
         [ viewInput "text" "Prénom" "firstname" form.firstName FirstName
         , viewInput "text" "Nom" "lastname" form.lastName LastName
