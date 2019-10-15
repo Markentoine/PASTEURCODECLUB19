@@ -5345,7 +5345,7 @@ var author$project$PCC$update = F2(
 											]),
 										_List_fromArray(
 											[
-												elm$html$Html$text('d\'une dizaine d\'élèves')
+												elm$html$Html$text('d\'une dizaine de personnes')
 											]))
 									])),
 								A2(

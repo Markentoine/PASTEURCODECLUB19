@@ -109,7 +109,7 @@ update msg model =
                     [ div [ Html.Attributes.class "submain" ]
                         [ section [ Html.Attributes.id "saison" ]
                             [ h1 [ Html.Attributes.class "explications" ] [ Html.text "Un Club" ]
-                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "d'une dizaine d'élèves" ]
+                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "d'une dizaine de personnes" ]
                             ]
                         , section
                             [ Html.Attributes.id "langage" ]
