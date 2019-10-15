@@ -5138,7 +5138,7 @@ var author$project$PCC$viewForm = function (form) {
 				[
 					elm$html$Html$Attributes$method('post'),
 					elm$html$Html$Attributes$action(''),
-					elm$html$Html$Attributes$name('signIn'),
+					elm$html$Html$Attributes$name('inscription'),
 					A2(elm$html$Html$Attributes$attribute, 'netlify-honeypot', 'bot-field'),
 					A2(elm$html$Html$Attributes$attribute, 'data-netlify', 'true')
 				]),

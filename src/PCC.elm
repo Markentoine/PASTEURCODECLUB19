@@ -244,7 +244,7 @@ viewForm form =
     , Html.form
         [ Html.Attributes.method "post"
         , action ""
-        , Html.Attributes.name "signIn"
+        , Html.Attributes.name "inscription"
         , attribute "netlify-honeypot" "bot-field"
         , attribute "data-netlify" "true"
         ]
