@@ -5151,6 +5151,15 @@ var author$project$PCC$viewForm = function (form) {
 					elm$html$Html$input,
 					_List_fromArray(
 						[
+							elm$html$Html$Attributes$type_('hidden'),
+							elm$html$Html$Attributes$name('form-name'),
+							elm$html$Html$Attributes$value('inscription')
+						]),
+					_List_Nil),
+					A2(
+					elm$html$Html$input,
+					_List_fromArray(
+						[
 							elm$html$Html$Attributes$type_('submit')
 						]),
 					_List_fromArray(
