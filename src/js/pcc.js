@@ -5277,7 +5277,7 @@ var author$project$PCC$update = F2(
 											]),
 										_List_fromArray(
 											[
-												elm$html$Html$text('Si vous vous êtes inscrits plus tard')
+												elm$html$Html$text('Si tu t\'es inscrit plus tard')
 											])),
 										A2(
 										elm$html$Html$h1,
@@ -5287,7 +5287,7 @@ var author$project$PCC$update = F2(
 											]),
 										_List_fromArray(
 											[
-												elm$html$Html$text('Vous pouvez venir à la 2eme séance')
+												elm$html$Html$text('Tu peux venir à la 2eme séance')
 											]))
 									])),
 								A2(
@@ -5335,7 +5335,7 @@ var author$project$PCC$update = F2(
 											]),
 										_List_fromArray(
 											[
-												elm$html$Html$text('Montez directement en salle 203')
+												elm$html$Html$text('Monte directement en salle 203')
 											])),
 										A2(
 										elm$html$Html$h1,
