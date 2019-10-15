@@ -234,10 +234,10 @@ footer {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 8vh;
+    height: 9vh;
     border-top: 2px dotted chartreuse;
     background-color: black;
-    margin-top: 92vh;
+    margin-top: 91vh;
     color: chartreuse;
 }
 
