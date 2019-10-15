@@ -5110,7 +5110,7 @@ var author$project$PCC$update = F2(
 										elm$html$Html$h1,
 										_List_fromArray(
 											[
-												elm$html$Html$Attributes$class('annonce')
+												elm$html$Html$Attributes$class('explications')
 											]),
 										_List_fromArray(
 											[
@@ -5120,7 +5120,7 @@ var author$project$PCC$update = F2(
 										elm$html$Html$h1,
 										_List_fromArray(
 											[
-												elm$html$Html$Attributes$class('annonce')
+												elm$html$Html$Attributes$class('explications')
 											]),
 										_List_fromArray(
 											[
@@ -5139,7 +5139,7 @@ var author$project$PCC$update = F2(
 										elm$html$Html$h1,
 										_List_fromArray(
 											[
-												elm$html$Html$Attributes$class('annonce')
+												elm$html$Html$Attributes$class('explications')
 											]),
 										_List_fromArray(
 											[
@@ -5149,7 +5149,7 @@ var author$project$PCC$update = F2(
 										elm$html$Html$h1,
 										_List_fromArray(
 											[
-												elm$html$Html$Attributes$class('annonce')
+												elm$html$Html$Attributes$class('explications')
 											]),
 										_List_fromArray(
 											[
@@ -5168,7 +5168,7 @@ var author$project$PCC$update = F2(
 										elm$html$Html$h1,
 										_List_fromArray(
 											[
-												elm$html$Html$Attributes$class('annonce')
+												elm$html$Html$Attributes$class('explications')
 											]),
 										_List_fromArray(
 											[
@@ -5178,7 +5178,7 @@ var author$project$PCC$update = F2(
 										elm$html$Html$h1,
 										_List_fromArray(
 											[
-												elm$html$Html$Attributes$class('annonce')
+												elm$html$Html$Attributes$class('explications')
 											]),
 										_List_fromArray(
 											[
@@ -5197,7 +5197,7 @@ var author$project$PCC$update = F2(
 										elm$html$Html$h1,
 										_List_fromArray(
 											[
-												elm$html$Html$Attributes$class('annonce')
+												elm$html$Html$Attributes$class('explications')
 											]),
 										_List_fromArray(
 											[
@@ -5207,7 +5207,7 @@ var author$project$PCC$update = F2(
 										elm$html$Html$h1,
 										_List_fromArray(
 											[
-												elm$html$Html$Attributes$class('annonce')
+												elm$html$Html$Attributes$class('explications')
 											]),
 										_List_fromArray(
 											[
@@ -5222,14 +5222,280 @@ var author$project$PCC$update = F2(
 						{main: newMain}),
 					elm$core$Platform$Cmd$none);
 			case 'When':
-				return _Utils_Tuple2(model, elm$core$Platform$Cmd$none);
+				var newMain = _List_fromArray(
+					[
+						A2(
+						elm$html$Html$div,
+						_List_fromArray(
+							[
+								elm$html$Html$Attributes$class('submain')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								elm$html$Html$section,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$id('saison')
+									]),
+								_List_fromArray(
+									[
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('La première séance')
+											])),
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('aura lieu le 4 novembre')
+											]))
+									])),
+								A2(
+								elm$html$Html$section,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$id('langage')
+									]),
+								_List_fromArray(
+									[
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Si vous vous êtes inscrits plus tard')
+											])),
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Vous pouvez venir à la 2eme séance')
+											]))
+									])),
+								A2(
+								elm$html$Html$section,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$id('horaire')
+									]),
+								_List_fromArray(
+									[
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Elle aura lieu')
+											])),
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Le lundi 18 novembre')
+											]))
+									])),
+								A2(
+								elm$html$Html$section,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$id('salle')
+									]),
+								_List_fromArray(
+									[
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Montez directement en salle 203')
+											])),
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Dès que possible après la fin du repas')
+											]))
+									]))
+							]))
+					]);
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{main: newMain}),
+					elm$core$Platform$Cmd$none);
 			case 'WhatToDo':
-				return _Utils_Tuple2(model, elm$core$Platform$Cmd$none);
+				var newMain = _List_fromArray(
+					[
+						A2(
+						elm$html$Html$div,
+						_List_fromArray(
+							[
+								elm$html$Html$Attributes$class('submain')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								elm$html$Html$section,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$id('saison')
+									]),
+								_List_fromArray(
+									[
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('On  apprendra')
+											])),
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('un  langage  appelé  Elm')
+											]))
+									])),
+								A2(
+								elm$html$Html$section,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$id('langage')
+									]),
+								_List_fromArray(
+									[
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Qui nous permettra')
+											])),
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('De programmer à partir de zéro')
+											]))
+									])),
+								A2(
+								elm$html$Html$section,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$id('horaire')
+									]),
+								_List_fromArray(
+									[
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('De dessiner')
+											])),
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('De donner vie à des êtres, des choses')
+											]))
+									])),
+								A2(
+								elm$html$Html$section,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$id('salle')
+									]),
+								_List_fromArray(
+									[
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('De créer des jeux')
+											])),
+										A2(
+										elm$html$Html$h1,
+										_List_fromArray(
+											[
+												elm$html$Html$Attributes$class('explications')
+											]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Des petits d\'abord et des plus grands ensuite...')
+											]))
+									]))
+							]))
+					]);
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{main: newMain}),
+					elm$core$Platform$Cmd$none);
 			default:
 				return _Utils_Tuple2(model, elm$core$Platform$Cmd$none);
 		}
 	});
+var author$project$PCC$WhatToDo = {$: 'WhatToDo'};
 var author$project$PCC$WhatisIt = {$: 'WhatisIt'};
+var author$project$PCC$When = {$: 'When'};
 var elm$html$Html$a = _VirtualDom_node('a');
 var elm$html$Html$button = _VirtualDom_node('button');
 var elm$html$Html$footer = _VirtualDom_node('footer');
@@ -5293,7 +5559,8 @@ var author$project$PCC$viewFooter = A2(
 					elm$html$Html$button,
 					_List_fromArray(
 						[
-							elm$html$Html$Attributes$class('nav')
+							elm$html$Html$Attributes$class('nav'),
+							elm$html$Html$Events$onClick(author$project$PCC$WhatToDo)
 						]),
 					_List_fromArray(
 						[
@@ -5313,7 +5580,8 @@ var author$project$PCC$viewFooter = A2(
 					elm$html$Html$button,
 					_List_fromArray(
 						[
-							elm$html$Html$Attributes$class('nav')
+							elm$html$Html$Attributes$class('nav'),
+							elm$html$Html$Events$onClick(author$project$PCC$When)
 						]),
 					_List_fromArray(
 						[
@@ -5364,6 +5632,7 @@ var author$project$PCC$viewFooter = A2(
 						]))
 				]))
 		]));
+var author$project$PCC$Landing = {$: 'Landing'};
 var elm$html$Html$header = _VirtualDom_node('header');
 var elm$html$Html$p = _VirtualDom_node('p');
 var author$project$PCC$viewHeader = A2(
@@ -5383,7 +5652,8 @@ var author$project$PCC$viewHeader = A2(
 					elm$html$Html$a,
 					_List_fromArray(
 						[
-							elm$html$Html$Attributes$href('https://pasteurcodeclub.net')
+							elm$html$Html$Attributes$href(''),
+							elm$html$Html$Events$onClick(author$project$PCC$Landing)
 						]),
 					_List_fromArray(
 						[

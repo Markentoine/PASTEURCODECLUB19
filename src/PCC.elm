@@ -88,21 +88,21 @@ update msg model =
                 newMain =
                     [ div [ Html.Attributes.class "submain" ]
                         [ section [ Html.Attributes.id "saison" ]
-                            [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "Un Club" ]
-                            , h1 [ Html.Attributes.class "annonce" ] [ Html.text "d'une dizaine d'élèves" ]
+                            [ h1 [ Html.Attributes.class "explications" ] [ Html.text "Un Club" ]
+                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "d'une dizaine d'élèves" ]
                             ]
                         , section
                             [ Html.Attributes.id "langage" ]
-                            [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "Qui se réunit tous les lundis" ]
-                            , h1 [ Html.Attributes.class "annonce" ] [ Html.text "Entre 12h30 et 13h15" ]
+                            [ h1 [ Html.Attributes.class "explications" ] [ Html.text "Qui se réunit tous les lundis" ]
+                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "Entre 12h30 et 13h15" ]
                             ]
                         , section [ Html.Attributes.id "horaire" ]
-                            [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "Dans une salle" ]
-                            , h1 [ Html.Attributes.class "annonce" ] [ Html.text "peuplée d'ordinateurs" ]
+                            [ h1 [ Html.Attributes.class "explications" ] [ Html.text "Dans une salle" ]
+                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "peuplée d'ordinateurs" ]
                             ]
                         , section [ Html.Attributes.id "salle" ]
-                            [ h1 [ Html.Attributes.class "annonce" ] [ Html.text "Pour apprendre joyeusement " ]
-                            , h1 [ Html.Attributes.class "annonce" ] [ Html.text "A coder, programmer, créer" ]
+                            [ h1 [ Html.Attributes.class "explications" ] [ Html.text "Pour apprendre joyeusement " ]
+                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "A coder, programmer, créer" ]
                             ]
                         ]
                     ]
@@ -110,10 +110,56 @@ update msg model =
             ( { model | main = newMain }, Cmd.none )
 
         When ->
-            ( model, Cmd.none )
+            let
+                newMain =
+                    [ div [ Html.Attributes.class "submain" ]
+                        [ section [ Html.Attributes.id "saison" ]
+                            [ h1 [ Html.Attributes.class "explications" ] [ Html.text "La première séance" ]
+                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "aura lieu le 4 novembre" ]
+                            ]
+                        , section
+                            [ Html.Attributes.id "langage" ]
+                            [ h1 [ Html.Attributes.class "explications" ] [ Html.text "Si vous vous êtes inscrits plus tard" ]
+                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "Vous pouvez venir à la 2eme séance" ]
+                            ]
+                        , section [ Html.Attributes.id "horaire" ]
+                            [ h1 [ Html.Attributes.class "explications" ] [ Html.text "Elle aura lieu" ]
+                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "Le lundi 18 novembre" ]
+                            ]
+                        , section [ Html.Attributes.id "salle" ]
+                            [ h1 [ Html.Attributes.class "explications" ] [ Html.text "Montez directement en salle 203" ]
+                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "Dès que possible après la fin du repas" ]
+                            ]
+                        ]
+                    ]
+            in
+            ( { model | main = newMain }, Cmd.none )
 
         WhatToDo ->
-            ( model, Cmd.none )
+            let
+                newMain =
+                    [ div [ Html.Attributes.class "submain" ]
+                        [ section [ Html.Attributes.id "saison" ]
+                            [ h1 [ Html.Attributes.class "explications" ] [ Html.text "On  apprendra" ]
+                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "un  langage  appelé  Elm" ]
+                            ]
+                        , section
+                            [ Html.Attributes.id "langage" ]
+                            [ h1 [ Html.Attributes.class "explications" ] [ Html.text "Qui nous permettra" ]
+                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "De programmer à partir de zéro" ]
+                            ]
+                        , section [ Html.Attributes.id "horaire" ]
+                            [ h1 [ Html.Attributes.class "explications" ] [ Html.text "De dessiner" ]
+                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "De donner vie à des êtres, des choses" ]
+                            ]
+                        , section [ Html.Attributes.id "salle" ]
+                            [ h1 [ Html.Attributes.class "explications" ] [ Html.text "De créer des jeux" ]
+                            , h1 [ Html.Attributes.class "explications" ] [ Html.text "Des petits d'abord et des plus grands ensuite..." ]
+                            ]
+                        ]
+                    ]
+            in
+            ( { model | main = newMain }, Cmd.none )
 
         SignIn ->
             ( model, Cmd.none )
@@ -123,11 +169,11 @@ update msg model =
 -- VIEWS
 
 
-viewHeader : Html msg
+viewHeader : Html Msg
 viewHeader =
     header []
         [ div [ Html.Attributes.class "bigTitle" ]
-            [ Html.a [ href "https://pasteurcodeclub.net" ]
+            [ Html.a [ href "", onClick Landing ]
                 [ p [ Html.Attributes.id "title" ] [ Html.text "PASTEURCODECLUB" ]
                 ]
             ]
@@ -149,9 +195,9 @@ viewFooter =
     footer []
         [ div [ Html.Attributes.class "container" ]
             [ button [ Html.Attributes.class "nav", onClick WhatisIt ] [ Html.text "C'est quoi?" ]
-            , button [ Html.Attributes.class "nav" ] [ Html.text "On fait quoi?" ]
+            , button [ Html.Attributes.class "nav", onClick WhatToDo ] [ Html.text "On fait quoi?" ]
             , button [ Html.Attributes.class "nav" ] [ Html.text "Je m'inscris!" ]
-            , button [ Html.Attributes.class "nav" ] [ Html.text "On commence quand?" ]
+            , button [ Html.Attributes.class "nav", onClick When ] [ Html.text "On commence quand?" ]
             ]
         , Html.a [ href "https://github.com/Markentoine/PASTEURCODECLUB19", Html.Attributes.target "_blank" ]
             [ div [ Html.Attributes.class "github" ]
