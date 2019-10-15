@@ -5069,7 +5069,6 @@ var author$project$PCC$viewInput = F5(
 				]),
 			_List_Nil);
 	});
-var elm$html$Html$button = _VirtualDom_node('button');
 var elm$html$Html$form = _VirtualDom_node('form');
 var elm$html$Html$p = _VirtualDom_node('p');
 var elm$html$Html$Attributes$action = function (uri) {
@@ -5149,7 +5148,7 @@ var author$project$PCC$viewForm = function (form) {
 					A5(author$project$PCC$viewInput, 'text', 'Classe', 'class', form._class, author$project$PCC$Class),
 					A5(author$project$PCC$viewInput, 'mail', 'Mail', 'mail', form.mail, author$project$PCC$Mail),
 					A2(
-					elm$html$Html$button,
+					elm$html$Html$input,
 					_List_fromArray(
 						[
 							elm$html$Html$Attributes$type_('submit')
@@ -5760,6 +5759,7 @@ var author$project$PCC$WhatToDo = {$: 'WhatToDo'};
 var author$project$PCC$WhatisIt = {$: 'WhatisIt'};
 var author$project$PCC$When = {$: 'When'};
 var elm$html$Html$a = _VirtualDom_node('a');
+var elm$html$Html$button = _VirtualDom_node('button');
 var elm$html$Html$footer = _VirtualDom_node('footer');
 var elm$html$Html$Attributes$href = function (url) {
 	return A2(
