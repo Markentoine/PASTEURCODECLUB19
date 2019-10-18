@@ -287,7 +287,7 @@ viewHeader =
                 ]
             ]
         , div [ Html.Attributes.class "editorCode" ]
-            [ Html.a [ href "https://ellie-app.com/new", Html.Attributes.target "_blank" ]
+            [ Html.a [ href "https://ellie-app.com/6XsQCg75RCDa1", Html.Attributes.target "_blank" ]
                 [ Html.text ">>> ELLIE <<<"
                 ]
             ]
