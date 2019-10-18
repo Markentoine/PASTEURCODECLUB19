@@ -1,5 +1,5 @@
 # PASTEURCODECLUB19
-## Un club d'élèves du collège de Raon-l'Etape dans les Vosges.
+## Un club d'élèves-codeurs du collège de Raon-l'Etape dans les Vosges.
 
 ## Idées générales
 L'idée à l'origine du club est de partager des connaissances acquises en dehors et de les transmettre à des jeunes qui n'ont pas l'occasion d'apprendre à parler aux machines qu'ils ont quotidiennement devant eux.
