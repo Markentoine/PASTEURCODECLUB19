@@ -1,4 +1,4 @@
-# PASTEURCODECLUB19
+# PASTEURCODECLUB
 ## Un club d'élèves-codeurs du collège de Raon-l'Etape dans les Vosges.
 
 ## Idées générales
