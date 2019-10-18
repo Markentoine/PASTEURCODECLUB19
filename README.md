@@ -19,7 +19,7 @@ Apprendre la programmation a de multiples effets:
 + avoir senti et vécu une progression
 
 ## Outils
-+ Elm
-+ Playground
-+ Ellie
++ [Elm](https://elm-lang.org/)
++ [Playground](https://github.com/evancz/elm-playground)
++ [Ellie](https://github.com/evancz/elm-playground)
 + [Site consacré au club](https://pasteurcodeclub.net/)
