@@ -5949,7 +5949,7 @@ var author$project$PCC$viewHeader = A2(
 					elm$html$Html$a,
 					_List_fromArray(
 						[
-							elm$html$Html$Attributes$href('https://ellie-app.com/new'),
+							elm$html$Html$Attributes$href('https://ellie-app.com/6XsQCg75RCDa1'),
 							elm$html$Html$Attributes$target('_blank')
 						]),
 					_List_fromArray(
