@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +11,12 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./src/style/pcc.css" />
     <title>PASTEURCODECLUB</title>
 </head>
+
 <body>
-    
+
     <div id="nouveau"></div>
-    <form action="" method="POST" name="inscription" data-netlify="true" netlify-honeypot="bot-field" style="display:none">
+    <form action="" method="POST" name="inscription" data-netlify="true" netlify-honeypot="bot-field"
+        style="display:none">
         <input type="text" name="firstname">
         <input type="text" name="lastname">
         <input type="text" name="class">
@@ -22,9 +25,10 @@
 
     <script src="./src/js/pcc.js"></script>
     <script>
-        Elm.PCC.init({
+        Elm.Main.init({
             node: document.getElementById("nouveau")
         })
     </script>
 </body>
+
 </html>

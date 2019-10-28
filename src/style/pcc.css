@@ -99,29 +99,29 @@ section {
     border: 2px dotted chartreuse;
 }
 
-#saison {
-    animation: shadow-pop-tl .2s linear .5s  1;
+#block1 {
+    animation: shadow-pop-tl .2s linear .5s 1;
     /*Set our animation play state to paused initially */
     animation-fill-mode: forwards;
     animation-play-state: running;
 }
 
-#langage {
+#block2 {
     animation: shadow-pop-tl .2s linear 1s 1;
     /*Set our animation play state to paused initially */
     animation-fill-mode: forwards;
     animation-play-state: running;
 }
 
-#horaire {
-    animation: shadow-pop-tl .2s linear 1.5s  1;
+#block3 {
+    animation: shadow-pop-tl .2s linear 1.5s 1;
     /*Set our animation play state to paused initially */
     animation-fill-mode: forwards;
     animation-play-state: running;
 }
 
-#salle {
-    animation: shadow-pop-tl .2s linear 2s  1;
+#block4 {
+    animation: shadow-pop-tl .2s linear 2s 1;
     /*Set our animation play state to paused initially */
     animation-fill-mode: forwards;
     animation-play-state: running;
@@ -129,7 +129,7 @@ section {
 
 .explications {
     font-family: 'Titillium Web',
-    sans-serif;
+        sans-serif;
 }
 
 /*-----FORM--------*/
@@ -221,7 +221,7 @@ input[type="submit"] {
     border: 3px solid red;
 }
 
-p { 
+p {
     margin: .4rem 0;
 }
 
@@ -264,7 +264,7 @@ a:first-of-type {
 .container {
     display: flex;
     justify-content: space-between;
-    width : 92%;
+    width: 92%;
     margin-left: .5rem;
     margin-top: .5rem;
 }
