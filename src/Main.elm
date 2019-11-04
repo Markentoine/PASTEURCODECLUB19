@@ -69,8 +69,8 @@ viewHeader =
                 ]
             ]
         , div [ Html.Attributes.class "editorCode" ]
-            [ Html.a [ href "https://ellie-app.com/6XsQCg75RCDa1", Html.Attributes.target "_blank" ]
-                [ Html.text ">>> ELLIE <<<"
+            [ Html.a [ href "https://racket-lang.org/", Html.Attributes.target "_blank" ]
+                [ Html.text ">>> DR.RACKET <<<"
                 ]
             ]
         ]

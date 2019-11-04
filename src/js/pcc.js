@@ -5254,7 +5254,7 @@ var $elm$svg$Svg$text = $elm$virtual_dom$VirtualDom$text;
 var $elm$svg$Svg$title = $elm$svg$Svg$trustedNode('title');
 var $elm$svg$Svg$Attributes$viewBox = _VirtualDom_attribute('viewBox');
 var $elm$svg$Svg$Attributes$xmlSpace = A2(_VirtualDom_attributeNS, 'http://www.w3.org/XML/1998/namespace', 'xml:space');
-var $author$project$Main$gitHub = A2(
+var $author$project$Helpers$Helpers$gitHub = A2(
 	$elm$html$Html$a,
 	_List_fromArray(
 		[
@@ -5374,7 +5374,7 @@ var $author$project$Main$viewFooter = function (model) {
 								$elm$html$Html$text('On commence quand?')
 							]))
 					])),
-				$author$project$Main$gitHub
+				$author$project$Helpers$Helpers$gitHub
 			]));
 };
 var $author$project$Message$Announce = {$: 'Announce'};
@@ -5427,12 +5427,12 @@ var $author$project$Main$viewHeader = A2(
 					$elm$html$Html$a,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$href('https://ellie-app.com/6XsQCg75RCDa1'),
+							$elm$html$Html$Attributes$href('https://racket-lang.org/'),
 							$elm$html$Html$Attributes$target('_blank')
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('>>> ELLIE <<<')
+							$elm$html$Html$text('>>> DR.RACKET <<<')
 						]))
 				]))
 		]));
@@ -5500,7 +5500,7 @@ var $author$project$Page$Announce$viewBlocks = function (blocks) {
 				_List_fromArray(
 					[
 						_Utils_Tuple3('1', '---- NOUVELLE SAISON ----', '2019-2020'),
-						_Utils_Tuple3('2', '---- NOUVEAU LANGAGE ----', 'Elm'),
+						_Utils_Tuple3('2', '---- NOUVEAU LANGAGE ----', 'Racket'),
 						_Utils_Tuple3('3', '---- NOUVEL HORAIRE ----', 'LUNDI 12h30-13h15'),
 						_Utils_Tuple3('4', '---- NOUVELLE SALLE ----', '203')
 					]));
@@ -5517,8 +5517,8 @@ var $author$project$Page$Announce$viewBlocks = function (blocks) {
 			return $author$project$Helpers$Helpers$createBlocks(
 				_List_fromArray(
 					[
-						_Utils_Tuple3('1', 'On  apprendra', 'un  langage  nommé  Elm'),
-						_Utils_Tuple3('2', 'Qui nous permettra', 'De programmer à partir de zéro'),
+						_Utils_Tuple3('1', 'On  apprendra', 'grâce à Dr.Racket!'),
+						_Utils_Tuple3('2', 'Il nous permettra', 'De programmer à partir de zéro'),
 						_Utils_Tuple3('3', 'De dessiner', 'De donner vie à des êtres, des choses'),
 						_Utils_Tuple3('4', 'De créer des jeux', 'Des petits d\'abord et des plus grands ensuite...')
 					]));
