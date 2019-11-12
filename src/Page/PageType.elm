@@ -7,3 +7,4 @@ type Page
     = Announcement Blocks
     | Home
     | Subscribe
+    | SignIn

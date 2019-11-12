@@ -1,4 +1,4 @@
-module Page.SignUpForm exposing (..)
+module Page.SubscribeForm exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)

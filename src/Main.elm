@@ -9,7 +9,7 @@ import Html.Events exposing (onClick)
 import Message exposing (..)
 import Page.Announce exposing (..)
 import Page.PageType exposing (..)
-import Page.SignUpForm exposing (..)
+import Page.SubscribeForm exposing (..)
 
 
 type alias Model =
@@ -72,9 +72,8 @@ viewHeader =
                 ]
             ]
         , div [ Html.Attributes.class "editorCode" ]
-            [ Html.a [ href "https://racket-lang.org/", Html.Attributes.target "_blank" ]
-                [ Html.text ">>> DR.RACKET <<<"
-                ]
+            [ button [ Html.Attributes.class "nav", onClick Authentication ]
+                [ Html.text "S'Identifier" ]
             ]
         ]
 
@@ -90,6 +89,9 @@ viewMain model =
 
         Subscribe ->
             Html.main_ [] (viewForm model.form)
+
+        SignIn ->
+            Html.main_ [] []
 
 
 viewFooter : Model -> Html Msg
@@ -124,6 +126,9 @@ update msg model =
 
         SignUp ->
             ( { model | page = Subscribe }, Cmd.none )
+
+        Authentication ->
+            ( { model | page = SignIn }, Cmd.none )
 
         FirstName fname ->
             ( { model | form = newFormFName fname model.form }, Cmd.none )
