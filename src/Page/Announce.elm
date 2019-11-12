@@ -18,7 +18,7 @@ viewBlocks blocks =
         New ->
             createBlocks
                 [ ( "1", "---- NOUVELLE SAISON ----", "2019-2020" )
-                , ( "2", "---- NOUVEAU LANGAGE ----", "Racket" )
+                , ( "2", "---- NOUVEAU LANGAGE ----", "RACKET" )
                 , ( "3", "---- NOUVEL HORAIRE ----", "LUNDI 12h30-13h15" )
                 , ( "4", "---- NOUVELLE SALLE ----", "203" )
                 ]
