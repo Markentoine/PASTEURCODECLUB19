@@ -5103,10 +5103,12 @@ var $author$project$Page$PageType$Announcement = function (a) {
 	return {$: 'Announcement', a: a};
 };
 var $author$project$Page$Announce$New = {$: 'New'};
+var $author$project$Footer$Presentation = {$: 'Presentation'};
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$init = function (_v0) {
 	var initialModel = {
+		footer: $author$project$Footer$Presentation,
 		form: {_class: '', firstName: '', lastName: '', mail: ''},
 		page: $author$project$Page$PageType$Announcement($author$project$Page$Announce$New)
 	};
@@ -5316,6 +5318,7 @@ var $elm$html$Html$Events$onClick = function (msg) {
 };
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$Main$viewFooter = function (model) {
+	var _v0 = model.footer;
 	return A2(
 		$elm$html$Html$footer,
 		_List_Nil,
@@ -5500,7 +5503,7 @@ var $author$project$Page$Announce$viewBlocks = function (blocks) {
 				_List_fromArray(
 					[
 						_Utils_Tuple3('1', '---- NOUVELLE SAISON ----', '2019-2020'),
-						_Utils_Tuple3('2', '---- NOUVEAU LANGAGE ----', 'Racket'),
+						_Utils_Tuple3('2', '---- NOUVEAU LANGAGE ----', 'RACKET'),
 						_Utils_Tuple3('3', '---- NOUVEL HORAIRE ----', 'LUNDI 12h30-13h15'),
 						_Utils_Tuple3('4', '---- NOUVELLE SALLE ----', '203')
 					]));

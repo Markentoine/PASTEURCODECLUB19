@@ -1,6 +1,7 @@
 module Main exposing (..)
 
 import Browser
+import Footer exposing (..)
 import Helpers.Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -13,6 +14,7 @@ import Page.SignUpForm exposing (..)
 
 type alias Model =
     { page : Page
+    , footer : Footer
     , form : Form
     }
 
@@ -32,6 +34,7 @@ init () =
     let
         initialModel =
             { page = Announcement New
+            , footer = Presentation
             , form =
                 { firstName = ""
                 , lastName = ""
@@ -91,15 +94,17 @@ viewMain model =
 
 viewFooter : Model -> Html Msg
 viewFooter model =
-    footer []
-        [ div [ Html.Attributes.class "container" ]
-            [ button [ Html.Attributes.class "nav", onClick What ] [ Html.text "C'est quoi?" ]
-            , button [ Html.Attributes.class "nav", onClick WhatToDo ] [ Html.text "On fait quoi?" ]
-            , button [ Html.Attributes.class "nav", onClick SignUp ] [ Html.text "Je m'inscris!" ]
-            , button [ Html.Attributes.class "nav", onClick When ] [ Html.text "On commence quand?" ]
-            ]
-        , gitHub
-        ]
+    case model.footer of
+        Presentation ->
+            footer []
+                [ div [ Html.Attributes.class "container" ]
+                    [ button [ Html.Attributes.class "nav", onClick What ] [ Html.text "C'est quoi?" ]
+                    , button [ Html.Attributes.class "nav", onClick WhatToDo ] [ Html.text "On fait quoi?" ]
+                    , button [ Html.Attributes.class "nav", onClick SignUp ] [ Html.text "Je m'inscris!" ]
+                    , button [ Html.Attributes.class "nav", onClick When ] [ Html.text "On commence quand?" ]
+                    ]
+                , gitHub
+                ]
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
