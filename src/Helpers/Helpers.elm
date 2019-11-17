@@ -1,5 +1,6 @@
 module Helpers.Helpers exposing (..)
 
+import Array
 import Html exposing (..)
 import Html.Attributes exposing (class, href, id)
 import Message exposing (..)
@@ -23,6 +24,71 @@ createBlocks announces =
             announces
         )
     ]
+
+
+blockNews : List String -> List (Html Msg)
+blockNews announces =
+    [ div [ Html.Attributes.class "submain" ]
+        (List.map
+            (\n ->
+                let
+                    lines =
+                        Debug.log "lines" (breakNewsLines n)
+                in
+                section
+                    [ Html.Attributes.class "block" ]
+                    (List.map
+                        (\line ->
+                            h1 [ Html.Attributes.class "explications" ] [ Html.text line ]
+                        )
+                        lines
+                    )
+            )
+            announces
+        )
+    ]
+
+
+
+-- fragmente l'info qui sous forme d'une seule string en plusieurs strings affichables dans le block
+-- si len < 40 retourner la string
+-- sépare la string en mots
+
+
+breakNewsLines : String -> List String
+breakNewsLines n =
+    if String.length n <= 40 then
+        [ n ]
+
+    else
+        String.split " " n
+            |> List.foldl cutLines (Array.fromList [ "" ])
+            |> Array.toList
+
+
+cutLines : String -> Array.Array String -> Array.Array String
+cutLines w result =
+    let
+        lenResult =
+            Array.length result
+    in
+    case Array.get (lenResult - 1) result of
+        Just s ->
+            let
+                lenS =
+                    String.length s
+
+                lenW =
+                    String.length w
+            in
+            if lenS + lenW > 50 then
+                Array.append result (Array.fromList [ w ])
+
+            else
+                Array.set (lenResult - 1) (String.append " " w |> String.append s) result
+
+        Nothing ->
+            result
 
 
 gitHub : Html Msg
