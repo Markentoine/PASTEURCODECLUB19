@@ -10,6 +10,7 @@ news =
     [ "Et voilà, c'est la fin des inscriptions pour cette année!"
     , "Je souhaite la Bienvenue aux nouveaux membres du PasteurCodeClub! 😎"
     , "News : la prochaine session vous fera découvrir Dr.Racket!"
+    , "Deux tutos en video vous attendent pour tout vous expliquer"
     ]
 
 

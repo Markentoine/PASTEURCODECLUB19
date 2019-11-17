@@ -6123,7 +6123,7 @@ var $author$project$Helpers$Helpers$blockNews = function (announces) {
 		]);
 };
 var $author$project$Page$Home$news = _List_fromArray(
-	['Et voilà, c\'est la fin des inscriptions pour cette année!', 'Je souhaite la Bienvenue aux nouveaux membres du PasteurCodeClub! 😎', 'News : la prochaine session vous fera découvrir Dr.Racket!']);
+	['Et voilà, c\'est la fin des inscriptions pour cette année!', 'Je souhaite la Bienvenue aux nouveaux membres du PasteurCodeClub! 😎', 'News : la prochaine session vous fera découvrir Dr.Racket!', 'Deux tutos en video vous attendent pour tout vous expliquer']);
 var $author$project$Page$Home$viewNews = $author$project$Helpers$Helpers$blockNews($author$project$Page$Home$news);
 var $author$project$Main$viewMain = function (model) {
 	var _v0 = model.page;
