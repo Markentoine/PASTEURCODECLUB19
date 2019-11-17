@@ -5099,23 +5099,24 @@ var $elm$core$Task$perform = F2(
 				A2($elm$core$Task$map, toMessage, task)));
 	});
 var $elm$browser$Browser$element = _Browser_element;
-var $author$project$Page$PageType$Announcement = function (a) {
-	return {$: 'Announcement', a: a};
-};
 var $author$project$Footer$Bare = {$: 'Bare'};
-var $author$project$Page$Announce$New = {$: 'New'};
+var $author$project$Page$PageType$Home = {$: 'Home'};
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$init = function (_v0) {
 	var initialModel = {
 		footer: $author$project$Footer$Bare,
 		form: {_class: '', firstName: '', lastName: '', mail: ''},
-		page: $author$project$Page$PageType$Announcement($author$project$Page$Announce$New)
+		page: $author$project$Page$PageType$Home
 	};
 	return _Utils_Tuple2(initialModel, $elm$core$Platform$Cmd$none);
 };
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
+var $author$project$Page$PageType$Announcement = function (a) {
+	return {$: 'Announcement', a: a};
+};
+var $author$project$Page$Announce$New = {$: 'New'};
 var $author$project$Page$PageType$SignIn = {$: 'SignIn'};
 var $author$project$Page$PageType$Subscribe = {$: 'Subscribe'};
 var $author$project$Page$Announce$WhatDoWeDo = {$: 'WhatDoWeDo'};
@@ -5476,7 +5477,8 @@ var $author$project$Helpers$Helpers$createBlocks = function (announces) {
 								$elm$html$Html$Attributes$id(
 								$elm$core$String$concat(
 									_List_fromArray(
-										['block', nbBlock])))
+										['block', nbBlock]))),
+								$elm$html$Html$Attributes$class('block')
 							]),
 						_List_fromArray(
 							[
@@ -5706,6 +5708,13 @@ var $author$project$Page$SubscribeForm$viewForm = function (form) {
 				]))
 		]);
 };
+var $author$project$Page$Home$news = _List_fromArray(
+	[
+		_Utils_Tuple3('', 'Fin des inscriptions!', ''),
+		_Utils_Tuple3('', 'Bienvenue', 'aux nouveaux membres du PasteurCodeClub! 😎'),
+		_Utils_Tuple3('', 'Prochaine session', 'Découvrir Dr.Racket')
+	]);
+var $author$project$Page$Home$viewNews = $author$project$Helpers$Helpers$createBlocks($author$project$Page$Home$news);
 var $author$project$Main$viewMain = function (model) {
 	var _v0 = model.page;
 	switch (_v0.$) {
@@ -5716,7 +5725,7 @@ var $author$project$Main$viewMain = function (model) {
 				_List_Nil,
 				$author$project$Page$Announce$viewBlocks(blocks));
 		case 'Home':
-			return A2($elm$html$Html$main_, _List_Nil, _List_Nil);
+			return A2($elm$html$Html$main_, _List_Nil, $author$project$Page$Home$viewNews);
 		case 'Subscribe':
 			return A2(
 				$elm$html$Html$main_,

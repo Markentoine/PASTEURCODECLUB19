@@ -8,6 +8,7 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Message exposing (..)
 import Page.Announce exposing (..)
+import Page.Home exposing (..)
 import Page.PageType exposing (..)
 import Page.SignIn exposing (..)
 import Page.SubscribeForm exposing (..)
@@ -34,7 +35,7 @@ init : () -> ( Model, Cmd Msg )
 init () =
     let
         initialModel =
-            { page = Announcement New
+            { page = Home
             , footer = Bare
             , form =
                 { firstName = ""
@@ -85,7 +86,7 @@ viewMain model =
             Html.main_ [] (viewBlocks blocks)
 
         Home ->
-            Html.main_ [] []
+            Html.main_ [] viewNews
 
         Subscribe ->
             Html.main_ [] (viewForm model.form)

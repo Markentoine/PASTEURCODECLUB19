@@ -12,7 +12,10 @@ createBlocks announces =
     [ div [ Html.Attributes.class "submain" ]
         (List.map
             (\( nbBlock, first, second ) ->
-                section [ Html.Attributes.id (String.concat [ "block", nbBlock ]) ]
+                section
+                    [ Html.Attributes.id (String.concat [ "block", nbBlock ])
+                    , Html.Attributes.class "block"
+                    ]
                     [ h1 [ Html.Attributes.class "explications" ] [ Html.text first ]
                     , h1 [ Html.Attributes.class "explications" ] [ Html.text second ]
                     ]
