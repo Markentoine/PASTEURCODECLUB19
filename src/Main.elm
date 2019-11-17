@@ -9,6 +9,7 @@ import Html.Events exposing (onClick)
 import Message exposing (..)
 import Page.Announce exposing (..)
 import Page.PageType exposing (..)
+import Page.SignIn exposing (..)
 import Page.SubscribeForm exposing (..)
 
 
@@ -110,8 +111,7 @@ viewFooter model =
 
         Bare ->
             footer []
-                [
-                    gitHub
+                [ gitHub
                 ]
 
 

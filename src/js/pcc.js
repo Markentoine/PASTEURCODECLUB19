@@ -5116,29 +5116,30 @@ var $author$project$Main$init = function (_v0) {
 };
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
+var $author$project$Page$PageType$SignIn = {$: 'SignIn'};
 var $author$project$Page$PageType$Subscribe = {$: 'Subscribe'};
 var $author$project$Page$Announce$WhatDoWeDo = {$: 'WhatDoWeDo'};
 var $author$project$Page$Announce$WhatIsIt = {$: 'WhatIsIt'};
 var $author$project$Page$Announce$WhenDoWeStart = {$: 'WhenDoWeStart'};
-var $author$project$Page$SignUpForm$newFormClass = F2(
+var $author$project$Page$SubscribeForm$newFormClass = F2(
 	function (input, currentForm) {
 		return _Utils_update(
 			currentForm,
 			{_class: input});
 	});
-var $author$project$Page$SignUpForm$newFormFName = F2(
+var $author$project$Page$SubscribeForm$newFormFName = F2(
 	function (input, currentForm) {
 		return _Utils_update(
 			currentForm,
 			{firstName: input});
 	});
-var $author$project$Page$SignUpForm$newFormLName = F2(
+var $author$project$Page$SubscribeForm$newFormLName = F2(
 	function (input, currentForm) {
 		return _Utils_update(
 			currentForm,
 			{lastName: input});
 	});
-var $author$project$Page$SignUpForm$newFormMail = F2(
+var $author$project$Page$SubscribeForm$newFormMail = F2(
 	function (input, currentForm) {
 		return _Utils_update(
 			currentForm,
@@ -5185,13 +5186,19 @@ var $author$project$Main$update = F2(
 						model,
 						{page: $author$project$Page$PageType$Subscribe}),
 					$elm$core$Platform$Cmd$none);
+			case 'Authentication':
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{page: $author$project$Page$PageType$SignIn}),
+					$elm$core$Platform$Cmd$none);
 			case 'FirstName':
 				var fname = msg.a;
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
 						{
-							form: A2($author$project$Page$SignUpForm$newFormFName, fname, model.form)
+							form: A2($author$project$Page$SubscribeForm$newFormFName, fname, model.form)
 						}),
 					$elm$core$Platform$Cmd$none);
 			case 'LastName':
@@ -5200,7 +5207,7 @@ var $author$project$Main$update = F2(
 					_Utils_update(
 						model,
 						{
-							form: A2($author$project$Page$SignUpForm$newFormLName, lname, model.form)
+							form: A2($author$project$Page$SubscribeForm$newFormLName, lname, model.form)
 						}),
 					$elm$core$Platform$Cmd$none);
 			case 'Class':
@@ -5209,7 +5216,7 @@ var $author$project$Main$update = F2(
 					_Utils_update(
 						model,
 						{
-							form: A2($author$project$Page$SignUpForm$newFormClass, _class, model.form)
+							form: A2($author$project$Page$SubscribeForm$newFormClass, _class, model.form)
 						}),
 					$elm$core$Platform$Cmd$none);
 			default:
@@ -5218,7 +5225,7 @@ var $author$project$Main$update = F2(
 					_Utils_update(
 						model,
 						{
-							form: A2($author$project$Page$SignUpForm$newFormMail, mail, model.form)
+							form: A2($author$project$Page$SubscribeForm$newFormMail, mail, model.form)
 						}),
 					$elm$core$Platform$Cmd$none);
 		}
@@ -5381,6 +5388,7 @@ var $author$project$Main$viewFooter = function (model) {
 			]));
 };
 var $author$project$Message$Announce = {$: 'Announce'};
+var $author$project$Message$Authentication = {$: 'Authentication'};
 var $elm$html$Html$header = _VirtualDom_node('header');
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
 var $elm$html$Html$p = _VirtualDom_node('p');
@@ -5427,15 +5435,15 @@ var $author$project$Main$viewHeader = A2(
 			_List_fromArray(
 				[
 					A2(
-					$elm$html$Html$a,
+					$elm$html$Html$button,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$href('https://racket-lang.org/'),
-							$elm$html$Html$Attributes$target('_blank')
+							$elm$html$Html$Attributes$class('nav'),
+							$elm$html$Html$Events$onClick($author$project$Message$Authentication)
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('>>> DR.RACKET <<<')
+							$elm$html$Html$text('S\'Identifier')
 						]))
 				]))
 		]));
@@ -5602,7 +5610,7 @@ var $elm$html$Html$Events$onInput = function (tagger) {
 			A2($elm$json$Json$Decode$map, tagger, $elm$html$Html$Events$targetValue)));
 };
 var $elm$html$Html$Attributes$placeholder = $elm$html$Html$Attributes$stringProperty('placeholder');
-var $author$project$Page$SignUpForm$viewInput = F5(
+var $author$project$Page$SubscribeForm$viewInput = F5(
 	function (t, p, n, v, toMsg) {
 		return A2(
 			$elm$html$Html$input,
@@ -5616,7 +5624,7 @@ var $author$project$Page$SignUpForm$viewInput = F5(
 				]),
 			_List_Nil);
 	});
-var $author$project$Page$SignUpForm$viewForm = function (form) {
+var $author$project$Page$SubscribeForm$viewForm = function (form) {
 	return _List_fromArray(
 		[
 			A2(
@@ -5673,10 +5681,10 @@ var $author$project$Page$SignUpForm$viewForm = function (form) {
 				]),
 			_List_fromArray(
 				[
-					A5($author$project$Page$SignUpForm$viewInput, 'text', 'Prénom', 'firstname', form.firstName, $author$project$Message$FirstName),
-					A5($author$project$Page$SignUpForm$viewInput, 'text', 'Nom', 'lastname', form.lastName, $author$project$Message$LastName),
-					A5($author$project$Page$SignUpForm$viewInput, 'text', 'Classe', 'class', form._class, $author$project$Message$Class),
-					A5($author$project$Page$SignUpForm$viewInput, 'mail', 'Mail', 'mail', form.mail, $author$project$Message$Mail),
+					A5($author$project$Page$SubscribeForm$viewInput, 'text', 'Prénom', 'firstname', form.firstName, $author$project$Message$FirstName),
+					A5($author$project$Page$SubscribeForm$viewInput, 'text', 'Nom', 'lastname', form.lastName, $author$project$Message$LastName),
+					A5($author$project$Page$SubscribeForm$viewInput, 'text', 'Classe', 'class', form._class, $author$project$Message$Class),
+					A5($author$project$Page$SubscribeForm$viewInput, 'mail', 'Mail', 'mail', form.mail, $author$project$Message$Mail),
 					A2(
 					$elm$html$Html$input,
 					_List_fromArray(
@@ -5708,11 +5716,13 @@ var $author$project$Main$viewMain = function (model) {
 				$author$project$Page$Announce$viewBlocks(blocks));
 		case 'Home':
 			return A2($elm$html$Html$main_, _List_Nil, _List_Nil);
-		default:
+		case 'Subscribe':
 			return A2(
 				$elm$html$Html$main_,
 				_List_Nil,
-				$author$project$Page$SignUpForm$viewForm(model.form));
+				$author$project$Page$SubscribeForm$viewForm(model.form));
+		default:
+			return A2($elm$html$Html$main_, _List_Nil, _List_Nil);
 	}
 };
 var $author$project$Main$viewPage = function (model) {
