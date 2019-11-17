@@ -34,7 +34,7 @@ init () =
     let
         initialModel =
             { page = Announcement New
-            , footer = Presentation
+            , footer = Bare
             , form =
                 { firstName = ""
                 , lastName = ""
@@ -106,6 +106,12 @@ viewFooter model =
                     , button [ Html.Attributes.class "nav", onClick When ] [ Html.text "On commence quand?" ]
                     ]
                 , gitHub
+                ]
+
+        Bare ->
+            footer []
+                [
+                    gitHub
                 ]
 
 
