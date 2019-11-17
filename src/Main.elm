@@ -72,9 +72,8 @@ viewHeader =
                 [ p [ Html.Attributes.id "title" ] [ Html.text "PASTEURCODECLUB" ]
                 ]
             ]
-        , div [ Html.Attributes.class "editorCode" ]
-            [ button [ Html.Attributes.class "nav", onClick Authentication ]
-                [ Html.text "S'Identifier" ]
+        , div []
+            [ h2 [] [ text "Prochaine session du club Lundi 18 novembre à 12H30." ]
             ]
         ]
 

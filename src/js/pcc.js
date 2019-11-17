@@ -5102,13 +5102,13 @@ var $elm$browser$Browser$element = _Browser_element;
 var $author$project$Page$PageType$Announcement = function (a) {
 	return {$: 'Announcement', a: a};
 };
+var $author$project$Footer$Bare = {$: 'Bare'};
 var $author$project$Page$Announce$New = {$: 'New'};
-var $author$project$Footer$Presentation = {$: 'Presentation'};
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$init = function (_v0) {
 	var initialModel = {
-		footer: $author$project$Footer$Presentation,
+		footer: $author$project$Footer$Bare,
 		form: {_class: '', firstName: '', lastName: '', mail: ''},
 		page: $author$project$Page$PageType$Announcement($author$project$Page$Announce$New)
 	};
@@ -5326,69 +5326,77 @@ var $elm$html$Html$Events$onClick = function (msg) {
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$Main$viewFooter = function (model) {
 	var _v0 = model.footer;
-	return A2(
-		$elm$html$Html$footer,
-		_List_Nil,
-		_List_fromArray(
-			[
-				A2(
-				$elm$html$Html$div,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('container')
-					]),
-				_List_fromArray(
-					[
-						A2(
-						$elm$html$Html$button,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('nav'),
-								$elm$html$Html$Events$onClick($author$project$Message$What)
-							]),
-						_List_fromArray(
-							[
-								$elm$html$Html$text('C\'est quoi?')
-							])),
-						A2(
-						$elm$html$Html$button,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('nav'),
-								$elm$html$Html$Events$onClick($author$project$Message$WhatToDo)
-							]),
-						_List_fromArray(
-							[
-								$elm$html$Html$text('On fait quoi?')
-							])),
-						A2(
-						$elm$html$Html$button,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('nav'),
-								$elm$html$Html$Events$onClick($author$project$Message$SignUp)
-							]),
-						_List_fromArray(
-							[
-								$elm$html$Html$text('Je m\'inscris!')
-							])),
-						A2(
-						$elm$html$Html$button,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('nav'),
-								$elm$html$Html$Events$onClick($author$project$Message$When)
-							]),
-						_List_fromArray(
-							[
-								$elm$html$Html$text('On commence quand?')
-							]))
-					])),
-				$author$project$Helpers$Helpers$gitHub
-			]));
+	if (_v0.$ === 'Presentation') {
+		return A2(
+			$elm$html$Html$footer,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('container')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$button,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('nav'),
+									$elm$html$Html$Events$onClick($author$project$Message$What)
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('C\'est quoi?')
+								])),
+							A2(
+							$elm$html$Html$button,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('nav'),
+									$elm$html$Html$Events$onClick($author$project$Message$WhatToDo)
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('On fait quoi?')
+								])),
+							A2(
+							$elm$html$Html$button,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('nav'),
+									$elm$html$Html$Events$onClick($author$project$Message$SignUp)
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Je m\'inscris!')
+								])),
+							A2(
+							$elm$html$Html$button,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('nav'),
+									$elm$html$Html$Events$onClick($author$project$Message$When)
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('On commence quand?')
+								]))
+						])),
+					$author$project$Helpers$Helpers$gitHub
+				]));
+	} else {
+		return A2(
+			$elm$html$Html$footer,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Helpers$Helpers$gitHub]));
+	}
 };
 var $author$project$Message$Announce = {$: 'Announce'};
-var $author$project$Message$Authentication = {$: 'Authentication'};
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $elm$html$Html$header = _VirtualDom_node('header');
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
 var $elm$html$Html$p = _VirtualDom_node('p');
@@ -5428,22 +5436,15 @@ var $author$project$Main$viewHeader = A2(
 				])),
 			A2(
 			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('editorCode')
-				]),
+			_List_Nil,
 			_List_fromArray(
 				[
 					A2(
-					$elm$html$Html$button,
+					$elm$html$Html$h2,
+					_List_Nil,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('nav'),
-							$elm$html$Html$Events$onClick($author$project$Message$Authentication)
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('S\'Identifier')
+							$elm$html$Html$text('Prochaine session du club Lundi 18 novembre à 12H30.')
 						]))
 				]))
 		]));
