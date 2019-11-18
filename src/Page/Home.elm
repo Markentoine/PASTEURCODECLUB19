@@ -9,7 +9,7 @@ news : List String
 news =
     [ "🎬 La première séance a eu lieu! C'est parti! 🎬"
     , "Les Codeurs ont pu découvrir Dr.Racket et son environnement."
-    , "📷 Ils ont put aussi commencer à manipuler des images dans Dr.Racket. 📷"
+    , "📷 Ils ont pu aussi commencer à manipuler des images dans Dr.Racket. 📷"
     , "🎉 Ils viennent de faire leurs premiers pas en programmation! 🎉"
     ]
 

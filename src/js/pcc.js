@@ -6123,7 +6123,7 @@ var $author$project$Helpers$Helpers$blockNews = function (announces) {
 		]);
 };
 var $author$project$Page$Home$news = _List_fromArray(
-	['🎬 La première séance a eu lieu! C\'est parti! 🎬', 'Les Codeurs ont pu découvrir Dr.Racket et son environnement.', '📷 Ils ont put aussi commencer à manipuler des images dans Dr.Racket. 📷', '🎉 Ils viennent de faire leurs premiers pas en programmation! 🎉']);
+	['🎬 La première séance a eu lieu! C\'est parti! 🎬', 'Les Codeurs ont pu découvrir Dr.Racket et son environnement.', '📷 Ils ont pu aussi commencer à manipuler des images dans Dr.Racket. 📷', '🎉 Ils viennent de faire leurs premiers pas en programmation! 🎉']);
 var $author$project$Page$Home$viewNews = $author$project$Helpers$Helpers$blockNews($author$project$Page$Home$news);
 var $author$project$Main$viewMain = function (model) {
 	var _v0 = model.page;
