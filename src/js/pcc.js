@@ -5482,7 +5482,7 @@ var $author$project$Main$viewHeader = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Prochaine session du club Lundi 18 novembre à 12H30.')
+							$elm$html$Html$text('Prochaine session du club Lundi 25 novembre à 12H30.')
 						]))
 				]))
 		]));
@@ -6123,7 +6123,7 @@ var $author$project$Helpers$Helpers$blockNews = function (announces) {
 		]);
 };
 var $author$project$Page$Home$news = _List_fromArray(
-	['Et voilà, c\'est la fin des inscriptions pour cette année!', 'Je souhaite la Bienvenue aux nouveaux membres du PasteurCodeClub! 😎', 'News : la prochaine session vous fera découvrir Dr.Racket!', 'Deux tutos en video vous attendent pour tout vous expliquer']);
+	['🎬 La première séance a eu lieu! C\'est parti! 🎬', 'Les Codeurs ont pu découvrir Dr.Racket et son environnement.', '📷 Ils ont put aussi commencer à manipuler des images dans Dr.Racket. 📷', '🎉 Ils viennent de faire leurs premiers pas en programmation! 🎉']);
 var $author$project$Page$Home$viewNews = $author$project$Helpers$Helpers$blockNews($author$project$Page$Home$news);
 var $author$project$Main$viewMain = function (model) {
 	var _v0 = model.page;
