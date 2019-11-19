@@ -5,3 +5,4 @@ type Footer
     = Presentation
     | Bare
     | Nav
+    | ForTutos

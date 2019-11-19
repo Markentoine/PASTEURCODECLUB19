@@ -5170,7 +5170,7 @@ var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $author$project$Page$PageType$Announcement = function (a) {
 	return {$: 'Announcement', a: a};
 };
-var $author$project$Footer$Bare = {$: 'Bare'};
+var $author$project$Footer$ForTutos = {$: 'ForTutos'};
 var $author$project$Page$Announce$New = {$: 'New'};
 var $author$project$Page$PageType$SignIn = {$: 'SignIn'};
 var $author$project$Page$PageType$Subscribe = {$: 'Subscribe'};
@@ -5253,7 +5253,7 @@ var $author$project$Main$update = F2(
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{footer: $author$project$Footer$Bare, page: $author$project$Page$PageType$Tutos}),
+						{footer: $author$project$Footer$ForTutos, page: $author$project$Page$PageType$Tutos}),
 					$elm$core$Platform$Cmd$none);
 			case 'Authentication':
 				return _Utils_Tuple2(
@@ -5473,7 +5473,7 @@ var $author$project$Main$viewFooter = function (model) {
 						_List_Nil),
 						$author$project$Helpers$Helpers$gitHub
 					]));
-		default:
+		case 'Nav':
 			return A2(
 				$elm$html$Html$footer,
 				_List_Nil,
@@ -5498,6 +5498,24 @@ var $author$project$Main$viewFooter = function (model) {
 									[
 										$elm$html$Html$text('Tutos')
 									]))
+							])),
+						$author$project$Helpers$Helpers$gitHub
+					]));
+		default:
+			return A2(
+				$elm$html$Html$footer,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('container')
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text('<<Attention>> Les Tutos les plus anciens sont en fin page! Le plus récent apparaît en premier.')
 							])),
 						$author$project$Helpers$Helpers$gitHub
 					]));
@@ -5552,7 +5570,7 @@ var $author$project$Main$viewHeader = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Prochaine session du club Lundi 25 novembre à 12H30.')
+							$elm$html$Html$text('Prochaine session>> Lundi 25 novembre à 12H30.')
 						]))
 				]))
 		]));
@@ -6587,15 +6605,17 @@ var $author$project$Page$Tutos$tutosDescriptions = _List_fromArray(
 	[
 		{
 		content: _List_fromArray(
-			['Installer Dr.Racket', 'Découvrir l\'interface', 'Personnaliser']),
-		title: 'Préparatifs',
-		youtubeRef: 'vvSD5YydNc8'
+			['Installer un langage dans Dr.Racket', 'Méthode pour apprendre mieux', 'Insérer une image dans Dr.Racket', 'Apprendre quelques noms de commandes pour manipuler des images']),
+		id: 1,
+		title: 'Manipuler des images #1',
+		youtubeRef: '4eg0vk8gWb8'
 	},
 		{
 		content: _List_fromArray(
-			['Installer un langage dans Dr.Racket', 'Méthode pour apprendre mieux', 'Insérer une image dans Dr.Racket', 'Apprendre quelques noms de commandes pour manipuler des images']),
-		title: 'Manipuler des images #1',
-		youtubeRef: '4eg0vk8gWb8'
+			['Installer Dr.Racket', 'Découvrir l\'interface', 'Personnaliser']),
+		id: 0,
+		title: 'Préparatifs',
+		youtubeRef: 'vvSD5YydNc8'
 	}
 	]);
 var $author$project$Page$Tutos$viewTutos = A2(

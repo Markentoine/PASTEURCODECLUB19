@@ -75,7 +75,7 @@ viewHeader =
                 ]
             ]
         , div []
-            [ h2 [] [ text "Prochaine session du club Lundi 25 novembre à 12H30." ]
+            [ h2 [] [ text "Prochaine session>> Lundi 25 novembre à 12H30." ]
             ]
         ]
 
@@ -128,6 +128,13 @@ viewFooter model =
                 , gitHub
                 ]
 
+        ForTutos ->
+            footer []
+                [ div [ Html.Attributes.class "container" ]
+                    [ text "<<Attention>> Les Tutos les plus anciens sont en fin page! Le plus récent apparaît en premier." ]
+                , gitHub
+                ]
+
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
@@ -151,7 +158,7 @@ update msg model =
             ( { model | page = Subscribe }, Cmd.none )
 
         ToTutos ->
-            ( { model | page = Tutos, footer = Bare }, Cmd.none )
+            ( { model | page = Tutos, footer = ForTutos }, Cmd.none )
 
         Authentication ->
             ( { model | page = SignIn }, Cmd.none )

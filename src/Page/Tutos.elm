@@ -7,7 +7,8 @@ import Html.Attributes exposing (class)
 
 
 type alias Description =
-    { title : String
+    { id : Int
+    , title : String
     , content : List String
     , youtubeRef : String
     }
@@ -42,11 +43,8 @@ youtube link =
 
 tutosDescriptions : List Description
 tutosDescriptions =
-    [ { title = "Préparatifs"
-      , content = [ "Installer Dr.Racket", "Découvrir l'interface", "Personnaliser" ]
-      , youtubeRef = "vvSD5YydNc8"
-      }
-    , { title = "Manipuler des images #1"
+    [ { id = 1
+      , title = "Manipuler des images #1"
       , content =
             [ "Installer un langage dans Dr.Racket"
             , "Méthode pour apprendre mieux"
@@ -54,5 +52,10 @@ tutosDescriptions =
             , "Apprendre quelques noms de commandes pour manipuler des images"
             ]
       , youtubeRef = "4eg0vk8gWb8"
+      }
+    , { id = 0
+      , title = "Préparatifs"
+      , content = [ "Installer Dr.Racket", "Découvrir l'interface", "Personnaliser" ]
+      , youtubeRef = "vvSD5YydNc8"
       }
     ]
