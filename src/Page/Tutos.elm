@@ -16,17 +16,17 @@ type alias Description =
 viewTutos : Html msg
 viewTutos =
     div [ Html.Attributes.class "tutos" ]
-        (List.map (\desc -> tuto desc.title desc.content (youtube desc.youtubeRef)) tutosDescriptions)
+        (List.map tuto tutosDescriptions)
 
 
-tuto : String -> List String -> Html msg -> Html msg
-tuto title details whichTuto =
+tuto : Description -> Html msg
+tuto desc =
     div [ Html.Attributes.class "wrapperTuto" ]
         [ div [ Html.Attributes.class "presentationTuto" ]
-            [ h2 [] [ text (String.concat [ "📽 ", title ]) ]
-            , ul [] (List.map (\l -> li [ Html.Attributes.class "detailsTuto" ] [ text (String.concat [ "🎯 ", l ]) ]) details)
+            [ h2 [] [ text (String.concat [ "📽 ", desc.title ]) ]
+            , ul [] (List.map (\l -> li [ Html.Attributes.class "detailsTuto" ] [ text (String.concat [ "🎯 ", l ]) ]) desc.content)
             ]
-        , div [ Html.Attributes.class "tuto" ] [ whichTuto ]
+        , div [ Html.Attributes.class "tuto" ] [ youtube desc.youtubeRef ]
         ]
 
 
