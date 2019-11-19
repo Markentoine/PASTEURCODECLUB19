@@ -6195,6 +6195,83 @@ var $author$project$Helpers$Helpers$blockNews = function (announces) {
 var $author$project$Page$Home$news = _List_fromArray(
 	['🎬 La première séance a eu lieu! C\'est parti! 🎬', 'Les Codeurs ont pu découvrir Dr.Racket et son environnement.', '📷 Ils ont pu aussi commencer à manipuler des images dans Dr.Racket. 📷', '🎉 Ils viennent de faire leurs premiers pas en programmation! 🎉']);
 var $author$project$Page$Home$viewNews = $author$project$Helpers$Helpers$blockNews($author$project$Page$Home$news);
+var $elm$html$Html$li = _VirtualDom_node('li');
+var $elm$html$Html$ul = _VirtualDom_node('ul');
+var $author$project$Page$Tutos$tuto = F3(
+	function (title, details, whichTuto) {
+		return A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('wrapperTuto')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('presentationTuto')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$h2,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$elm$html$Html$text(
+									$elm$core$String$concat(
+										_List_fromArray(
+											['📽 ', title])))
+								])),
+							A2(
+							$elm$html$Html$ul,
+							_List_Nil,
+							A2(
+								$elm$core$List$map,
+								function (l) {
+									return A2(
+										$elm$html$Html$li,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$class('detailsTuto')
+											]),
+										_List_fromArray(
+											[
+												$elm$html$Html$text(
+												$elm$core$String$concat(
+													_List_fromArray(
+														['🎯 ', l])))
+											]));
+								},
+								details))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('tuto')
+						]),
+					_List_fromArray(
+						[whichTuto]))
+				]));
+	});
+var $author$project$Page$Tutos$tutosDescriptions = _List_fromArray(
+	[
+		{
+		content: _List_fromArray(
+			['Installer Dr.Racket', 'Découvrir l\'interface', 'Personnaliser']),
+		title: 'Préparatifs',
+		youtubeRef: 'vvSD5YydNc8'
+	},
+		{
+		content: _List_fromArray(
+			['Installer un langage dans Dr.Racket', 'Méthode pour apprendre mieux', 'Insérer une image dans Dr.Racket', 'Apprendre quelques noms de commandes pour manipuler des images']),
+		title: 'Manipuler des images #1',
+		youtubeRef: '4eg0vk8gWb8'
+	}
+	]);
 var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Youtube$Youtube = F2(
 	function (a, b) {
 		return {$: 'Youtube', a: a, b: b};
@@ -6520,49 +6597,22 @@ var $author$project$Page$Tutos$youtube = function (link) {
 				]),
 			$tricycle$elm_embed_youtube$Embed$Youtube$fromString(link)));
 };
-var $author$project$Page$Tutos$manipImages_1 = $author$project$Page$Tutos$youtube('4eg0vk8gWb8');
-var $author$project$Page$Tutos$preparatifTuto = $author$project$Page$Tutos$youtube('vvSD5YydNc8');
-var $author$project$Page$Tutos$tuto = F2(
-	function (title, whichTuto) {
-		return A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('wrapperTuto')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$div,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('presentationTuto')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text(title)
-						])),
-					A2(
-					$elm$html$Html$div,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('tuto')
-						]),
-					_List_fromArray(
-						[whichTuto]))
-				]));
-	});
 var $author$project$Page$Tutos$viewTutos = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
 		[
 			$elm$html$Html$Attributes$class('tutos')
 		]),
-	_List_fromArray(
-		[
-			A2($author$project$Page$Tutos$tuto, 'Préparatifs', $author$project$Page$Tutos$preparatifTuto),
-			A2($author$project$Page$Tutos$tuto, 'Manipuler des images #1', $author$project$Page$Tutos$manipImages_1)
-		]));
+	A2(
+		$elm$core$List$map,
+		function (desc) {
+			return A3(
+				$author$project$Page$Tutos$tuto,
+				desc.title,
+				desc.content,
+				$author$project$Page$Tutos$youtube(desc.youtubeRef));
+		},
+		$author$project$Page$Tutos$tutosDescriptions));
 var $author$project$Main$viewMain = function (model) {
 	var _v0 = model.page;
 	switch (_v0.$) {

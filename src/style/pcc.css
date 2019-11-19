@@ -242,14 +242,21 @@ p {
 
 .wrapperTuto {
     display: flex;
-
+    border-bottom: 1px solid chartreuse;
     width: 75vw;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1rem;
+
 }
 
 .presentationTuto {
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+
+.detailsTuto {
+    font-size: 1rem;
+    padding: 1rem 0;
 }
 
 
