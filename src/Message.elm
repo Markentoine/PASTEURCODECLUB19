@@ -7,6 +7,7 @@ type Msg
     | When
     | WhatToDo
     | SignUp
+    | ToTutos
     | Authentication
     | FirstName String
     | LastName String

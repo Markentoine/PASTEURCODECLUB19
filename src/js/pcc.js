@@ -4347,7 +4347,24 @@ var _Bitwise_shiftRightZfBy = F2(function(offset, a)
 {
 	return a >>> offset;
 });
-var $elm$core$Basics$EQ = {$: 'EQ'};
+
+
+function _Url_percentEncode(string)
+{
+	return encodeURIComponent(string);
+}
+
+function _Url_percentDecode(string)
+{
+	try
+	{
+		return $elm$core$Maybe$Just(decodeURIComponent(string));
+	}
+	catch (e)
+	{
+		return $elm$core$Maybe$Nothing;
+	}
+}var $elm$core$Basics$EQ = {$: 'EQ'};
 var $elm$core$Basics$GT = {$: 'GT'};
 var $elm$core$Basics$LT = {$: 'LT'};
 var $elm$core$List$cons = _List_cons;
@@ -5136,13 +5153,13 @@ var $elm$core$Task$perform = F2(
 				A2($elm$core$Task$map, toMessage, task)));
 	});
 var $elm$browser$Browser$element = _Browser_element;
-var $author$project$Footer$Bare = {$: 'Bare'};
 var $author$project$Page$PageType$Home = {$: 'Home'};
+var $author$project$Footer$Nav = {$: 'Nav'};
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$init = function (_v0) {
 	var initialModel = {
-		footer: $author$project$Footer$Bare,
+		footer: $author$project$Footer$Nav,
 		form: {_class: '', firstName: '', lastName: '', mail: ''},
 		page: $author$project$Page$PageType$Home
 	};
@@ -5153,9 +5170,11 @@ var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $author$project$Page$PageType$Announcement = function (a) {
 	return {$: 'Announcement', a: a};
 };
+var $author$project$Footer$Bare = {$: 'Bare'};
 var $author$project$Page$Announce$New = {$: 'New'};
 var $author$project$Page$PageType$SignIn = {$: 'SignIn'};
 var $author$project$Page$PageType$Subscribe = {$: 'Subscribe'};
+var $author$project$Page$PageType$Tutos = {$: 'Tutos'};
 var $author$project$Page$Announce$WhatDoWeDo = {$: 'WhatDoWeDo'};
 var $author$project$Page$Announce$WhatIsIt = {$: 'WhatIsIt'};
 var $author$project$Page$Announce$WhenDoWeStart = {$: 'WhenDoWeStart'};
@@ -5224,6 +5243,12 @@ var $author$project$Main$update = F2(
 						model,
 						{page: $author$project$Page$PageType$Subscribe}),
 					$elm$core$Platform$Cmd$none);
+			case 'ToTutos':
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{footer: $author$project$Footer$Bare, page: $author$project$Page$PageType$Tutos}),
+					$elm$core$Platform$Cmd$none);
 			case 'Authentication':
 				return _Utils_Tuple2(
 					_Utils_update(
@@ -5279,6 +5304,7 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $author$project$Message$SignUp = {$: 'SignUp'};
+var $author$project$Message$ToTutos = {$: 'ToTutos'};
 var $author$project$Message$What = {$: 'What'};
 var $author$project$Message$WhatToDo = {$: 'WhatToDo'};
 var $author$project$Message$When = {$: 'When'};
@@ -5364,73 +5390,111 @@ var $elm$html$Html$Events$onClick = function (msg) {
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$Main$viewFooter = function (model) {
 	var _v0 = model.footer;
-	if (_v0.$ === 'Presentation') {
-		return A2(
-			$elm$html$Html$footer,
-			_List_Nil,
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$div,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('container')
-						]),
-					_List_fromArray(
-						[
-							A2(
-							$elm$html$Html$button,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$class('nav'),
-									$elm$html$Html$Events$onClick($author$project$Message$What)
-								]),
-							_List_fromArray(
-								[
-									$elm$html$Html$text('C\'est quoi?')
-								])),
-							A2(
-							$elm$html$Html$button,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$class('nav'),
-									$elm$html$Html$Events$onClick($author$project$Message$WhatToDo)
-								]),
-							_List_fromArray(
-								[
-									$elm$html$Html$text('On fait quoi?')
-								])),
-							A2(
-							$elm$html$Html$button,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$class('nav'),
-									$elm$html$Html$Events$onClick($author$project$Message$SignUp)
-								]),
-							_List_fromArray(
-								[
-									$elm$html$Html$text('Je m\'inscris!')
-								])),
-							A2(
-							$elm$html$Html$button,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$class('nav'),
-									$elm$html$Html$Events$onClick($author$project$Message$When)
-								]),
-							_List_fromArray(
-								[
-									$elm$html$Html$text('On commence quand?')
-								]))
-						])),
-					$author$project$Helpers$Helpers$gitHub
-				]));
-	} else {
-		return A2(
-			$elm$html$Html$footer,
-			_List_Nil,
-			_List_fromArray(
-				[$author$project$Helpers$Helpers$gitHub]));
+	switch (_v0.$) {
+		case 'Presentation':
+			return A2(
+				$elm$html$Html$footer,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('container')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$button,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('nav'),
+										$elm$html$Html$Events$onClick($author$project$Message$What)
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('C\'est quoi?')
+									])),
+								A2(
+								$elm$html$Html$button,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('nav'),
+										$elm$html$Html$Events$onClick($author$project$Message$WhatToDo)
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('On fait quoi?')
+									])),
+								A2(
+								$elm$html$Html$button,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('nav'),
+										$elm$html$Html$Events$onClick($author$project$Message$SignUp)
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Je m\'inscris!')
+									])),
+								A2(
+								$elm$html$Html$button,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('nav'),
+										$elm$html$Html$Events$onClick($author$project$Message$When)
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('On commence quand?')
+									]))
+							])),
+						$author$project$Helpers$Helpers$gitHub
+					]));
+		case 'Bare':
+			return A2(
+				$elm$html$Html$footer,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('container')
+							]),
+						_List_Nil),
+						$author$project$Helpers$Helpers$gitHub
+					]));
+		default:
+			return A2(
+				$elm$html$Html$footer,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('container')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$button,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('nav'),
+										$elm$html$Html$Events$onClick($author$project$Message$ToTutos)
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Tutos')
+									]))
+							])),
+						$author$project$Helpers$Helpers$gitHub
+					]));
 	}
 };
 var $author$project$Message$Announce = {$: 'Announce'};
@@ -6125,6 +6189,374 @@ var $author$project$Helpers$Helpers$blockNews = function (announces) {
 var $author$project$Page$Home$news = _List_fromArray(
 	['🎬 La première séance a eu lieu! C\'est parti! 🎬', 'Les Codeurs ont pu découvrir Dr.Racket et son environnement.', '📷 Ils ont pu aussi commencer à manipuler des images dans Dr.Racket. 📷', '🎉 Ils viennent de faire leurs premiers pas en programmation! 🎉']);
 var $author$project$Page$Home$viewNews = $author$project$Helpers$Helpers$blockNews($author$project$Page$Home$news);
+var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Youtube$Youtube = F2(
+	function (a, b) {
+		return {$: 'Youtube', a: a, b: b};
+	});
+var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Youtube$attributes = F2(
+	function (a, _v0) {
+		var youtubeVideoid = _v0.a;
+		var listOfAttributes = _v0.b;
+		return A2(
+			$tricycle$elm_embed_youtube$Embed$Youtube$Internal$Youtube$Youtube,
+			youtubeVideoid,
+			_Utils_ap(listOfAttributes, a));
+	});
+var $tricycle$elm_embed_youtube$Embed$Youtube$attributes = F2(
+	function (a, yt) {
+		return A2($tricycle$elm_embed_youtube$Embed$Youtube$Internal$Youtube$attributes, a, yt);
+	});
+var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Youtube$YoutubeVideoId = function (a) {
+	return {$: 'YoutubeVideoId', a: a};
+};
+var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Youtube$fromString = function (stringYoutubeVideoid) {
+	return A2(
+		$tricycle$elm_embed_youtube$Embed$Youtube$Internal$Youtube$Youtube,
+		$tricycle$elm_embed_youtube$Embed$Youtube$Internal$Youtube$YoutubeVideoId(stringYoutubeVideoid),
+		_List_Nil);
+};
+var $tricycle$elm_embed_youtube$Embed$Youtube$fromString = $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Youtube$fromString;
+var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Attribute$Height = function (a) {
+	return {$: 'Height', a: a};
+};
+var $tricycle$elm_embed_youtube$Embed$Youtube$Attributes$height = $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Attribute$Height;
+var $elm$html$Html$iframe = _VirtualDom_node('iframe');
+var $elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
+var $elm$core$List$maybeCons = F3(
+	function (f, mx, xs) {
+		var _v0 = f(mx);
+		if (_v0.$ === 'Just') {
+			var x = _v0.a;
+			return A2($elm$core$List$cons, x, xs);
+		} else {
+			return xs;
+		}
+	});
+var $elm$core$List$filterMap = F2(
+	function (f, xs) {
+		return A3(
+			$elm$core$List$foldr,
+			$elm$core$List$maybeCons(f),
+			_List_Nil,
+			xs);
+	});
+var $elm$html$Html$Attributes$height = function (n) {
+	return A2(
+		_VirtualDom_attribute,
+		'height',
+		$elm$core$String$fromInt(n));
+};
+var $elm$html$Html$Attributes$width = function (n) {
+	return A2(
+		_VirtualDom_attribute,
+		'width',
+		$elm$core$String$fromInt(n));
+};
+var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$View$toHtmlAttribute = function (attribute) {
+	switch (attribute.$) {
+		case 'Width':
+			var a = attribute.a;
+			return $elm$core$Maybe$Just(
+				$elm$html$Html$Attributes$width(a));
+		case 'Height':
+			var a = attribute.a;
+			return $elm$core$Maybe$Just(
+				$elm$html$Html$Attributes$height(a));
+		default:
+			return $elm$core$Maybe$Nothing;
+	}
+};
+var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$View$toHtmlAttributes = function (_v0) {
+	var attributes = _v0.b;
+	return A2($elm$core$List$filterMap, $tricycle$elm_embed_youtube$Embed$Youtube$Internal$View$toHtmlAttribute, attributes);
+};
+var $elm$url$Url$addPort = F2(
+	function (maybePort, starter) {
+		if (maybePort.$ === 'Nothing') {
+			return starter;
+		} else {
+			var port_ = maybePort.a;
+			return starter + (':' + $elm$core$String$fromInt(port_));
+		}
+	});
+var $elm$url$Url$addPrefixed = F3(
+	function (prefix, maybeSegment, starter) {
+		if (maybeSegment.$ === 'Nothing') {
+			return starter;
+		} else {
+			var segment = maybeSegment.a;
+			return _Utils_ap(
+				starter,
+				_Utils_ap(prefix, segment));
+		}
+	});
+var $elm$url$Url$toString = function (url) {
+	var http = function () {
+		var _v0 = url.protocol;
+		if (_v0.$ === 'Http') {
+			return 'http://';
+		} else {
+			return 'https://';
+		}
+	}();
+	return A3(
+		$elm$url$Url$addPrefixed,
+		'#',
+		url.fragment,
+		A3(
+			$elm$url$Url$addPrefixed,
+			'?',
+			url.query,
+			_Utils_ap(
+				A2(
+					$elm$url$Url$addPort,
+					url.port_,
+					_Utils_ap(http, url.host)),
+				url.path)));
+};
+var $elm$url$Url$Builder$toQueryPair = function (_v0) {
+	var key = _v0.a;
+	var value = _v0.b;
+	return key + ('=' + value);
+};
+var $elm$url$Url$Builder$toQuery = function (parameters) {
+	if (!parameters.b) {
+		return '';
+	} else {
+		return '?' + A2(
+			$elm$core$String$join,
+			'&',
+			A2($elm$core$List$map, $elm$url$Url$Builder$toQueryPair, parameters));
+	}
+};
+var $elm$url$Url$Builder$QueryParameter = F2(
+	function (a, b) {
+		return {$: 'QueryParameter', a: a, b: b};
+	});
+var $elm$url$Url$percentEncode = _Url_percentEncode;
+var $elm$url$Url$Builder$string = F2(
+	function (key, value) {
+		return A2(
+			$elm$url$Url$Builder$QueryParameter,
+			$elm$url$Url$percentEncode(key),
+			$elm$url$Url$percentEncode(value));
+	});
+var $elm$url$Url$Builder$int = F2(
+	function (key, value) {
+		return A2(
+			$elm$url$Url$Builder$QueryParameter,
+			$elm$url$Url$percentEncode(key),
+			$elm$core$String$fromInt(value));
+	});
+var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$View$toQueryParameters_ = F2(
+	function (_v0, attribute) {
+		var stringYoutubeVideoId = _v0.a;
+		switch (attribute.$) {
+			case 'Width':
+				return _List_Nil;
+			case 'Height':
+				return _List_Nil;
+			case 'Autoplay':
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'autoplay', '1'),
+						A2($elm$url$Url$Builder$string, 'mute', '1')
+					]);
+			case 'Loop':
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'loop', '1'),
+						A2($elm$url$Url$Builder$string, 'playlist', stringYoutubeVideoId)
+					]);
+			case 'Start':
+				var a = attribute.a;
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$int, 'start', a)
+					]);
+			case 'End':
+				var a = attribute.a;
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$int, 'end', a)
+					]);
+			case 'Mute':
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'mute', '1')
+					]);
+			case 'ColorRed':
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'color', 'red')
+					]);
+			case 'ColorWhite':
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'color', 'white')
+					]);
+			case 'ModestBranding':
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'modestbranding', '1'),
+						A2($elm$url$Url$Builder$string, 'showinfo', '1')
+					]);
+			case 'PlaysInline':
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'playsinline', '1')
+					]);
+			case 'HideControls':
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'controls', '0')
+					]);
+			case 'DisableKeyboard':
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'disablekb', '1')
+					]);
+			case 'DisableFullscreen':
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'fs', '0')
+					]);
+			case 'VideoAnnotations':
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'iv_load_policy', '3')
+					]);
+			case 'Language':
+				var a = attribute.a;
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'hl', a)
+					]);
+			case 'ClosedCaptionsLanguagePreference':
+				var a = attribute.a;
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'cc_lang_pref', a)
+					]);
+			default:
+				return _List_fromArray(
+					[
+						A2($elm$url$Url$Builder$string, 'cc_load_policy', '1')
+					]);
+		}
+	});
+var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$View$toQueryParameters = function (_v0) {
+	var youtubeVideoId = _v0.a;
+	var attributes = _v0.b;
+	return _Utils_ap(
+		A3(
+			$elm$core$List$foldl,
+			function (a) {
+				return $elm$core$Basics$append(
+					A2($tricycle$elm_embed_youtube$Embed$Youtube$Internal$View$toQueryParameters_, youtubeVideoId, a));
+			},
+			_List_Nil,
+			attributes),
+		_List_fromArray(
+			[
+				A2($elm$url$Url$Builder$string, 'version', '3'),
+				A2($elm$url$Url$Builder$string, 'rel', '0')
+			]));
+};
+var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$View$toYoutubeUrl = function (yt) {
+	var stringYoutubeVideoid = yt.a.a;
+	return {
+		fragment: $elm$core$Maybe$Nothing,
+		host: 'www.youtube.com',
+		path: '/embed/' + stringYoutubeVideoid,
+		port_: $elm$core$Maybe$Nothing,
+		protocol: $elm$url$Url$Https,
+		query: $elm$core$Maybe$Just(
+			$elm$url$Url$Builder$toQuery(
+				$tricycle$elm_embed_youtube$Embed$Youtube$Internal$View$toQueryParameters(yt)))
+	};
+};
+var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$View$toIframe = function (yt) {
+	return A2(
+		$elm$html$Html$iframe,
+		_Utils_ap(
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$src(
+					$elm$url$Url$toString(
+						$tricycle$elm_embed_youtube$Embed$Youtube$Internal$View$toYoutubeUrl(yt))),
+					$elm$html$Html$Attributes$type_('text/html'),
+					A2($elm$html$Html$Attributes$attribute, 'allowfullscreen', 'true'),
+					A2($elm$html$Html$Attributes$attribute, 'allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen'),
+					A2($elm$html$Html$Attributes$attribute, 'frameborder', '0')
+				]),
+			$tricycle$elm_embed_youtube$Embed$Youtube$Internal$View$toHtmlAttributes(yt)),
+		_List_Nil);
+};
+var $tricycle$elm_embed_youtube$Embed$Youtube$toHtml = $tricycle$elm_embed_youtube$Embed$Youtube$Internal$View$toIframe;
+var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Attribute$Width = function (a) {
+	return {$: 'Width', a: a};
+};
+var $tricycle$elm_embed_youtube$Embed$Youtube$Attributes$width = $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Attribute$Width;
+var $author$project$Page$Tutos$youtube = function (link) {
+	return $tricycle$elm_embed_youtube$Embed$Youtube$toHtml(
+		A2(
+			$tricycle$elm_embed_youtube$Embed$Youtube$attributes,
+			_List_fromArray(
+				[
+					$tricycle$elm_embed_youtube$Embed$Youtube$Attributes$width(480),
+					$tricycle$elm_embed_youtube$Embed$Youtube$Attributes$height(270)
+				]),
+			$tricycle$elm_embed_youtube$Embed$Youtube$fromString(link)));
+};
+var $author$project$Page$Tutos$manipImages_1 = $author$project$Page$Tutos$youtube('4eg0vk8gWb8');
+var $author$project$Page$Tutos$preparatifTuto = $author$project$Page$Tutos$youtube('vvSD5YydNc8');
+var $author$project$Page$Tutos$tuto = F2(
+	function (title, whichTuto) {
+		return A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('wrapperTuto')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('presentationTuto')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text(title)
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('tuto')
+						]),
+					_List_fromArray(
+						[whichTuto]))
+				]));
+	});
+var $author$project$Page$Tutos$viewTutos = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('tutos')
+		]),
+	_List_fromArray(
+		[
+			A2($author$project$Page$Tutos$tuto, 'Préparatifs', $author$project$Page$Tutos$preparatifTuto),
+			A2($author$project$Page$Tutos$tuto, 'Manipuler des images #1', $author$project$Page$Tutos$manipImages_1)
+		]));
 var $author$project$Main$viewMain = function (model) {
 	var _v0 = model.page;
 	switch (_v0.$) {
@@ -6141,8 +6573,14 @@ var $author$project$Main$viewMain = function (model) {
 				$elm$html$Html$main_,
 				_List_Nil,
 				$author$project$Page$SubscribeForm$viewForm(model.form));
-		default:
+		case 'SignIn':
 			return A2($elm$html$Html$main_, _List_Nil, _List_Nil);
+		default:
+			return A2(
+				$elm$html$Html$main_,
+				_List_Nil,
+				_List_fromArray(
+					[$author$project$Page$Tutos$viewTutos]));
 	}
 };
 var $author$project$Main$viewPage = function (model) {

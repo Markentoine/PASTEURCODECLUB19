@@ -12,6 +12,7 @@ import Page.Home exposing (..)
 import Page.PageType exposing (..)
 import Page.SignIn exposing (..)
 import Page.SubscribeForm exposing (..)
+import Page.Tutos exposing (..)
 
 
 type alias Model =
@@ -36,7 +37,7 @@ init () =
     let
         initialModel =
             { page = Home
-            , footer = Bare
+            , footer = Nav
             , form =
                 { firstName = ""
                 , lastName = ""
@@ -94,6 +95,9 @@ viewMain model =
         SignIn ->
             Html.main_ [] []
 
+        Tutos ->
+            Html.main_ [] [ viewTutos ]
+
 
 viewFooter : Model -> Html Msg
 viewFooter model =
@@ -111,7 +115,17 @@ viewFooter model =
 
         Bare ->
             footer []
-                [ gitHub
+                [ div [ Html.Attributes.class "container" ]
+                    []
+                , gitHub
+                ]
+
+        Nav ->
+            footer []
+                [ div [ Html.Attributes.class "container" ]
+                    [ button [ Html.Attributes.class "nav", onClick ToTutos ] [ Html.text "Tutos" ]
+                    ]
+                , gitHub
                 ]
 
 
@@ -132,6 +146,9 @@ update msg model =
 
         SignUp ->
             ( { model | page = Subscribe }, Cmd.none )
+
+        ToTutos ->
+            ( { model | page = Tutos, footer = Bare }, Cmd.none )
 
         Authentication ->
             ( { model | page = SignIn }, Cmd.none )

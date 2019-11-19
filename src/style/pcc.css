@@ -240,6 +240,26 @@ p {
     margin: .4rem 0;
 }
 
+.wrapperTuto {
+    display: flex;
+
+    width: 75vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.presentationTuto {
+    font-size: 2rem;
+}
+
+
+.tuto {
+    outline: 3px solid chartreuse;
+    margin: 5rem;
+}
+
+
+
 /*-------------------------------------*/
 
 footer {

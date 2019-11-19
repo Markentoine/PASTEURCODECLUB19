@@ -8,3 +8,4 @@ type Page
     | Home
     | Subscribe
     | SignIn
+    | Tutos
