@@ -5205,6 +5205,12 @@ var $author$project$Page$SubscribeForm$newFormMail = F2(
 var $author$project$Main$update = F2(
 	function (msg, model) {
 		switch (msg.$) {
+			case 'BackHome':
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{page: $author$project$Page$PageType$Home}),
+					$elm$core$Platform$Cmd$none);
 			case 'Announce':
 				return _Utils_Tuple2(
 					_Utils_update(
@@ -5497,7 +5503,7 @@ var $author$project$Main$viewFooter = function (model) {
 					]));
 	}
 };
-var $author$project$Message$Announce = {$: 'Announce'};
+var $author$project$Message$BackHome = {$: 'BackHome'};
 var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $elm$html$Html$header = _VirtualDom_node('header');
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
@@ -5520,7 +5526,7 @@ var $author$project$Main$viewHeader = A2(
 					_List_fromArray(
 						[
 							$elm$html$Html$Attributes$href(''),
-							$elm$html$Html$Events$onClick($author$project$Message$Announce)
+							$elm$html$Html$Events$onClick($author$project$Message$BackHome)
 						]),
 					_List_fromArray(
 						[

@@ -70,7 +70,7 @@ viewHeader : Html Msg
 viewHeader =
     header []
         [ div [ Html.Attributes.class "bigTitle" ]
-            [ Html.a [ href "", onClick Announce ]
+            [ Html.a [ href "", onClick BackHome ]
                 [ p [ Html.Attributes.id "title" ] [ Html.text "PASTEURCODECLUB" ]
                 ]
             ]
@@ -132,6 +132,9 @@ viewFooter model =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
+        BackHome ->
+            ( { model | page = Home }, Cmd.none )
+
         Announce ->
             ( { model | page = Announcement New }, Cmd.none )
 

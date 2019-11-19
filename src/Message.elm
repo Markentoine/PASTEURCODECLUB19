@@ -8,6 +8,7 @@ type Msg
     | WhatToDo
     | SignUp
     | ToTutos
+    | BackHome
     | Authentication
     | FirstName String
     | LastName String
