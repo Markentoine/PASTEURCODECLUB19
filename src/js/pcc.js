@@ -6559,13 +6559,26 @@ var $author$project$Page$Tutos$tuto = function (desc) {
 					[
 						A2(
 						$elm$html$Html$h2,
-						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('episode')
+							]),
 						_List_fromArray(
 							[
 								$elm$html$Html$text(
 								$elm$core$String$concat(
 									_List_fromArray(
-										['📽 ', desc.title])))
+										[
+											'Episode #',
+											$elm$core$String$fromInt(desc.id)
+										])))
+							])),
+						A2(
+						$elm$html$Html$h2,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text(desc.title)
 							])),
 						A2(
 						$elm$html$Html$ul,

@@ -250,8 +250,16 @@ p {
 
 }
 
-.presentationTuto {
+.episode {
+    font-family: 'Monoton',
+        Helvetica,
+        sans-serif;
     font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.presentationTuto {
+    font-size: 1rem;
 }
 
 .detailsTuto {
