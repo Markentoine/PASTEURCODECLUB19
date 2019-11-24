@@ -7,10 +7,10 @@ import Message exposing (..)
 
 news : List String
 news =
-    [ "🎬 La première séance a eu lieu! C'est parti! 🎬"
-    , "Les Codeurs ont pu découvrir Dr.Racket et son environnement."
-    , "📷 Ils ont pu aussi commencer à manipuler des images dans Dr.Racket. 📷"
-    , "🎉 Ils viennent de faire leurs premiers pas en programmation! 🎉"
+    [ "🎬 2e séance en ce lundi 27 🎬"
+    , "Deux nouveeaux tutos à regarder!"
+    , "📷 On continue à manipuler des images. 📷"
+    , "🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉"
     ]
 
 

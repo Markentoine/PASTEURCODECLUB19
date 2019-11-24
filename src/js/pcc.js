@@ -6211,7 +6211,7 @@ var $author$project$Helpers$Helpers$blockNews = function (announces) {
 		]);
 };
 var $author$project$Page$Home$news = _List_fromArray(
-	['🎬 La première séance a eu lieu! C\'est parti! 🎬', 'Les Codeurs ont pu découvrir Dr.Racket et son environnement.', '📷 Ils ont pu aussi commencer à manipuler des images dans Dr.Racket. 📷', '🎉 Ils viennent de faire leurs premiers pas en programmation! 🎉']);
+	['🎬 2e séance en ce lundi 27 🎬', 'Deux nouveeaux tutos à regarder!', '📷 On continue à manipuler des images. 📷', '🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉']);
 var $author$project$Page$Home$viewNews = $author$project$Helpers$Helpers$blockNews($author$project$Page$Home$news);
 var $elm$html$Html$li = _VirtualDom_node('li');
 var $elm$html$Html$ul = _VirtualDom_node('ul');
@@ -6616,6 +6616,20 @@ var $author$project$Page$Tutos$tuto = function (desc) {
 };
 var $author$project$Page$Tutos$tutosDescriptions = _List_fromArray(
 	[
+		{
+		content: _List_fromArray(
+			['Nouvelles fonctions', 'Manipuler plusieurs images', 'Composer des fonctions', 'Exercices']),
+		id: 3,
+		title: 'Manipuler des images #2',
+		youtubeRef: 'WYcfGKhtx5w'
+	},
+		{
+		content: _List_fromArray(
+			['Qu\'est-ce qu\'une fonction?', 'Qu\'est-ce qu\'un argument?', 'Qu\'est-ce qu\'une expression?', 'Qu\'est-ce qu\'une valeur?']),
+		id: 2,
+		title: 'Quelques mots à connaître',
+		youtubeRef: 'cfqbGWSS14U'
+	},
 		{
 		content: _List_fromArray(
 			['Installer un langage dans Dr.Racket', 'Méthode pour apprendre mieux', 'Insérer une image dans Dr.Racket', 'Apprendre quelques noms de commandes pour manipuler des images']),

@@ -44,7 +44,27 @@ youtube link =
 
 tutosDescriptions : List Description
 tutosDescriptions =
-    [ { id = 1
+    [ { id = 3
+      , title = "Manipuler des images #2"
+      , content =
+            [ "Nouvelles fonctions"
+            , "Manipuler plusieurs images"
+            , "Composer des fonctions"
+            , "Exercices"
+            ]
+      , youtubeRef = "WYcfGKhtx5w"
+      }
+    , { id = 2
+      , title = "Quelques mots à connaître"
+      , content =
+            [ "Qu'est-ce qu'une fonction?"
+            , "Qu'est-ce qu'un argument?"
+            , "Qu'est-ce qu'une expression?"
+            , "Qu'est-ce qu'une valeur?"
+            ]
+      , youtubeRef = "cfqbGWSS14U"
+      }
+    , { id = 1
       , title = "Manipuler des images #1"
       , content =
             [ "Installer un langage dans Dr.Racket"
