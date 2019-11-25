@@ -5570,7 +5570,7 @@ var $author$project$Main$viewHeader = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Prochaine session>> Lundi 25 novembre à 12H30.')
+							$elm$html$Html$text('Prochaine session>> Lundi 2 décembre à 12H30.')
 						]))
 				]))
 		]));
@@ -6211,7 +6211,7 @@ var $author$project$Helpers$Helpers$blockNews = function (announces) {
 		]);
 };
 var $author$project$Page$Home$news = _List_fromArray(
-	['🎬 2e séance en ce lundi 27 🎬', 'Deux nouveeaux tutos à regarder!', '📷 On continue à manipuler des images. 📷', '🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉']);
+	['Bulletin du 25 novembre: ', 'Deux nouveaux inscrits au PCC!', 'La découverte de Dr.Racket continue.', '📷 On poursuivra la manipulation d\'images la prochaine fois. 📷']);
 var $author$project$Page$Home$viewNews = $author$project$Helpers$Helpers$blockNews($author$project$Page$Home$news);
 var $elm$html$Html$li = _VirtualDom_node('li');
 var $elm$html$Html$ul = _VirtualDom_node('ul');
