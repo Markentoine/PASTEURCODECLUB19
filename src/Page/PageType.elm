@@ -9,3 +9,4 @@ type Page
     | Subscribe
     | SignIn
     | Tutos
+    | Images

@@ -6,3 +6,4 @@ type Footer
     | Bare
     | Nav
     | ForTutos
+    | ForImages

@@ -9,6 +9,7 @@ import Html.Events exposing (onClick)
 import Message exposing (..)
 import Page.Announce exposing (..)
 import Page.Home exposing (..)
+import Page.Images exposing (..)
 import Page.PageType exposing (..)
 import Page.SignIn exposing (..)
 import Page.SubscribeForm exposing (..)
@@ -98,6 +99,9 @@ viewMain model =
         Tutos ->
             Html.main_ [] [ viewTutos ]
 
+        Images ->
+            Html.main_ [] [ viewImages ]
+
 
 viewFooter : Model -> Html Msg
 viewFooter model =
@@ -124,6 +128,7 @@ viewFooter model =
             footer []
                 [ div [ Html.Attributes.class "container" ]
                     [ button [ Html.Attributes.class "nav", onClick ToTutos ] [ Html.text "Tutos" ]
+                    , button [ Html.Attributes.class "nav", onClick ToPictures ] [ Html.text "Images" ]
                     ]
                 , gitHub
                 ]
@@ -132,6 +137,13 @@ viewFooter model =
             footer []
                 [ div [ Html.Attributes.class "container" ]
                     [ text "<<Attention>> Les Tutos les plus anciens sont en fin page! Le plus récent apparaît en premier." ]
+                , gitHub
+                ]
+
+        ForImages ->
+            footer []
+                [ div [ Html.Attributes.class "container" ]
+                    [ text "Ces images sont indispensables pour réussir certains exercices proposés dans les tutos." ]
                 , gitHub
                 ]
 
@@ -159,6 +171,9 @@ update msg model =
 
         ToTutos ->
             ( { model | page = Tutos, footer = ForTutos }, Cmd.none )
+
+        ToPictures ->
+            ( { model | page = Images, footer = ForImages }, Cmd.none )
 
         Authentication ->
             ( { model | page = SignIn }, Cmd.none )
