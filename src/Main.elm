@@ -127,23 +127,25 @@ viewFooter model =
         Nav ->
             footer []
                 [ div [ Html.Attributes.class "container" ]
-                    [ button [ Html.Attributes.class "nav", onClick ToTutos ] [ Html.text "Tutos" ]
-                    , button [ Html.Attributes.class "nav", onClick ToPictures ] [ Html.text "Images" ]
-                    ]
+                    [ button [ Html.Attributes.class "nav", onClick ToTutos ] [ Html.text "Tutos" ] ]
                 , gitHub
                 ]
 
         ForTutos ->
             footer []
                 [ div [ Html.Attributes.class "container" ]
-                    [ text "<<Attention>> Les Tutos les plus anciens sont en fin page! Le plus récent apparaît en premier." ]
+                    [ text "<<Attention>> Les Tutos les plus anciens sont en fin page! Le plus récent apparaît en premier."
+                    , button [ Html.Attributes.class "nav", onClick ToPictures ] [ Html.text "Images" ]
+                    ]
                 , gitHub
                 ]
 
         ForImages ->
             footer []
                 [ div [ Html.Attributes.class "container" ]
-                    [ text "Ces images sont indispensables pour réussir certains exercices proposés dans les tutos." ]
+                    [ text "Ces images sont indispensables pour réussir certains exercices proposés dans les tutos."
+                    , button [ Html.Attributes.class "nav", onClick ToTutos ] [ Html.text "Tutos" ]
+                    ]
                 , gitHub
                 ]
 

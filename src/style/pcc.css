@@ -250,7 +250,7 @@ p {
 
 }
 
-.episode {
+.sousTitre {
     font-family: 'Monoton',
         Helvetica,
         sans-serif;
@@ -267,12 +267,26 @@ p {
     padding: 1rem 0;
 }
 
-
 .tuto {
     outline: 3px solid chartreuse;
     margin: 5rem;
 }
 
+.imagesFolder {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid chartreuse;
+    margin: 1rem;
+    width: 75vw;
+}
+
+.imagesContainer {
+    display: flex;
+}
+
+.images {
+    margin: 1rem;
+}
 
 
 /*-------------------------------------*/

@@ -5170,7 +5170,9 @@ var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $author$project$Page$PageType$Announcement = function (a) {
 	return {$: 'Announcement', a: a};
 };
+var $author$project$Footer$ForImages = {$: 'ForImages'};
 var $author$project$Footer$ForTutos = {$: 'ForTutos'};
+var $author$project$Page$PageType$Images = {$: 'Images'};
 var $author$project$Page$Announce$New = {$: 'New'};
 var $author$project$Page$PageType$SignIn = {$: 'SignIn'};
 var $author$project$Page$PageType$Subscribe = {$: 'Subscribe'};
@@ -5255,6 +5257,12 @@ var $author$project$Main$update = F2(
 						model,
 						{footer: $author$project$Footer$ForTutos, page: $author$project$Page$PageType$Tutos}),
 					$elm$core$Platform$Cmd$none);
+			case 'ToPictures':
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{footer: $author$project$Footer$ForImages, page: $author$project$Page$PageType$Images}),
+					$elm$core$Platform$Cmd$none);
 			case 'Authentication':
 				return _Utils_Tuple2(
 					_Utils_update(
@@ -5310,6 +5318,7 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $author$project$Message$SignUp = {$: 'SignUp'};
+var $author$project$Message$ToPictures = {$: 'ToPictures'};
 var $author$project$Message$ToTutos = {$: 'ToTutos'};
 var $author$project$Message$What = {$: 'What'};
 var $author$project$Message$WhatToDo = {$: 'WhatToDo'};
@@ -5501,6 +5510,35 @@ var $author$project$Main$viewFooter = function (model) {
 							])),
 						$author$project$Helpers$Helpers$gitHub
 					]));
+		case 'ForTutos':
+			return A2(
+				$elm$html$Html$footer,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('container')
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text('<<Attention>> Les Tutos les plus anciens sont en fin page! Le plus récent apparaît en premier.'),
+								A2(
+								$elm$html$Html$button,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('nav'),
+										$elm$html$Html$Events$onClick($author$project$Message$ToPictures)
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Images')
+									]))
+							])),
+						$author$project$Helpers$Helpers$gitHub
+					]));
 		default:
 			return A2(
 				$elm$html$Html$footer,
@@ -5515,7 +5553,18 @@ var $author$project$Main$viewFooter = function (model) {
 							]),
 						_List_fromArray(
 							[
-								$elm$html$Html$text('<<Attention>> Les Tutos les plus anciens sont en fin page! Le plus récent apparaît en premier.')
+								$elm$html$Html$text('Ces images sont indispensables pour réussir certains exercices proposés dans les tutos.'),
+								A2(
+								$elm$html$Html$button,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('nav'),
+										$elm$html$Html$Events$onClick($author$project$Message$ToTutos)
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Tutos')
+									]))
 							])),
 						$author$project$Helpers$Helpers$gitHub
 					]));
@@ -5833,6 +5882,244 @@ var $author$project$Page$SubscribeForm$viewForm = function (form) {
 				]))
 		]);
 };
+var $elm$html$Html$img = _VirtualDom_node('img');
+var $elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
+var $author$project$Page$Images$viewImages = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('exercicesStuff')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('imagesFolder')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$div,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$h2,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('sousTitre')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Tuto#4 - Puzzle#1')
+								]))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('imagesContainer')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_1/rocket_part_1.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_1/rocket_part_2.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil)
+						]))
+				])),
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('imagesFolder')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$div,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$h2,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('sousTitre')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Tuto#4 - Puzzle#2')
+								]))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('imagesContainer')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_2/rocket_p1.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_2/rocket_p2.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_2/rocket_p3.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_2/rocket_p4.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil)
+						]))
+				])),
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('imagesFolder')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$div,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$h2,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('sousTitre')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Tuto#4 - Puzzle#3')
+								]))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('imagesContainer')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_3/image_part_002.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_3/image_part_004.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_3/image_part_003.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_3/image_part_001.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_3/image_part_009.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_3/image_part_005.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_3/image_part_008.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_3/image_part_007.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$src('./../../assets/pictures/puzzle_3/image_part_006.jpg'),
+									$elm$html$Html$Attributes$class('images')
+								]),
+							_List_Nil)
+						]))
+				]))
+		]));
 var $elm$core$Elm$JsArray$appendN = _JsArray_appendN;
 var $elm$core$Elm$JsArray$slice = _JsArray_slice;
 var $elm$core$Array$appendHelpBuilder = F2(
@@ -6247,12 +6534,6 @@ var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Attribute$Height = functi
 };
 var $tricycle$elm_embed_youtube$Embed$Youtube$Attributes$height = $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Attribute$Height;
 var $elm$html$Html$iframe = _VirtualDom_node('iframe');
-var $elm$html$Html$Attributes$src = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'src',
-		_VirtualDom_noJavaScriptOrHtmlUri(url));
-};
 var $elm$core$List$maybeCons = F3(
 	function (f, mx, xs) {
 		var _v0 = f(mx);
@@ -6561,7 +6842,7 @@ var $author$project$Page$Tutos$tuto = function (desc) {
 						$elm$html$Html$h2,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$class('episode')
+								$elm$html$Html$Attributes$class('sousTitre')
 							]),
 						_List_fromArray(
 							[
@@ -6670,12 +6951,18 @@ var $author$project$Main$viewMain = function (model) {
 				$author$project$Page$SubscribeForm$viewForm(model.form));
 		case 'SignIn':
 			return A2($elm$html$Html$main_, _List_Nil, _List_Nil);
-		default:
+		case 'Tutos':
 			return A2(
 				$elm$html$Html$main_,
 				_List_Nil,
 				_List_fromArray(
 					[$author$project$Page$Tutos$viewTutos]));
+		default:
+			return A2(
+				$elm$html$Html$main_,
+				_List_Nil,
+				_List_fromArray(
+					[$author$project$Page$Images$viewImages]));
 	}
 };
 var $author$project$Main$viewPage = function (model) {

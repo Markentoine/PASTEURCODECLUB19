@@ -24,7 +24,7 @@ tuto : Description -> Html msg
 tuto desc =
     div [ Html.Attributes.class "wrapperTuto" ]
         [ div [ Html.Attributes.class "presentationTuto" ]
-            [ h2 [ Html.Attributes.class "episode" ] [ text (String.concat [ "Episode #", String.fromInt desc.id ]) ]
+            [ h2 [ Html.Attributes.class "sousTitre" ] [ text (String.concat [ "Episode #", String.fromInt desc.id ]) ]
             , h2 [] [ text desc.title ]
             , ul [] (List.map (\l -> li [ Html.Attributes.class "detailsTuto" ] [ text (String.concat [ "🎯 ", l ]) ]) desc.content)
             ]
