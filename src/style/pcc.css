@@ -282,10 +282,14 @@ p {
 
 .imagesContainer {
     display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .images {
-    margin: .5rem;
+    margin: .3rem;
+    width: 30%;
 }
 
 
