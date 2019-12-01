@@ -6899,7 +6899,7 @@ var $author$project$Page$Tutos$tutosDescriptions = _List_fromArray(
 	[
 		{
 		content: _List_fromArray(
-			['Définir une fonction', 'Reconstituer une image', 'Exercices']),
+			['Définir une fonction', 'Reconstituer une image', 'Exercices: retrouver les images directement sur le site']),
 		id: 4,
 		title: 'Définir des fonctions et faire des puzzles',
 		youtubeRef: 'LjtoQfbhqeM'
