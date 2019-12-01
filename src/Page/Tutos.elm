@@ -44,7 +44,16 @@ youtube link =
 
 tutosDescriptions : List Description
 tutosDescriptions =
-    [ { id = 3
+    [ { id = 4
+      , title = "Définir des fonctions et faire des puzzles"
+      , content =
+            [ "Définir une fonction"
+            , "Reconstituer une image"
+            , "Exercices"
+            ]
+      , youtubeRef = "LjtoQfbhqeM"
+      }
+    , { id = 3
       , title = "Manipuler des images #2"
       , content =
             [ "Nouvelles fonctions"
