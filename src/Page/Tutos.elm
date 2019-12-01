@@ -44,7 +44,16 @@ youtube link =
 
 tutosDescriptions : List Description
 tutosDescriptions =
-    [ { id = 4
+    [ { id = 5
+      , title = "Solution du Challenge Puzzle#3"
+      , content =
+            [ "Ecrire le programme"
+            , "Comprendre en détails le programme"
+            , "Arranger les images et retrouver des transformations"
+            ]
+      , youtubeRef = "q6lmNj7Y01E"
+      }
+    , { id = 4
       , title = "Définir des fonctions et faire des puzzles"
       , content =
             [ "Définir une fonction"

@@ -6899,6 +6899,13 @@ var $author$project$Page$Tutos$tutosDescriptions = _List_fromArray(
 	[
 		{
 		content: _List_fromArray(
+			['Ecrire le programme', 'Comprendre en détails le programme', 'Arranger les images et retrouver des transformations']),
+		id: 5,
+		title: 'Solution du Challenge Puzzle#3',
+		youtubeRef: 'q6lmNj7Y01E'
+	},
+		{
+		content: _List_fromArray(
 			['Définir une fonction', 'Reconstituer une image', 'Exercices: retrouvez les images directement sur le site']),
 		id: 4,
 		title: 'Définir des fonctions et faire des puzzles',
