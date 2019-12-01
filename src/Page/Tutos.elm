@@ -49,7 +49,7 @@ tutosDescriptions =
       , content =
             [ "Définir une fonction"
             , "Reconstituer une image"
-            , "Exercices: retrouver les images directement sur le site"
+            , "Exercices: retrouvez les images directement sur le site"
             ]
       , youtubeRef = "LjtoQfbhqeM"
       }
