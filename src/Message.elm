@@ -7,6 +7,8 @@ type Msg
     | When
     | WhatToDo
     | SignUp
+    | Username String
+    | Pwd String
     | ToTutos
     | ToPictures
     | BackHome

@@ -6,7 +6,7 @@ import Html.Events exposing (onInput)
 import Message exposing (..)
 
 
-type alias Form =
+type alias SubscriptionForm =
     { firstName : String
     , lastName : String
     , class : String
@@ -18,7 +18,7 @@ type alias Form =
 -- VIEWS
 
 
-viewForm : Form -> List (Html Msg)
+viewForm : SubscriptionForm -> List (Html Msg)
 viewForm form =
     [ h1 [] [ Html.text "Inscris-toi" ]
     , p [] [ Html.text "Une adresse mail est nécessaire pour te répondre afin que tu saches si tu fais partie du club" ]
@@ -44,12 +44,12 @@ viewForm form =
 
 
 viewInput : String -> String -> String -> String -> (String -> msg) -> Html msg
-viewInput t p n v toMsg =
+viewInput typ p name val toMsg =
     input
-        [ Html.Attributes.type_ t
+        [ Html.Attributes.type_ typ
         , placeholder p
-        , Html.Attributes.name n
-        , value v
+        , Html.Attributes.name name
+        , value val
         , onInput toMsg
         ]
         []
@@ -59,21 +59,21 @@ viewInput t p n v toMsg =
 -- HELPERS
 
 
-newFormFName : String -> Form -> Form
+newFormFName : String -> SubscriptionForm -> SubscriptionForm
 newFormFName input currentForm =
     { currentForm | firstName = input }
 
 
-newFormLName : String -> Form -> Form
+newFormLName : String -> SubscriptionForm -> SubscriptionForm
 newFormLName input currentForm =
     { currentForm | lastName = input }
 
 
-newFormClass : String -> Form -> Form
+newFormClass : String -> SubscriptionForm -> SubscriptionForm
 newFormClass input currentForm =
     { currentForm | class = input }
 
 
-newFormMail : String -> Form -> Form
+newFormMail : String -> SubscriptionForm -> SubscriptionForm
 newFormMail input currentForm =
     { currentForm | mail = input }

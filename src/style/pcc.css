@@ -66,6 +66,17 @@ header h2 {
     margin-right: .5rem;
 }
 
+.headerNav {
+    width: 50%;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.headerNav button {
+    width: 25%;
+}
+
 .bigTitle {
     margin-left: .5rem;
 }

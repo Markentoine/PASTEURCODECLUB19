@@ -19,7 +19,8 @@ import Page.Tutos exposing (..)
 type alias Model =
     { page : Page
     , footer : Footer
-    , form : Form
+    , signupForm : SubscriptionForm
+    , signinForm : SignInForm
     }
 
 
@@ -39,11 +40,15 @@ init () =
         initialModel =
             { page = Home
             , footer = Nav
-            , form =
+            , signupForm =
                 { firstName = ""
                 , lastName = ""
                 , class = ""
                 , mail = ""
+                }
+            , signinForm =
+                { username = ""
+                , pwd = ""
                 }
             }
     in
@@ -75,8 +80,8 @@ viewHeader =
                 [ p [ Html.Attributes.id "title" ] [ Html.text "PASTEURCODECLUB" ]
                 ]
             ]
-        , div []
-            [ h2 [] [ text "Prochaine session >>> Lundi 9 décembre à 12H30." ]
+        , div [ Html.Attributes.class "headerNav" ]
+            [ button [ onClick Authentication ] [ Html.text "Connexion" ]
             ]
         ]
 
@@ -91,10 +96,10 @@ viewMain model =
             Html.main_ [] viewNews
 
         Subscribe ->
-            Html.main_ [] (viewForm model.form)
+            Html.main_ [] (viewForm model.signupForm)
 
         SignIn ->
-            Html.main_ [] []
+            Html.main_ [] (viewSignIn model.signinForm)
 
         Tutos ->
             Html.main_ [] [ viewTutos ]
@@ -180,14 +185,20 @@ update msg model =
         Authentication ->
             ( { model | page = SignIn }, Cmd.none )
 
+        Username username ->
+            ( { model | signinForm = newUserName username model.signinForm }, Cmd.none )
+
+        Pwd pwd ->
+            ( { model | signinForm = newFormPwd pwd model.signinForm }, Cmd.none )
+
         FirstName fname ->
-            ( { model | form = newFormFName fname model.form }, Cmd.none )
+            ( { model | signupForm = newFormFName fname model.signupForm }, Cmd.none )
 
         LastName lname ->
-            ( { model | form = newFormLName lname model.form }, Cmd.none )
+            ( { model | signupForm = newFormLName lname model.signupForm }, Cmd.none )
 
         Class class ->
-            ( { model | form = newFormClass class model.form }, Cmd.none )
+            ( { model | signupForm = newFormClass class model.signupForm }, Cmd.none )
 
         Mail mail ->
-            ( { model | form = newFormMail mail model.form }, Cmd.none )
+            ( { model | signupForm = newFormMail mail model.signupForm }, Cmd.none )

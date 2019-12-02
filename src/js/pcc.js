@@ -5160,8 +5160,9 @@ var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$init = function (_v0) {
 	var initialModel = {
 		footer: $author$project$Footer$Nav,
-		form: {_class: '', firstName: '', lastName: '', mail: ''},
-		page: $author$project$Page$PageType$Home
+		page: $author$project$Page$PageType$Home,
+		signinForm: {pwd: '', username: ''},
+		signupForm: {_class: '', firstName: '', lastName: '', mail: ''}
 	};
 	return _Utils_Tuple2(initialModel, $elm$core$Platform$Cmd$none);
 };
@@ -5203,6 +5204,18 @@ var $author$project$Page$SubscribeForm$newFormMail = F2(
 		return _Utils_update(
 			currentForm,
 			{mail: input});
+	});
+var $author$project$Page$SignIn$newFormPwd = F2(
+	function (pwd, form) {
+		return _Utils_update(
+			form,
+			{pwd: pwd});
+	});
+var $author$project$Page$SignIn$newUserName = F2(
+	function (username, form) {
+		return _Utils_update(
+			form,
+			{username: username});
 	});
 var $author$project$Main$update = F2(
 	function (msg, model) {
@@ -5269,13 +5282,31 @@ var $author$project$Main$update = F2(
 						model,
 						{page: $author$project$Page$PageType$SignIn}),
 					$elm$core$Platform$Cmd$none);
+			case 'Username':
+				var username = msg.a;
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{
+							signinForm: A2($author$project$Page$SignIn$newUserName, username, model.signinForm)
+						}),
+					$elm$core$Platform$Cmd$none);
+			case 'Pwd':
+				var pwd = msg.a;
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{
+							signinForm: A2($author$project$Page$SignIn$newFormPwd, pwd, model.signinForm)
+						}),
+					$elm$core$Platform$Cmd$none);
 			case 'FirstName':
 				var fname = msg.a;
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
 						{
-							form: A2($author$project$Page$SubscribeForm$newFormFName, fname, model.form)
+							signupForm: A2($author$project$Page$SubscribeForm$newFormFName, fname, model.signupForm)
 						}),
 					$elm$core$Platform$Cmd$none);
 			case 'LastName':
@@ -5284,7 +5315,7 @@ var $author$project$Main$update = F2(
 					_Utils_update(
 						model,
 						{
-							form: A2($author$project$Page$SubscribeForm$newFormLName, lname, model.form)
+							signupForm: A2($author$project$Page$SubscribeForm$newFormLName, lname, model.signupForm)
 						}),
 					$elm$core$Platform$Cmd$none);
 			case 'Class':
@@ -5293,7 +5324,7 @@ var $author$project$Main$update = F2(
 					_Utils_update(
 						model,
 						{
-							form: A2($author$project$Page$SubscribeForm$newFormClass, _class, model.form)
+							signupForm: A2($author$project$Page$SubscribeForm$newFormClass, _class, model.signupForm)
 						}),
 					$elm$core$Platform$Cmd$none);
 			default:
@@ -5302,7 +5333,7 @@ var $author$project$Main$update = F2(
 					_Utils_update(
 						model,
 						{
-							form: A2($author$project$Page$SubscribeForm$newFormMail, mail, model.form)
+							signupForm: A2($author$project$Page$SubscribeForm$newFormMail, mail, model.signupForm)
 						}),
 					$elm$core$Platform$Cmd$none);
 		}
@@ -5570,8 +5601,8 @@ var $author$project$Main$viewFooter = function (model) {
 					]));
 	}
 };
+var $author$project$Message$Authentication = {$: 'Authentication'};
 var $author$project$Message$BackHome = {$: 'BackHome'};
-var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $elm$html$Html$header = _VirtualDom_node('header');
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
 var $elm$html$Html$p = _VirtualDom_node('p');
@@ -5611,15 +5642,21 @@ var $author$project$Main$viewHeader = A2(
 				])),
 			A2(
 			$elm$html$Html$div,
-			_List_Nil,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('headerNav')
+				]),
 			_List_fromArray(
 				[
 					A2(
-					$elm$html$Html$h2,
-					_List_Nil,
+					$elm$html$Html$button,
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Prochaine session >>> Lundi 9 décembre à 12H30.')
+							$elm$html$Html$Events$onClick($author$project$Message$Authentication)
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Connexion')
 						]))
 				]))
 		]));
@@ -5788,15 +5825,15 @@ var $elm$html$Html$Events$onInput = function (tagger) {
 };
 var $elm$html$Html$Attributes$placeholder = $elm$html$Html$Attributes$stringProperty('placeholder');
 var $author$project$Page$SubscribeForm$viewInput = F5(
-	function (t, p, n, v, toMsg) {
+	function (typ, p, name, val, toMsg) {
 		return A2(
 			$elm$html$Html$input,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$type_(t),
+					$elm$html$Html$Attributes$type_(typ),
 					$elm$html$Html$Attributes$placeholder(p),
-					$elm$html$Html$Attributes$name(n),
-					$elm$html$Html$Attributes$value(v),
+					$elm$html$Html$Attributes$name(name),
+					$elm$html$Html$Attributes$value(val),
 					$elm$html$Html$Events$onInput(toMsg)
 				]),
 			_List_Nil);
@@ -5882,6 +5919,7 @@ var $author$project$Page$SubscribeForm$viewForm = function (form) {
 				]))
 		]);
 };
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $elm$html$Html$img = _VirtualDom_node('img');
 var $elm$html$Html$Attributes$src = function (url) {
 	return A2(
@@ -6498,8 +6536,60 @@ var $author$project$Helpers$Helpers$blockNews = function (announces) {
 		]);
 };
 var $author$project$Page$Home$news = _List_fromArray(
-	['Bulletin du 2 décembre: ', 'Deux nouveaux tutos en vidéos!', 'Des puzzles, des challenges!', 'Nouvel outil: le stepper!']);
+	['Bulletin du 2 décembre: ', 'Deux nouveaux tutos en vidéos!', 'Des puzzles, des challenges!', 'Nouvel outil: le stepper!', 'Prochaine session >>> 2 décembre à 12h30!']);
 var $author$project$Page$Home$viewNews = $author$project$Helpers$Helpers$blockNews($author$project$Page$Home$news);
+var $author$project$Message$Pwd = function (a) {
+	return {$: 'Pwd', a: a};
+};
+var $author$project$Message$Username = function (a) {
+	return {$: 'Username', a: a};
+};
+var $author$project$Page$SignIn$viewInput = F5(
+	function (typ, p, name, val, toMsg) {
+		return A2(
+			$elm$html$Html$input,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$type_(typ),
+					$elm$html$Html$Attributes$placeholder(p),
+					$elm$html$Html$Attributes$name(name),
+					$elm$html$Html$Attributes$value(val),
+					$elm$html$Html$Events$onInput(toMsg)
+				]),
+			_List_Nil);
+	});
+var $author$project$Page$SignIn$viewSignIn = function (form) {
+	return _List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h1,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Connecte-toi à ton compte')
+				])),
+			A2(
+			$elm$html$Html$form,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$method('POST'),
+					$elm$html$Html$Attributes$action('https://rare-lined-hagfish.gigalixirapp.com/api/users/sign_in')
+				]),
+			_List_fromArray(
+				[
+					A5($author$project$Page$SignIn$viewInput, 'text', 'Nom d\'Utilisateur', 'username', form.username, $author$project$Message$Username),
+					A5($author$project$Page$SignIn$viewInput, 'text', 'Mot de passe', 'pwd', form.pwd, $author$project$Message$Pwd),
+					A2(
+					$elm$html$Html$input,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$type_('submit'),
+							$elm$html$Html$Attributes$value('Je me connecte')
+						]),
+					_List_Nil)
+				]))
+		]);
+};
 var $elm$html$Html$li = _VirtualDom_node('li');
 var $elm$html$Html$ul = _VirtualDom_node('ul');
 var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Youtube$Youtube = F2(
@@ -6962,9 +7052,12 @@ var $author$project$Main$viewMain = function (model) {
 			return A2(
 				$elm$html$Html$main_,
 				_List_Nil,
-				$author$project$Page$SubscribeForm$viewForm(model.form));
+				$author$project$Page$SubscribeForm$viewForm(model.signupForm));
 		case 'SignIn':
-			return A2($elm$html$Html$main_, _List_Nil, _List_Nil);
+			return A2(
+				$elm$html$Html$main_,
+				_List_Nil,
+				$author$project$Page$SignIn$viewSignIn(model.signinForm));
 		case 'Tutos':
 			return A2(
 				$elm$html$Html$main_,
