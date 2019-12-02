@@ -76,7 +76,7 @@ viewHeader =
                 ]
             ]
         , div []
-            [ h2 [] [ text "Prochaine session>> Lundi 2 décembre à 12H30." ]
+            [ h2 [] [ text "Prochaine session >>> Lundi 9 décembre à 12H30." ]
             ]
         ]
 

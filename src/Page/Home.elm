@@ -7,10 +7,10 @@ import Message exposing (..)
 
 news : List String
 news =
-    [ "Bulletin du 25 novembre: "
-    , "Deux nouveaux inscrits au PCC!"
-    , "La découverte de Dr.Racket continue."
-    , "📷 On poursuivra la manipulation d'images la prochaine fois. 📷"
+    [ "Bulletin du 2 décembre: "
+    , "Deux nouveaux tutos en vidéos!"
+    , "Des puzzles, des challenges!"
+    , "Nouvel outil: le stepper!"
     ]
 
 
