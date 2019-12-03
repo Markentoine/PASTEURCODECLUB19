@@ -14,6 +14,8 @@ import Page.PageType exposing (..)
 import Page.SignIn exposing (..)
 import Page.SubscribeForm exposing (..)
 import Page.Tutos exposing (..)
+import Request exposing (authenticateUser)
+import User exposing (..)
 
 
 type alias Model =
@@ -21,6 +23,7 @@ type alias Model =
     , footer : Footer
     , signupForm : SubscriptionForm
     , signinForm : SignInForm
+    , userProfile : UserProfile
     }
 
 
@@ -50,6 +53,7 @@ init () =
                 { username = ""
                 , pwd = ""
                 }
+            , userProfile = NotSet
             }
     in
     ( initialModel, Cmd.none )
@@ -184,6 +188,17 @@ update msg model =
 
         Authentication ->
             ( { model | page = SignIn }, Cmd.none )
+
+        GotUserProfile result ->
+            case result of
+                Ok userInfos ->
+                    ( { model | page = Home, userProfile = Set userInfos }, Cmd.none )
+
+                Err _ ->
+                    ( { model | page = Tutos, userProfile = Failure }, Cmd.none )
+
+        Profile ->
+            ( model, authenticateUser model.signinForm )
 
         Username username ->
             ( { model | signinForm = newUserName username model.signinForm }, Cmd.none )

@@ -1,5 +1,8 @@
 module Message exposing (..)
 
+import Http exposing (Error)
+import User exposing (UserInfos)
+
 
 type Msg
     = Announce
@@ -13,6 +16,8 @@ type Msg
     | ToPictures
     | BackHome
     | Authentication
+    | Profile
+    | GotUserProfile (Result Error UserInfos)
     | FirstName String
     | LastName String
     | Class String

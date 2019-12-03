@@ -2,8 +2,9 @@ module Page.SignIn exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (action, method, type_, value)
-import Html.Events exposing (onInput)
+import Html.Events exposing (onClick, onInput)
 import Message exposing (..)
+import User exposing (..)
 
 
 type alias SignInForm =
@@ -15,13 +16,11 @@ type alias SignInForm =
 viewSignIn : SignInForm -> List (Html Msg)
 viewSignIn form =
     [ h1 [] [ text "Connecte-toi à ton compte" ]
-    , Html.form
-        [ method "POST"
-        , action "https://rare-lined-hagfish.gigalixirapp.com/api/users/sign_in"
-        ]
+    , div
+        []
         [ viewInput "text" "Nom d'Utilisateur" "username" form.username Username
         , viewInput "text" "Mot de passe" "pwd" form.pwd Pwd
-        , input [ type_ "submit", value "Je me connecte" ] []
+        , button [ onClick Profile ] [ text "Je me connecte" ]
         ]
     ]
 
