@@ -37,4 +37,4 @@ decodeUserProfile : Decoder UserInfos
 decodeUserProfile =
     map2 UserInfos
         (field "data" (field "user" (field "id" string)))
-        (field "data" (field "user" (field "usernanme" string)))
+        (field "data" (field "user" (field "username" string)))
