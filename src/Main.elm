@@ -11,6 +11,7 @@ import Message exposing (..)
 import Page.Announce exposing (..)
 import Page.Home exposing (..)
 import Page.Images exposing (..)
+import Page.Landing exposing (..)
 import Page.PageType exposing (..)
 import Page.SignIn exposing (..)
 import Page.SubscribeForm exposing (..)
@@ -43,7 +44,7 @@ init : () -> ( Model, Cmd Msg )
 init () =
     let
         initialModel =
-            { page = Home
+            { page = Landing
             , header = Connexion
             , footer = Nav
             , signupForm =
@@ -92,6 +93,9 @@ viewHeader model =
 viewMain : Model -> Html Msg
 viewMain model =
     case model.page of
+        Landing ->
+            Html.main_ [] viewLogo
+
         Announcement blocks ->
             Html.main_ [] (viewBlocks blocks)
 

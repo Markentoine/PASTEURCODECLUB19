@@ -5,6 +5,7 @@ import Page.Announce exposing (Blocks)
 
 type Page
     = Announcement Blocks
+    | Landing
     | Home
     | Subscribe
     | SignIn

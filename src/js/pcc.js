@@ -5329,7 +5329,7 @@ var $elm$core$Task$perform = F2(
 	});
 var $elm$browser$Browser$element = _Browser_element;
 var $author$project$Header$Connexion = {$: 'Connexion'};
-var $author$project$Page$PageType$Home = {$: 'Home'};
+var $author$project$Page$PageType$Landing = {$: 'Landing'};
 var $author$project$Footer$Nav = {$: 'Nav'};
 var $author$project$User$NotSet = {$: 'NotSet'};
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
@@ -5338,7 +5338,7 @@ var $author$project$Main$init = function (_v0) {
 	var initialModel = {
 		footer: $author$project$Footer$Nav,
 		header: $author$project$Header$Connexion,
-		page: $author$project$Page$PageType$Home,
+		page: $author$project$Page$PageType$Landing,
 		signinForm: {pwd: '', username: ''},
 		signupForm: {_class: '', firstName: '', lastName: '', mail: ''},
 		userProfile: $author$project$User$NotSet
@@ -5353,6 +5353,7 @@ var $author$project$Page$PageType$Announcement = function (a) {
 var $author$project$User$Failure = {$: 'Failure'};
 var $author$project$Footer$ForImages = {$: 'ForImages'};
 var $author$project$Footer$ForTutos = {$: 'ForTutos'};
+var $author$project$Page$PageType$Home = {$: 'Home'};
 var $author$project$Header$Identified = {$: 'Identified'};
 var $author$project$Page$PageType$Images = {$: 'Images'};
 var $author$project$Page$Announce$New = {$: 'New'};
@@ -7355,6 +7356,77 @@ var $author$project$Page$Images$viewImages = A2(
 						]))
 				]))
 		]));
+var $elm$svg$Svg$Attributes$clipRule = _VirtualDom_attribute('clip-rule');
+var $elm$svg$Svg$Attributes$fill = _VirtualDom_attribute('fill');
+var $elm$svg$Svg$Attributes$fillRule = _VirtualDom_attribute('fill-rule');
+var $elm$svg$Svg$Attributes$stroke = _VirtualDom_attribute('stroke');
+var $elm$svg$Svg$Attributes$strokeLinecap = _VirtualDom_attribute('stroke-linecap');
+var $elm$svg$Svg$Attributes$strokeLinejoin = _VirtualDom_attribute('stroke-linejoin');
+var $elm$svg$Svg$Attributes$strokeMiterlimit = _VirtualDom_attribute('stroke-miterlimit');
+var $elm$svg$Svg$Attributes$strokeWidth = _VirtualDom_attribute('stroke-width');
+var $author$project$Helpers$Helpers$logo = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('logo')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$svg$Svg$svg,
+			_List_fromArray(
+				[
+					$elm$svg$Svg$Attributes$viewBox('0 0 115 118'),
+					$elm$svg$Svg$Attributes$xmlSpace('http://www.w3.org/2000/svg'),
+					$elm$svg$Svg$Attributes$fillRule('evenodd'),
+					$elm$svg$Svg$Attributes$clipRule('evenodd'),
+					$elm$svg$Svg$Attributes$strokeLinecap('round'),
+					$elm$svg$Svg$Attributes$strokeLinejoin('round'),
+					$elm$svg$Svg$Attributes$strokeMiterlimit('evenodd')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$svg$Svg$title,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$elm$svg$Svg$text('logo for coders')
+						])),
+					A2(
+					$elm$svg$Svg$path,
+					_List_fromArray(
+						[
+							$elm$svg$Svg$Attributes$fill('#7fff00'),
+							$elm$svg$Svg$Attributes$stroke('#7fff00'),
+							$elm$svg$Svg$Attributes$strokeWidth('.5'),
+							$elm$svg$Svg$Attributes$d('M48.595 39.059l-1.523.287-.987.598-.593.736-.115.833.396.959.25.863.673.628.979.47.688.109h1.077l.664.053.625.194.704.438.853.502.671.786.668.682.673.845 2.863 5.979-14.944 26.632-.297.911-.245.879.038.743.197.537.351.411.286.399.375.314.501.206.503.125.501.032.666-.029.525-.129.53-.191.539-.42.376-.671.568-.846.505-1.085 12.002-20.924 8.591 18.921.927 1.591.943.87 1.066 1.068.662.547.774.389.966.449 1.095.213.844.239.772.05.695.029 1.175.033 1.186-.028.847-.065.864-.304.603-.441.488-.594.524-.937.018-.931-.428-.964-.632-.583-.535-.423-1.28-.072-1.729-.148-1.409.055-.747-.015-.783-.473-.532-.494-.904-1.074-1.084-1.812-13.956-30.499-.691-1.204-.926-1.134-.918-.989-.881-.868-1.139-.669-.776-.453-.783-.345-.931-.454-1.039-.334-.845-.03-.679-.038-.956.065')
+						]),
+					_List_Nil),
+					A2(
+					$elm$svg$Svg$path,
+					_List_fromArray(
+						[
+							$elm$svg$Svg$Attributes$fill('none'),
+							$elm$svg$Svg$Attributes$stroke('#7fff00'),
+							$elm$svg$Svg$Attributes$strokeWidth('.5'),
+							$elm$svg$Svg$Attributes$d('M58.18.32l-1.192.17-.748.626-.818 1.321-1.479 2.356-50.92 88.138-.566.964-.073.938.129.852.231.544.474.459.465.334.649.233.937.252.74.146 105.568-.182.669-.361.56-.289.402-.352.414-.543.158-.598.079-.721.048-.584-.452-1.081-.611-.984-51.496-89.04-.436-.615-.505-.848-.417-.633-.411-.429L58.91.25l-.73.07')
+						]),
+					_List_Nil),
+					A2(
+					$elm$svg$Svg$path,
+					_List_fromArray(
+						[
+							$elm$svg$Svg$Attributes$fill('none'),
+							$elm$svg$Svg$Attributes$stroke('#7fff00'),
+							$elm$svg$Svg$Attributes$strokeWidth('.5'),
+							$elm$svg$Svg$Attributes$d('M58.064 7.766l-1.009.15-.633.553-.694 1.165-1.252 2.08-43.125 77.793-.48.851-.061.828.109.752.195.48.402.405.394.295.549.206.794.222.627.129 89.408-.161.566-.318.474-.255.341-.311.35-.479.134-.528.067-.637.041-.515-.383-.955-.518-.868-43.613-78.589-.369-.543-.428-.748-.352-.559-.349-.378-.566-.127-.619.062')
+						]),
+					_List_Nil)
+				]))
+		]));
+var $author$project$Page$Landing$viewLogo = _List_fromArray(
+	[$author$project$Helpers$Helpers$logo]);
 var $elm$core$Elm$JsArray$appendN = _JsArray_appendN;
 var $elm$core$Elm$JsArray$slice = _JsArray_slice;
 var $elm$core$Array$appendHelpBuilder = F2(
@@ -8234,6 +8306,8 @@ var $author$project$Page$Tutos$viewTutos = A2(
 var $author$project$Main$viewMain = function (model) {
 	var _v0 = model.page;
 	switch (_v0.$) {
+		case 'Landing':
+			return A2($elm$html$Html$main_, _List_Nil, $author$project$Page$Landing$viewLogo);
 		case 'Announcement':
 			var blocks = _v0.a;
 			return A2(
