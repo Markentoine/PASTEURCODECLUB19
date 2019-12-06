@@ -1,6 +1,6 @@
 module Page.Home exposing (..)
 
-import Helpers.Helpers exposing (blockNews, createBlocks)
+import Helpers.Helpers exposing (blockNews)
 import Html exposing (..)
 import Message exposing (..)
 

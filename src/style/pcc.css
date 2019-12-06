@@ -71,14 +71,27 @@ header h2 {
     margin-right: 1rem;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    font-family: 'Titillium Web',
+        sans-serif;
 }
 
 .headerNav button {
     width: 25%;
 }
 
+.headerNav img {
+    width: 8%;
+    border-radius: 50%;
+    padding: .3rem;
+}
+
 .bigTitle {
     margin-left: .5rem;
+}
+
+#title {
+    cursor: pointer;
 }
 
 .editorCode {
@@ -158,6 +171,40 @@ section {
         sans-serif;
 }
 
+.signinPage {
+    display: flex;
+    justify-content: space-around;
+    height: 80vh;
+}
+
+.signinForm {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
+    background-color: black;
+    border-radius: .7rem;
+    border: 1px solid chartreuse;
+    border-color: chartreuse;
+    margin-bottom: .8rem;
+}
+
+.username,
+.pwd {
+    width: 75%;
+}
+
+.warning {
+    color: red;
+    margin: 1rem;
+    font-size: 1.5rem;
+    text-decoration: blink;
+    animation: blinking 3s ease-in infinite;
+}
+
 /*-----FORM--------*/
 
 form {
@@ -196,7 +243,7 @@ input[name="bot-field"] {
 }
 
 input::placeholder {
-    color: black;
+    color: gray;
     opacity: 0.4;
 }
 
@@ -223,10 +270,6 @@ select {
     width: 100%;
 }
 
-.captcha {
-    margin-top: 1rem;
-}
-
 input:focus {
     outline: none;
 }
@@ -239,17 +282,11 @@ input[type="submit"] {
     vertical-align: center;
 }
 
-.greenLight {
-    border: 3px solid chartreuse;
-}
-
-.redLight {
-    border: 3px solid red;
-}
-
 p {
     margin: .4rem 0;
 }
+
+/*-- OTHER --*/
 
 .wrapperTuto {
     display: flex;
@@ -393,12 +430,9 @@ button:focus {
     animation-play-state: running;
 }
 
-
-
 img {
     width: 100%;
 }
-
 
 ul {
     margin: 2rem 4rem;
@@ -462,6 +496,11 @@ h1 {
     }
 }
 
+/**
+ * ----------------------------------------
+ * animation blinking
+ * ----------------------------------------
+ */
 
 @keyframes blinking {
     0% {
@@ -469,7 +508,7 @@ h1 {
     }
 
     50% {
-        color: chartreuse
+        color: red
     }
 
     100% {

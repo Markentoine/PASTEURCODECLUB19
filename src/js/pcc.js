@@ -5328,6 +5328,7 @@ var $elm$core$Task$perform = F2(
 				A2($elm$core$Task$map, toMessage, task)));
 	});
 var $elm$browser$Browser$element = _Browser_element;
+var $author$project$Header$Connexion = {$: 'Connexion'};
 var $author$project$Page$PageType$Home = {$: 'Home'};
 var $author$project$Footer$Nav = {$: 'Nav'};
 var $author$project$User$NotSet = {$: 'NotSet'};
@@ -5336,6 +5337,7 @@ var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$init = function (_v0) {
 	var initialModel = {
 		footer: $author$project$Footer$Nav,
+		header: $author$project$Header$Connexion,
 		page: $author$project$Page$PageType$Home,
 		signinForm: {pwd: '', username: ''},
 		signupForm: {_class: '', firstName: '', lastName: '', mail: ''},
@@ -5351,6 +5353,7 @@ var $author$project$Page$PageType$Announcement = function (a) {
 var $author$project$User$Failure = {$: 'Failure'};
 var $author$project$Footer$ForImages = {$: 'ForImages'};
 var $author$project$Footer$ForTutos = {$: 'ForTutos'};
+var $author$project$Header$Identified = {$: 'Identified'};
 var $author$project$Page$PageType$Images = {$: 'Images'};
 var $author$project$Page$Announce$New = {$: 'New'};
 var $author$project$User$Set = function (a) {
@@ -6258,7 +6261,7 @@ var $author$project$Main$update = F2(
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{page: $author$project$Page$PageType$Home}),
+						{footer: $author$project$Footer$Nav, page: $author$project$Page$PageType$Home}),
 					$elm$core$Platform$Cmd$none);
 			case 'Announce':
 				return _Utils_Tuple2(
@@ -6324,6 +6327,7 @@ var $author$project$Main$update = F2(
 						_Utils_update(
 							model,
 							{
+								header: $author$project$Header$Identified,
 								page: $author$project$Page$PageType$Home,
 								userProfile: $author$project$User$Set(userInfos)
 							}),
@@ -6332,7 +6336,7 @@ var $author$project$Main$update = F2(
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
-							{page: $author$project$Page$PageType$Tutos, userProfile: $author$project$User$Failure}),
+							{page: $author$project$Page$PageType$SignIn, userProfile: $author$project$User$Failure}),
 						$elm$core$Platform$Cmd$none);
 				}
 			case 'Profile':
@@ -6657,29 +6661,28 @@ var $author$project$Main$viewFooter = function (model) {
 					]));
 	}
 };
+var $elm$html$Html$header = _VirtualDom_node('header');
 var $author$project$Message$Authentication = {$: 'Authentication'};
 var $author$project$Message$BackHome = {$: 'BackHome'};
-var $elm$html$Html$header = _VirtualDom_node('header');
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
+var $elm$html$Html$img = _VirtualDom_node('img');
 var $elm$html$Html$p = _VirtualDom_node('p');
-var $author$project$Main$viewHeader = A2(
-	$elm$html$Html$header,
-	_List_Nil,
-	_List_fromArray(
-		[
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('bigTitle')
-				]),
-			_List_fromArray(
+var $elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
+var $author$project$Header$viewElemntsHeader = F2(
+	function (header, profile) {
+		if (header.$ === 'Connexion') {
+			return _List_fromArray(
 				[
 					A2(
-					$elm$html$Html$a,
+					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$href(''),
+							$elm$html$Html$Attributes$class('bigTitle'),
 							$elm$html$Html$Events$onClick($author$project$Message$BackHome)
 						]),
 					_List_fromArray(
@@ -6694,28 +6697,175 @@ var $author$project$Main$viewHeader = A2(
 								[
 									$elm$html$Html$text('PASTEURCODECLUB')
 								]))
-						]))
-				])),
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('headerNav')
-				]),
-			_List_fromArray(
-				[
+						])),
 					A2(
-					$elm$html$Html$button,
+					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Events$onClick($author$project$Message$Authentication)
+							$elm$html$Html$Attributes$class('headerNav')
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Connexion')
+							A2(
+							$elm$html$Html$button,
+							_List_fromArray(
+								[
+									$elm$html$Html$Events$onClick($author$project$Message$Authentication)
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Connexion')
+								]))
 						]))
-				]))
-		]));
+				]);
+		} else {
+			switch (profile.$) {
+				case 'NotSet':
+					return _List_fromArray(
+						[
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('bigTitle')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$a,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$href(''),
+											$elm$html$Html$Events$onClick($author$project$Message$BackHome)
+										]),
+									_List_fromArray(
+										[
+											A2(
+											$elm$html$Html$p,
+											_List_fromArray(
+												[
+													$elm$html$Html$Attributes$id('title')
+												]),
+											_List_fromArray(
+												[
+													$elm$html$Html$text('PASTEURCODECLUB')
+												]))
+										]))
+								])),
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('headerNav')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('inconnu')
+								]))
+						]);
+				case 'Failure':
+					return _List_fromArray(
+						[
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('bigTitle')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$a,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$href(''),
+											$elm$html$Html$Events$onClick($author$project$Message$BackHome)
+										]),
+									_List_fromArray(
+										[
+											A2(
+											$elm$html$Html$p,
+											_List_fromArray(
+												[
+													$elm$html$Html$Attributes$id('title')
+												]),
+											_List_fromArray(
+												[
+													$elm$html$Html$text('PASTEURCODECLUB')
+												]))
+										]))
+								])),
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('headerNav')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('inconnu')
+								]))
+						]);
+				default:
+					var userinfos = profile.a;
+					return _List_fromArray(
+						[
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('bigTitle'),
+									$elm$html$Html$Events$onClick($author$project$Message$BackHome)
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$p,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$id('title')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('PASTEURCODECLUB')
+										]))
+								])),
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('headerNav')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text(userinfos.id),
+									A2(
+									$elm$html$Html$img,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$src('https://api.adorable.io/avatars/50/' + (userinfos.id + '.png')),
+											$elm$html$Html$Attributes$class('avatar')
+										]),
+									_List_Nil)
+								]))
+						]);
+			}
+		}
+	});
+var $author$project$Main$viewHeader = function (model) {
+	var _v0 = model.header;
+	if (_v0.$ === 'Connexion') {
+		return A2(
+			$elm$html$Html$header,
+			_List_Nil,
+			A2($author$project$Header$viewElemntsHeader, $author$project$Header$Connexion, model.userProfile));
+	} else {
+		return A2(
+			$elm$html$Html$header,
+			_List_Nil,
+			A2($author$project$Header$viewElemntsHeader, $author$project$Header$Identified, model.userProfile));
+	}
+};
 var $elm$html$Html$main_ = _VirtualDom_node('main');
 var $elm$core$String$concat = function (strings) {
 	return A2($elm$core$String$join, '', strings);
@@ -6974,13 +7124,6 @@ var $author$project$Page$SubscribeForm$viewForm = function (form) {
 		]);
 };
 var $elm$html$Html$h2 = _VirtualDom_node('h2');
-var $elm$html$Html$img = _VirtualDom_node('img');
-var $elm$html$Html$Attributes$src = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'src',
-		_VirtualDom_noJavaScriptOrHtmlUri(url));
-};
 var $author$project$Page$Images$viewImages = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
@@ -7609,40 +7752,56 @@ var $author$project$Page$SignIn$viewInput = F5(
 					$elm$html$Html$Attributes$placeholder(p),
 					$elm$html$Html$Attributes$name(name),
 					$elm$html$Html$Attributes$value(val),
+					$elm$html$Html$Attributes$class(name),
 					$elm$html$Html$Events$onInput(toMsg)
 				]),
 			_List_Nil);
 	});
-var $author$project$Page$SignIn$viewSignIn = function (form) {
-	return _List_fromArray(
-		[
-			A2(
-			$elm$html$Html$h1,
-			_List_Nil,
-			_List_fromArray(
-				[
-					$elm$html$Html$text('Connecte-toi à ton compte')
-				])),
-			A2(
-			$elm$html$Html$div,
-			_List_Nil,
-			_List_fromArray(
-				[
-					A5($author$project$Page$SignIn$viewInput, 'text', 'Nom d\'Utilisateur', 'username', form.username, $author$project$Message$Username),
-					A5($author$project$Page$SignIn$viewInput, 'text', 'Mot de passe', 'pwd', form.pwd, $author$project$Message$Pwd),
-					A2(
-					$elm$html$Html$button,
-					_List_fromArray(
-						[
-							$elm$html$Html$Events$onClick($author$project$Message$Profile)
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Je me connecte')
-						]))
-				]))
-		]);
-};
+var $author$project$Page$SignIn$viewSignIn = F2(
+	function (form, user) {
+		var warningMessage = _Utils_eq(user, $author$project$User$Failure) ? '>>> Nom d\'utilisateur et/ou mot de passe incorrect <<<' : '';
+		return _List_fromArray(
+			[
+				A2(
+				$elm$html$Html$h1,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text('Connecte-toi à ton compte')
+					])),
+				A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('signinForm')
+					]),
+				_List_fromArray(
+					[
+						A5($author$project$Page$SignIn$viewInput, 'text', 'Nom d\'Utilisateur', 'username', form.username, $author$project$Message$Username),
+						A5($author$project$Page$SignIn$viewInput, 'text', 'Mot de passe', 'pwd', form.pwd, $author$project$Message$Pwd),
+						A2(
+						$elm$html$Html$button,
+						_List_fromArray(
+							[
+								$elm$html$Html$Events$onClick($author$project$Message$Profile)
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text('Je me connecte')
+							]))
+					])),
+				A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('warning')
+					]),
+				_List_fromArray(
+					[
+						$elm$html$Html$text(warningMessage)
+					]))
+			]);
+	});
 var $elm$html$Html$li = _VirtualDom_node('li');
 var $elm$html$Html$ul = _VirtualDom_node('ul');
 var $tricycle$elm_embed_youtube$Embed$Youtube$Internal$Youtube$Youtube = F2(
@@ -8091,8 +8250,11 @@ var $author$project$Main$viewMain = function (model) {
 		case 'SignIn':
 			return A2(
 				$elm$html$Html$main_,
-				_List_Nil,
-				$author$project$Page$SignIn$viewSignIn(model.signinForm));
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('signinPage')
+					]),
+				A2($author$project$Page$SignIn$viewSignIn, model.signinForm, model.userProfile));
 		case 'Tutos':
 			return A2(
 				$elm$html$Html$main_,
@@ -8110,7 +8272,7 @@ var $author$project$Main$viewMain = function (model) {
 var $author$project$Main$viewPage = function (model) {
 	return _List_fromArray(
 		[
-			$author$project$Main$viewHeader,
+			$author$project$Main$viewHeader(model),
 			$author$project$Main$viewMain(model),
 			$author$project$Main$viewFooter(model)
 		]);

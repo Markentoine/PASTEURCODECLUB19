@@ -13,15 +13,25 @@ type alias SignInForm =
     }
 
 
-viewSignIn : SignInForm -> List (Html Msg)
-viewSignIn form =
+viewSignIn : SignInForm -> UserProfile -> List (Html Msg)
+viewSignIn form user =
+    let
+        warningMessage =
+            if user == Failure then
+                ">>> Nom d'utilisateur et/ou mot de passe incorrect <<<"
+
+            else
+                ""
+    in
     [ h1 [] [ text "Connecte-toi à ton compte" ]
     , div
-        []
+        [ Html.Attributes.class "signinForm" ]
         [ viewInput "text" "Nom d'Utilisateur" "username" form.username Username
         , viewInput "text" "Mot de passe" "pwd" form.pwd Pwd
         , button [ onClick Profile ] [ text "Je me connecte" ]
         ]
+    , div [ Html.Attributes.class "warning" ]
+        [ text warningMessage ]
     ]
 
 
@@ -32,6 +42,7 @@ viewInput typ p name val toMsg =
         , Html.Attributes.placeholder p
         , Html.Attributes.name name
         , Html.Attributes.value val
+        , Html.Attributes.class name
         , onInput toMsg
         ]
         []

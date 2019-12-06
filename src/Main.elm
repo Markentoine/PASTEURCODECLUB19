@@ -2,6 +2,7 @@ module Main exposing (..)
 
 import Browser
 import Footer exposing (..)
+import Header exposing (..)
 import Helpers.Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -20,6 +21,7 @@ import User exposing (..)
 
 type alias Model =
     { page : Page
+    , header : Header
     , footer : Footer
     , signupForm : SubscriptionForm
     , signinForm : SignInForm
@@ -42,6 +44,7 @@ init () =
     let
         initialModel =
             { page = Home
+            , header = Connexion
             , footer = Nav
             , signupForm =
                 { firstName = ""
@@ -70,24 +73,20 @@ view model =
 
 viewPage : Model -> List (Html Msg)
 viewPage model =
-    [ viewHeader
+    [ viewHeader model
     , viewMain model
     , viewFooter model
     ]
 
 
-viewHeader : Html Msg
-viewHeader =
-    header []
-        [ div [ Html.Attributes.class "bigTitle" ]
-            [ Html.a [ href "", onClick BackHome ]
-                [ p [ Html.Attributes.id "title" ] [ Html.text "PASTEURCODECLUB" ]
-                ]
-            ]
-        , div [ Html.Attributes.class "headerNav" ]
-            [ button [ onClick Authentication ] [ Html.text "Connexion" ]
-            ]
-        ]
+viewHeader : Model -> Html Msg
+viewHeader model =
+    case model.header of
+        Connexion ->
+            header [] (viewElemntsHeader Connexion model.userProfile)
+
+        Identified ->
+            header [] (viewElemntsHeader Identified model.userProfile)
 
 
 viewMain : Model -> Html Msg
@@ -103,7 +102,7 @@ viewMain model =
             Html.main_ [] (viewForm model.signupForm)
 
         SignIn ->
-            Html.main_ [] (viewSignIn model.signinForm)
+            Html.main_ [ Html.Attributes.class "signinPage" ] (viewSignIn model.signinForm model.userProfile)
 
         Tutos ->
             Html.main_ [] [ viewTutos ]
@@ -163,7 +162,7 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         BackHome ->
-            ( { model | page = Home }, Cmd.none )
+            ( { model | page = Home, footer = Nav }, Cmd.none )
 
         Announce ->
             ( { model | page = Announcement New }, Cmd.none )
@@ -192,10 +191,10 @@ update msg model =
         GotUserProfile result ->
             case result of
                 Ok userInfos ->
-                    ( { model | page = Home, userProfile = Set userInfos }, Cmd.none )
+                    ( { model | page = Home, header = Identified, userProfile = Set userInfos }, Cmd.none )
 
                 Err _ ->
-                    ( { model | page = Tutos, userProfile = Failure }, Cmd.none )
+                    ( { model | page = SignIn, userProfile = Failure }, Cmd.none )
 
         Profile ->
             ( model, authenticateUser model.signinForm )
