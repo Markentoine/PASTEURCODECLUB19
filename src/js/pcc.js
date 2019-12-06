@@ -5329,14 +5329,14 @@ var $elm$core$Task$perform = F2(
 	});
 var $elm$browser$Browser$element = _Browser_element;
 var $author$project$Header$Connexion = {$: 'Connexion'};
+var $author$project$Footer$ForLanding = {$: 'ForLanding'};
 var $author$project$Page$PageType$Landing = {$: 'Landing'};
-var $author$project$Footer$Nav = {$: 'Nav'};
 var $author$project$User$NotSet = {$: 'NotSet'};
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$init = function (_v0) {
 	var initialModel = {
-		footer: $author$project$Footer$Nav,
+		footer: $author$project$Footer$ForLanding,
 		header: $author$project$Header$Connexion,
 		page: $author$project$Page$PageType$Landing,
 		signinForm: {pwd: '', username: ''},
@@ -5356,6 +5356,7 @@ var $author$project$Footer$ForTutos = {$: 'ForTutos'};
 var $author$project$Page$PageType$Home = {$: 'Home'};
 var $author$project$Header$Identified = {$: 'Identified'};
 var $author$project$Page$PageType$Images = {$: 'Images'};
+var $author$project$Footer$Nav = {$: 'Nav'};
 var $author$project$Page$Announce$New = {$: 'New'};
 var $author$project$User$Set = function (a) {
 	return {$: 'Set', a: a};
@@ -6601,6 +6602,32 @@ var $author$project$Main$viewFooter = function (model) {
 									]))
 							])),
 						$author$project$Helpers$Helpers$gitHub
+					]));
+		case 'ForLanding':
+			return A2(
+				$elm$html$Html$footer,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('containerCoders')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$div,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('coders')
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('ONLY FOR CODERS')
+									]))
+							]))
 					]));
 		case 'ForTutos':
 			return A2(

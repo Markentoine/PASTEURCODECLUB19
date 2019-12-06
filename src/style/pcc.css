@@ -362,6 +362,17 @@ footer {
     color: #7FFF00;
 }
 
+.containerCoders {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+
+.coders {
+    font-size: 2.5rem;
+    font-family: 'Monoton';
+}
+
 .github {
     fill: #7FFF00;
     width: 2vw;

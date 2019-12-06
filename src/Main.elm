@@ -46,7 +46,7 @@ init () =
         initialModel =
             { page = Landing
             , header = Connexion
-            , footer = Nav
+            , footer = ForLanding
             , signupForm =
                 { firstName = ""
                 , lastName = ""
@@ -141,6 +141,12 @@ viewFooter model =
                 [ div [ Html.Attributes.class "container" ]
                     [ button [ Html.Attributes.class "nav", onClick ToTutos ] [ Html.text "Tutos" ] ]
                 , gitHub
+                ]
+
+        ForLanding ->
+            footer []
+                [ div [ Html.Attributes.class "containerCoders" ]
+                    [ div [ Html.Attributes.class "coders" ] [ text "ONLY FOR CODERS" ] ]
                 ]
 
         ForTutos ->
