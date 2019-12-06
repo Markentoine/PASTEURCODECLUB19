@@ -9,5 +9,5 @@ type UserProfile
 
 type alias UserInfos =
     { id : String
-    , payload : String
+    , username : String
     }
