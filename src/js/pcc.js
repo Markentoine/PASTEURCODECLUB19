@@ -6838,7 +6838,7 @@ var $author$project$Header$viewElemntsHeader = F2(
 								]),
 							_List_fromArray(
 								[
-									$elm$html$Html$text(userinfos.id),
+									$elm$html$Html$text(userinfos.username),
 									A2(
 									$elm$html$Html$img,
 									_List_fromArray(

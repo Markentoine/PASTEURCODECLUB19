@@ -37,7 +37,7 @@ viewElemntsHeader header profile =
                 Set userinfos ->
                     [ div [ class "bigTitle", onClick BackHome ] [ p [ id "title" ] [ text "PASTEURCODECLUB" ] ]
                     , div [ class "headerNav" ]
-                        [ text userinfos.id
+                        [ text userinfos.username
                         ,img [ src ("https://api.adorable.io/avatars/50/" ++ userinfos.id ++ ".png"), class "avatar" ] []
                         ]
                     ]
