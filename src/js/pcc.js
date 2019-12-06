@@ -5390,7 +5390,7 @@ var $author$project$Request$decodeUserProfile = A3(
 		A2(
 			$elm$json$Json$Decode$field,
 			'user',
-			A2($elm$json$Json$Decode$field, 'usernanme', $elm$json$Json$Decode$string))));
+			A2($elm$json$Json$Decode$field, 'username', $elm$json$Json$Decode$string))));
 var $elm$json$Json$Encode$object = function (pairs) {
 	return _Json_wrap(
 		A3(
