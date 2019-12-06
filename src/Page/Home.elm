@@ -11,7 +11,7 @@ news =
     , "Deux nouveaux tutos en vidéos!"
     , "Des puzzles, des challenges!"
     , "Nouvel outil: le stepper!"
-    , "Prochaine session >>> 2 décembre à 12h30!"
+    , "Prochaine session >>> 9 décembre à 12h30!"
     ]
 
 
