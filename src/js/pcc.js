@@ -6329,6 +6329,7 @@ var $author$project$Main$update = F2(
 						_Utils_update(
 							model,
 							{
+								footer: $author$project$Footer$Nav,
 								header: $author$project$Header$Identified,
 								page: $author$project$Page$PageType$Home,
 								userProfile: $author$project$User$Set(userInfos)

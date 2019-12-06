@@ -201,7 +201,7 @@ update msg model =
         GotUserProfile result ->
             case result of
                 Ok userInfos ->
-                    ( { model | page = Home, header = Identified, userProfile = Set userInfos }, Cmd.none )
+                    ( { model | page = Home, header = Identified, footer = Nav, userProfile = Set userInfos }, Cmd.none )
 
                 Err _ ->
                     ( { model | page = SignIn, userProfile = Failure }, Cmd.none )
