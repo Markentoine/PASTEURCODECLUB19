@@ -5369,8 +5369,8 @@ var $author$project$Message$GotUserProfile = function (a) {
 	return {$: 'GotUserProfile', a: a};
 };
 var $author$project$User$UserInfos = F2(
-	function (id, payload) {
-		return {id: id, payload: payload};
+	function (id, username) {
+		return {id: id, username: username};
 	});
 var $elm$json$Json$Decode$field = _Json_decodeField;
 var $elm$json$Json$Decode$string = _Json_decodeString;
@@ -5383,14 +5383,14 @@ var $author$project$Request$decodeUserProfile = A3(
 		A2(
 			$elm$json$Json$Decode$field,
 			'user',
-			A2($elm$json$Json$Decode$field, 'username', $elm$json$Json$Decode$string))),
+			A2($elm$json$Json$Decode$field, 'id', $elm$json$Json$Decode$string))),
 	A2(
 		$elm$json$Json$Decode$field,
 		'data',
 		A2(
 			$elm$json$Json$Decode$field,
 			'user',
-			A2($elm$json$Json$Decode$field, 'id', $elm$json$Json$Decode$string))));
+			A2($elm$json$Json$Decode$field, 'usernanme', $elm$json$Json$Decode$string))));
 var $elm$json$Json$Encode$object = function (pairs) {
 	return _Json_wrap(
 		A3(
