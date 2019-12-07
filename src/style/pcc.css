@@ -86,6 +86,10 @@ header h2 {
     padding: .3rem;
 }
 
+#usernameHeader {
+    font-size: 1rem;
+}
+
 .bigTitle {
     margin-left: .5rem;
 }

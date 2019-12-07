@@ -6702,6 +6702,7 @@ var $elm$html$Html$Attributes$src = function (url) {
 		'src',
 		_VirtualDom_noJavaScriptOrHtmlUri(url));
 };
+var $elm$core$String$toUpper = _String_toUpper;
 var $author$project$Header$viewElemntsHeader = F2(
 	function (header, profile) {
 		if (header.$ === 'Connexion') {
@@ -6867,7 +6868,17 @@ var $author$project$Header$viewElemntsHeader = F2(
 								]),
 							_List_fromArray(
 								[
-									$elm$html$Html$text(userinfos.username),
+									A2(
+									$elm$html$Html$div,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$id('usernameHeader')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text(
+											$elm$core$String$toUpper(userinfos.username))
+										])),
 									A2(
 									$elm$html$Html$img,
 									_List_fromArray(
