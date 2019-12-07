@@ -7,11 +7,11 @@ import Message exposing (..)
 
 news : List String
 news =
-    [ "Bulletin du 2 décembre: "
-    , "Deux nouveaux tutos en vidéos!"
-    , "Des puzzles, des challenges!"
-    , "Nouvel outil: le stepper!"
-    , "Prochaine session >>> 9 décembre à 12h30!"
+    [ "NEWS "
+    , "Evolution du site!"
+    , "Vous devez désormais vous connecter"
+    , "Avec vos identifiants"
+    , "Pour accéder au Club!"
     ]
 
 

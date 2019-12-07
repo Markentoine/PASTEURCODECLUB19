@@ -7843,7 +7843,7 @@ var $author$project$Helpers$Helpers$blockNews = function (announces) {
 		]);
 };
 var $author$project$Page$Home$news = _List_fromArray(
-	['Bulletin du 2 décembre: ', 'Deux nouveaux tutos en vidéos!', 'Des puzzles, des challenges!', 'Nouvel outil: le stepper!', 'Prochaine session >>> 9 décembre à 12h30!']);
+	['NEWS ', 'Evolution du site!', 'Vous devez désormais vous connecter', 'Avec vos identifiants', 'Pour accéder au Club!']);
 var $author$project$Page$Home$viewNews = $author$project$Helpers$Helpers$blockNews($author$project$Page$Home$news);
 var $author$project$Message$Profile = {$: 'Profile'};
 var $author$project$Message$Pwd = function (a) {
