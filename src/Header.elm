@@ -16,7 +16,7 @@ viewElemntsHeader : Header -> UserProfile -> List (Html Msg)
 viewElemntsHeader header profile =
     case header of
         Connexion ->
-            [ div [ class "bigTitle", onClick BackHome ] [ p [ id "title" ] [ text "PASTEURCODECLUB" ] ]
+            [ div [ class "bigTitle" ] [ p [ id "title" ] [ text "PASTEURCODECLUB" ] ]
             , div [ class "headerNav" ] [ button [ onClick Authentication ] [ text "Connexion" ] ]
             ]
 

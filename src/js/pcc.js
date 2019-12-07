@@ -6712,8 +6712,7 @@ var $author$project$Header$viewElemntsHeader = F2(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('bigTitle'),
-							$elm$html$Html$Events$onClick($author$project$Message$BackHome)
+							$elm$html$Html$Attributes$class('bigTitle')
 						]),
 					_List_fromArray(
 						[
