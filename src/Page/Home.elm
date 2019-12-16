@@ -9,7 +9,7 @@ news : List String
 news =
     [ "NEWS "
     , "Aujourd'hui, Challenge de Noel!"
-    , "Allez dans tutos puis images"
+    , "Allez dans tutos > images > Challenge Noel"
     , "Essayez de coder pour retrouver l'image originale"
     , "Bon courage et Joyeuses Fêtes!"
     , "Un sticker Dr.Racket pour ceux qui finiront le Challenge"
