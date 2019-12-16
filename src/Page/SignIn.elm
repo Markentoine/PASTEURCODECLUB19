@@ -26,8 +26,8 @@ viewSignIn form user =
     [ h1 [] [ text "Connecte-toi à ton compte" ]
     , div
         [ Html.Attributes.class "signinForm" ]
-        [ viewInput "text" "Nom d'Utilisateur" "username" form.username Username
-        , viewInput "text" "Mot de passe" "pwd" form.pwd Pwd
+        [ viewInputText "Nom d'Utilisateur" "username" form.username Username
+        , viewInputText "Mot de passe" "pwd" form.pwd Pwd
         , button [ onClick Profile ] [ text "Je me connecte" ]
         ]
     , div [ Html.Attributes.class "warning" ]
@@ -46,6 +46,11 @@ viewInput typ p name val toMsg =
         , onInput toMsg
         ]
         []
+
+
+viewInputText : String -> String -> String -> (String -> msg) -> Html msg
+viewInputText =
+    viewInput "text"
 
 
 newUserName : String -> SignInForm -> SignInForm

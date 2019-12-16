@@ -7392,6 +7392,55 @@ var $author$project$Page$Images$viewImages = A2(
 								]),
 							_List_Nil)
 						]))
+				])),
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('imagesFolder')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$div,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$h2,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('sousTitre')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Challenge- Noel')
+								]))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('imagesContainer')
+						]),
+					A2(
+						$elm$core$List$map,
+						function (n) {
+							return A2(
+								$elm$html$Html$img,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$src('./../../assets/pictures/christmas/noel' + (n + '.jpg')),
+										$elm$html$Html$Attributes$class('images')
+									]),
+								_List_Nil);
+						},
+						A2(
+							$elm$core$List$map,
+							function (n) {
+								return $elm$core$String$fromInt(n);
+							},
+							A2($elm$core$List$range, 1, 24))))
 				]))
 		]));
 var $elm$svg$Svg$Attributes$clipRule = _VirtualDom_attribute('clip-rule');
@@ -7867,6 +7916,7 @@ var $author$project$Page$SignIn$viewInput = F5(
 				]),
 			_List_Nil);
 	});
+var $author$project$Page$SignIn$viewInputText = $author$project$Page$SignIn$viewInput('text');
 var $author$project$Page$SignIn$viewSignIn = F2(
 	function (form, user) {
 		var warningMessage = _Utils_eq(user, $author$project$User$Failure) ? '>>> Nom d\'utilisateur et/ou mot de passe incorrect <<<' : '';
@@ -7887,8 +7937,8 @@ var $author$project$Page$SignIn$viewSignIn = F2(
 					]),
 				_List_fromArray(
 					[
-						A5($author$project$Page$SignIn$viewInput, 'text', 'Nom d\'Utilisateur', 'username', form.username, $author$project$Message$Username),
-						A5($author$project$Page$SignIn$viewInput, 'text', 'Mot de passe', 'pwd', form.pwd, $author$project$Message$Pwd),
+						A4($author$project$Page$SignIn$viewInputText, 'Nom d\'Utilisateur', 'username', form.username, $author$project$Message$Username),
+						A4($author$project$Page$SignIn$viewInputText, 'Mot de passe', 'pwd', form.pwd, $author$project$Message$Pwd),
 						A2(
 						$elm$html$Html$button,
 						_List_fromArray(

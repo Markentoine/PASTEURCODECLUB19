@@ -26,8 +26,7 @@ viewImages =
         , div [ Html.Attributes.class "imagesFolder" ]
             [ div [] [ h2 [ Html.Attributes.class "sousTitre" ] [ text "Tuto#4 - Puzzle#3" ] ]
             , div [ Html.Attributes.class "imagesContainer" ]
-            [
-                img [ src "./../../assets/pictures/puzzle_3/image_part_002.jpg", Html.Attributes.class "images" ] []
+                [ img [ src "./../../assets/pictures/puzzle_3/image_part_002.jpg", Html.Attributes.class "images" ] []
                 , img [ src "./../../assets/pictures/puzzle_3/image_part_004.jpg", Html.Attributes.class "images" ] []
                 , img [ src "./../../assets/pictures/puzzle_3/image_part_003.jpg", Html.Attributes.class "images" ] []
                 , img [ src "./../../assets/pictures/puzzle_3/image_part_001.jpg", Html.Attributes.class "images" ] []
@@ -37,5 +36,12 @@ viewImages =
                 , img [ src "./../../assets/pictures/puzzle_3/image_part_007.jpg", Html.Attributes.class "images" ] []
                 , img [ src "./../../assets/pictures/puzzle_3/image_part_006.jpg", Html.Attributes.class "images" ] []
                 ]
+            ]
+        , div [ Html.Attributes.class "imagesFolder" ]
+            [ div [] [ h2 [ Html.Attributes.class "sousTitre" ] [ text "Challenge- Noel" ] ]
+            , div [ Html.Attributes.class "imagesContainer" ]
+                (List.map (\n -> String.fromInt n) (List.range 1 24)
+                    |> List.map (\n -> img [ src ("./../../assets/pictures/christmas/noel" ++ n ++ ".jpg"), Html.Attributes.class "images" ] [])
+                )
             ]
         ]
