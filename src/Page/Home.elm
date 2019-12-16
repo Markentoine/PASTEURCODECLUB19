@@ -8,10 +8,12 @@ import Message exposing (..)
 news : List String
 news =
     [ "NEWS "
-    , "Evolution du site!"
-    , "Vous devez désormais vous connecter"
-    , "Avec vos identifiants"
-    , "Pour accéder au Club!"
+    , "Aujourd'hui, Challenge de Noel!"
+    , "Allez dans tutos puis images"
+    , "Essayez de coder pour retrouver l'image originale"
+    , "Bon courage et Joyeuses Fêtes!"
+    , "Un sticker Dr.Racket pour ceux qui finiront le Challenge"
+    , "En montrant leur programme!"
     ]
 
 
