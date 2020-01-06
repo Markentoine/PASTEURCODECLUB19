@@ -7892,7 +7892,7 @@ var $author$project$Helpers$Helpers$blockNews = function (announces) {
 		]);
 };
 var $author$project$Page$Home$news = _List_fromArray(
-	['NEWS ', 'Aujourd\'hui, Challenge de Noel!', 'Allez dans tutos > images > Challenge Noel', 'Essayez de coder pour retrouver l\'image originale', 'Bon courage et Joyeuses Fêtes!', 'Un sticker Dr.Racket pour ceux qui finiront le Challenge', 'En montrant leur programme!']);
+	['NEWS ', 'Bonne Année 2020!', 'Tentez de résoudre le puzzle#3', 'Et le challenge de Noël!']);
 var $author$project$Page$Home$viewNews = $author$project$Helpers$Helpers$blockNews($author$project$Page$Home$news);
 var $author$project$Message$Profile = {$: 'Profile'};
 var $author$project$Message$Pwd = function (a) {
