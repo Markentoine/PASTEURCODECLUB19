@@ -41,8 +41,8 @@ viewImages =
             [ div [] [ h2 [ Html.Attributes.class "sousTitre" ] [ text "Challenge- Noel" ] ]
             , div [ Html.Attributes.class "imagesContainer" ]
                 (List.map (\n -> String.fromInt n) (List.range 1 24)
-                    |> List.map (\n -> img [ src ("./../../assets/pictures/christmas/noel" ++ n ++ ".jpg"), Html.Attributes.class "images" ] [])
-		    |> List.append([ img [ src ("./../../assets/pictures/christmas/modele_sapin.png", Html.Attributes.class "images" ] []])
+                |> List.map (\n -> img [ src ("./../../assets/pictures/christmas/noel" ++ n ++ ".jpg"), Html.Attributes.class "images" ] [])
+                |> List.append([ img [ src ("./../../assets/pictures/christmas/modele_sapin.png"), Html.Attributes.class "images" ] []])
                 )
             ]
         ]

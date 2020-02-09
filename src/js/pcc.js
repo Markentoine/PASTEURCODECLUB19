@@ -7162,6 +7162,14 @@ var $author$project$Page$SubscribeForm$viewForm = function (form) {
 				]))
 		]);
 };
+var $elm$core$List$append = F2(
+	function (xs, ys) {
+		if (!ys.b) {
+			return xs;
+		} else {
+			return A3($elm$core$List$foldr, $elm$core$List$cons, ys, xs);
+		}
+	});
 var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $author$project$Page$Images$viewImages = A2(
 	$elm$html$Html$div,
@@ -7424,23 +7432,36 @@ var $author$project$Page$Images$viewImages = A2(
 							$elm$html$Html$Attributes$class('imagesContainer')
 						]),
 					A2(
-						$elm$core$List$map,
-						function (n) {
-							return A2(
+						$elm$core$List$append,
+						_List_fromArray(
+							[
+								A2(
 								$elm$html$Html$img,
 								_List_fromArray(
 									[
-										$elm$html$Html$Attributes$src('./../../assets/pictures/christmas/noel' + (n + '.jpg')),
+										$elm$html$Html$Attributes$src('./../../assets/pictures/christmas/modele_sapin.png'),
 										$elm$html$Html$Attributes$class('images')
 									]),
-								_List_Nil);
-						},
+								_List_Nil)
+							]),
 						A2(
 							$elm$core$List$map,
 							function (n) {
-								return $elm$core$String$fromInt(n);
+								return A2(
+									$elm$html$Html$img,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$src('./../../assets/pictures/christmas/noel' + (n + '.jpg')),
+											$elm$html$Html$Attributes$class('images')
+										]),
+									_List_Nil);
 							},
-							A2($elm$core$List$range, 1, 24))))
+							A2(
+								$elm$core$List$map,
+								function (n) {
+									return $elm$core$String$fromInt(n);
+								},
+								A2($elm$core$List$range, 1, 24)))))
 				]))
 		]));
 var $elm$svg$Svg$Attributes$clipRule = _VirtualDom_attribute('clip-rule');
