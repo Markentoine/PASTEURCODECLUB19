@@ -144,10 +144,7 @@ viewFooter model =
                 ]
 
         ForLanding ->
-            footer []
-                [ div [ Html.Attributes.class "containerCoders" ]
-                    [ div [ Html.Attributes.class "coders" ] [ text "ONLY FOR CODERS" ] ]
-                ]
+            div [] []
 
         ForTutos ->
             footer []

@@ -6605,31 +6605,7 @@ var $author$project$Main$viewFooter = function (model) {
 						$author$project$Helpers$Helpers$gitHub
 					]));
 		case 'ForLanding':
-			return A2(
-				$elm$html$Html$footer,
-				_List_Nil,
-				_List_fromArray(
-					[
-						A2(
-						$elm$html$Html$div,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('containerCoders')
-							]),
-						_List_fromArray(
-							[
-								A2(
-								$elm$html$Html$div,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$class('coders')
-									]),
-								_List_fromArray(
-									[
-										$elm$html$Html$text('ONLY FOR CODERS')
-									]))
-							]))
-					]));
+			return A2($elm$html$Html$div, _List_Nil, _List_Nil);
 		case 'ForTutos':
 			return A2(
 				$elm$html$Html$footer,
