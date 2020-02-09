@@ -8,4 +8,4 @@ import Message exposing (..)
 
 viewLogo : List (Html Msg)
 viewLogo =
-    [ logo ]
+    [ new_logo ]

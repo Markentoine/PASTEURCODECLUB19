@@ -2,7 +2,7 @@ module Helpers.Helpers exposing (..)
 
 import Array
 import Html exposing (..)
-import Html.Attributes exposing (class, href, id, target)
+import Html.Attributes exposing (class, href, id, target, src)
 import Message exposing (..)
 import Svg exposing (..)
 import Svg.Attributes exposing (..)
@@ -121,3 +121,8 @@ logo =
             , Svg.path [ fill "none", stroke "#7fff00", strokeWidth ".5", d "M58.064 7.766l-1.009.15-.633.553-.694 1.165-1.252 2.08-43.125 77.793-.48.851-.061.828.109.752.195.48.402.405.394.295.549.206.794.222.627.129 89.408-.161.566-.318.474-.255.341-.311.35-.479.134-.528.067-.637.041-.515-.383-.955-.518-.868-43.613-78.589-.369-.543-.428-.748-.352-.559-.349-.378-.566-.127-.619.062" ] []
             ]
         ]
+        
+new_logo: Html Msg
+new_logo =
+    div [ Html.Attributes.class "logo" ]
+        [ img [ src "./../../assets/pictures/logo/new_logo.png" ] []]
