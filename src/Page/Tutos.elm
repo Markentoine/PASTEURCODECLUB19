@@ -44,7 +44,17 @@ youtube link =
 
 tutosDescriptions : List Description
 tutosDescriptions =
-    [ { id = 5
+    [ { id = 6
+      , title = "Solution du Challenge de Noël"
+      , content =
+            [ "Comment nommer les pièces du puzzle"
+            , "Séparer les pièces en plusieurs groupes"
+            , "Organiser son code pour le rendre lisible"
+            , "Construction de la solution pas à pas"
+            ]
+      , youtubeRef = ""
+      }
+    , { id = 5
       , title = "Solution du Challenge Puzzle#3"
       , content =
             [ "Ecrire le programme"

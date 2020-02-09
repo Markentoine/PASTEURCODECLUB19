@@ -8,9 +8,9 @@ import Message exposing (..)
 news : List String
 news =
     [ "NEWS "
-    , "Bonne Année 2020!"
-    , "Tentez de résoudre le puzzle#3"
-    , "Et le challenge de Noël!"
+    , "Résolution du challenge de Noël:"    
+    , "Nouvelle vidéo vous montrant"
+    , "Comment résoudre ce challenge assez difficile!"
     ]
 
 

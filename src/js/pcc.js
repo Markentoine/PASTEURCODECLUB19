@@ -7913,7 +7913,7 @@ var $author$project$Helpers$Helpers$blockNews = function (announces) {
 		]);
 };
 var $author$project$Page$Home$news = _List_fromArray(
-	['NEWS ', 'Bonne Année 2020!', 'Tentez de résoudre le puzzle#3', 'Et le challenge de Noël!']);
+	['NEWS ', 'Résolution du challenge de Noël:', 'Nouvelle vidéo vous montrant', 'Comment résoudre ce challenge assez difficile!']);
 var $author$project$Page$Home$viewNews = $author$project$Helpers$Helpers$blockNews($author$project$Page$Home$news);
 var $author$project$Message$Profile = {$: 'Profile'};
 var $author$project$Message$Pwd = function (a) {
@@ -8362,6 +8362,13 @@ var $author$project$Page$Tutos$tuto = function (desc) {
 };
 var $author$project$Page$Tutos$tutosDescriptions = _List_fromArray(
 	[
+		{
+		content: _List_fromArray(
+			['Comment nommer les pièces du puzzle', 'Séparer les pièces en plusieurs groupes', 'Organiser son code pour le rendre lisible', 'Construction de la solution pas à pas']),
+		id: 6,
+		title: 'Solution du Challenge de Noël',
+		youtubeRef: ''
+	},
 		{
 		content: _List_fromArray(
 			['Ecrire le programme', 'Comprendre en détails le programme', 'Arranger les images et retrouver des transformations']),
