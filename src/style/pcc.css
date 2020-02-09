@@ -19,10 +19,11 @@ body {
 
 .wrapper {
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    width: auto;
+    height: auto;
     top: 0;
     left: 0;
+    position:fixed;
     flex-direction: column;
     background-color: #0041C7;
 }
