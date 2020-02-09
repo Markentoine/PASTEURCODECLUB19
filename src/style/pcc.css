@@ -115,7 +115,7 @@ main {
     width: 100%;
     margin-top: 10vh;
     margin-bottom: 6vh;
-    background-color: black;
+    background-color: blue;
     position: relative;
     z-index: 1;
 }
@@ -134,7 +134,7 @@ section {
     align-items: center;
     margin: 1rem 0;
     padding: .5rem;
-    border: 2px dotted #7FFF00;
+    border: 2px dotted red;
 }
 
 .logo {
@@ -196,10 +196,10 @@ section {
     align-items: center;
     width: 50vw;
     height: 50vh;
-    background-color: black;
+    background-color: blue;
     border-radius: .7rem;
-    border: 1px solid #7FFF00;
-    border-color: #7FFF00;
+    border: 1px solid red;
+    border-color: red;
     margin-bottom: .8rem;
 }
 
@@ -227,10 +227,10 @@ form {
     align-items: center;
     width: 50vw;
     height: 50vh;
-    background-color: black;
+    background-color: blue;
     border-radius: .7rem;
-    border: 1px solid #7FFF00;
-    border-color: #7FFF00;
+    border: 1px solid red;
+    border-color: red;
     margin-bottom: .8rem;
 }
 
@@ -287,8 +287,8 @@ input:focus {
 
 input[type="submit"] {
     width: 50%;
-    color: black;
-    background-color: #7FFF00;
+    color: blue;
+    background-color: red;
     margin-bottom: 1rem;
     vertical-align: center;
 }
@@ -301,7 +301,7 @@ p {
 
 .wrapperTuto {
     display: flex;
-    border-bottom: 1px solid #7FFF00;
+    border-bottom: 1px solid red;
     width: 75vw;
     justify-content: space-between;
     align-items: center;
@@ -327,14 +327,14 @@ p {
 }
 
 .tuto {
-    outline: 3px solid #7FFF00;
+    outline: 3px solid red;
     margin: 5rem;
 }
 
 .imagesFolder {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #7FFF00;
+    border-bottom: 1px solid red;
     margin: 1rem;
     width: 75vw;
 }
@@ -362,8 +362,8 @@ footer {
     align-items: center;
     width: 100%;
     height: 9vh;
-    border-top: 2px dotted #7FFF00;
-    background-color: black;
+    border-top: 2px dotted red;
+    background-color: blue;
     margin-top: 91vh;
     color:red;
 }
@@ -380,7 +380,7 @@ footer {
 }
 
 .github {
-    fill: #7FFF00;
+    fill: red;
     width: 2vw;
     margin-right: 1rem;
 }
@@ -420,10 +420,10 @@ a:first-of-type {
 button {
     width: 50%;
     text-decoration: none;
-    border: .1rem solid #7FFF00;
+    border: .1rem solid red;
     padding: .5rem;
-    background-color: black;
-    color: #7FFF00;
+    background-color: blue;
+    color: red;
     cursor: pointer;
     font-weight: 600;
     font-size: 1rem;
@@ -438,16 +438,16 @@ button {
 }
 
 button.nav {
-    background-color: black;
-    border: .1rem solid #7FFF00;
+    background-color: blue;
+    border: .1rem solid red;
     width: 20%;
 
 }
 
 button:hover,
 button:focus {
-    background-color: black;
-    color: #7FFF00;
+    background-color: blue;
+    color: red;
     animation-fill-mode: forwards;
     animation-play-state: running;
 }
@@ -488,15 +488,15 @@ h1 {
  */
 @-webkit-keyframes shadow-pop-tl {
     0% {
-        -webkit-box-shadow: 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00;
-        box-shadow: 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00;
+        -webkit-box-shadow: 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red;
+        box-shadow: 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red;
         -webkit-transform: translateX(0) translateY(0);
         transform: translateX(0) translateY(0);
     }
 
     100% {
-        -webkit-box-shadow: -1px -1px #7FFF00, -2px -2px #7FFF00, -3px -3px #7FFF00, -4px -4px #7FFF00, -5px -5px #7FFF00, -6px -6px #7FFF00, -7px -7px #7FFF00, -8px -8px #7FFF00;
-        box-shadow: -1px -1px #7FFF00, -2px -2px #7FFF00, -3px -3px #7FFF00, -4px -4px #7FFF00, -5px -5px #7FFF00, -6px -6px #7FFF00, -7px -7px #7FFF00, -8px -8px #7FFF00;
+        -webkit-box-shadow: -1px -1px red, -2px -2px red, -3px -3px red, -4px -4px red, -5px -5px red, -6px -6px red, -7px -7px red, -8px -8px red;
+        box-shadow: -1px -1px red, -2px -2px red, -3px -3px red, -4px -4px red, -5px -5px red, -6px -6px red, -7px -7px red, -8px -8px red;
         -webkit-transform: translateX(8px) translateY(8px);
         transform: translateX(8px) translateY(8px);
     }
@@ -504,15 +504,15 @@ h1 {
 
 @keyframes shadow-pop-tl {
     0% {
-        -webkit-box-shadow: 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00;
-        box-shadow: 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00, 0 0 #7FFF00;
+        -webkit-box-shadow: 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red;
+        box-shadow: 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red, 0 0 red;
         -webkit-transform: translateX(0) translateY(0);
         transform: translateX(0) translateY(0);
     }
 
     100% {
-        -webkit-box-shadow: -1px -1px #7FFF00, -2px -2px #7FFF00, -3px -3px #7FFF00, -4px -4px #7FFF00, -5px -5px #7FFF00, -6px -6px #7FFF00, -7px -7px #7FFF00, -8px -8px #7FFF00;
-        box-shadow: -1px -1px #7FFF00, -2px -2px #7FFF00, -3px -3px #7FFF00, -4px -4px #7FFF00, -5px -5px #7FFF00, -6px -6px #7FFF00, -7px -7px #7FFF00, -8px -8px #7FFF00;
+        -webkit-box-shadow: -1px -1px red, -2px -2px red, -3px -3px red, -4px -4px red, -5px -5px red, -6px -6px red, -7px -7px red, -8px -8px red;
+        box-shadow: -1px -1px red, -2px -2px red, -3px -3px red, -4px -4px red, -5px -5px red, -6px -6px red, -7px -7px red, -8px -8px red;
         -webkit-transform: translateX(8px) translateY(8px);
         transform: translateX(8px) translateY(8px);
     }
@@ -526,7 +526,7 @@ h1 {
 
 @keyframes blinking {
     0% {
-        color: black
+        color: blue
     }
 
     50% {
@@ -534,6 +534,6 @@ h1 {
     }
 
     100% {
-        color: black
+        color: blue
     }
 }
