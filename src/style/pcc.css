@@ -23,7 +23,6 @@ body {
     height: 100vh;
     top: 0;
     left: 0;
-    position:fixed;
     flex-direction: column;
     background-color: #0041C7;
 }
