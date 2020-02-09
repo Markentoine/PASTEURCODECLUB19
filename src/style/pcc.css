@@ -19,8 +19,8 @@ body {
 
 .wrapper {
     display: flex;
-    width: auto;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
     position:fixed;
@@ -113,7 +113,6 @@ main {
     margin-top: 10vh;
     margin-bottom: 6vh;
     background-color: #0041C7;
-    position: relative;
     z-index: 1;
 }
 
