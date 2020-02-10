@@ -5350,7 +5350,7 @@ var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $author$project$Page$PageType$Announcement = function (a) {
 	return {$: 'Announcement', a: a};
 };
-var $author$project$User$Failure = {$: 'Failure'};
+var $author$project$Page$PageType$Continue = {$: 'Continue'};
 var $author$project$Footer$ForImages = {$: 'ForImages'};
 var $author$project$Footer$ForTutos = {$: 'ForTutos'};
 var $author$project$Page$PageType$Home = {$: 'Home'};
@@ -5362,6 +5362,7 @@ var $author$project$User$Set = function (a) {
 	return {$: 'Set', a: a};
 };
 var $author$project$Page$PageType$SignIn = {$: 'SignIn'};
+var $author$project$Page$PageType$Stats = {$: 'Stats'};
 var $author$project$Page$PageType$Subscribe = {$: 'Subscribe'};
 var $author$project$Page$PageType$Tutos = {$: 'Tutos'};
 var $author$project$Page$Announce$WhatDoWeDo = {$: 'WhatDoWeDo'};
@@ -6220,6 +6221,7 @@ var $author$project$Request$authenticateUser = function (form) {
 			url: 'https://rare-lined-hagfish.gigalixirapp.com/api/users/sign_in'
 		});
 };
+var $author$project$User$mock = {id: 'test', username: 'test'};
 var $author$project$Page$SubscribeForm$newFormClass = F2(
 	function (input, currentForm) {
 		return _Utils_update(
@@ -6303,6 +6305,18 @@ var $author$project$Main$update = F2(
 						model,
 						{page: $author$project$Page$PageType$Subscribe}),
 					$elm$core$Platform$Cmd$none);
+			case 'ToStats':
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{page: $author$project$Page$PageType$Stats}),
+					$elm$core$Platform$Cmd$none);
+			case 'ToContinue':
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{page: $author$project$Page$PageType$Continue}),
+					$elm$core$Platform$Cmd$none);
 			case 'ToTutos':
 				return _Utils_Tuple2(
 					_Utils_update(
@@ -6339,7 +6353,12 @@ var $author$project$Main$update = F2(
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
-							{page: $author$project$Page$PageType$SignIn, userProfile: $author$project$User$Failure}),
+							{
+								footer: $author$project$Footer$Nav,
+								header: $author$project$Header$Identified,
+								page: $author$project$Page$PageType$Home,
+								userProfile: $author$project$User$Set($author$project$User$mock)
+							}),
 						$elm$core$Platform$Cmd$none);
 				}
 			case 'Profile':
@@ -6412,7 +6431,9 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $author$project$Message$SignUp = {$: 'SignUp'};
+var $author$project$Message$ToContinue = {$: 'ToContinue'};
 var $author$project$Message$ToPictures = {$: 'ToPictures'};
+var $author$project$Message$ToStats = {$: 'ToStats'};
 var $author$project$Message$ToTutos = {$: 'ToTutos'};
 var $author$project$Message$What = {$: 'What'};
 var $author$project$Message$WhatToDo = {$: 'WhatToDo'};
@@ -6595,11 +6616,22 @@ var $author$project$Main$viewFooter = function (model) {
 								_List_fromArray(
 									[
 										$elm$html$Html$Attributes$class('nav'),
-										$elm$html$Html$Events$onClick($author$project$Message$ToTutos)
+										$elm$html$Html$Events$onClick($author$project$Message$ToStats)
 									]),
 								_List_fromArray(
 									[
-										$elm$html$Html$text('Tutos')
+										$elm$html$Html$text('Stats')
+									])),
+								A2(
+								$elm$html$Html$button,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('nav'),
+										$elm$html$Html$Events$onClick($author$project$Message$ToContinue)
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Continue')
 									]))
 							])),
 						$author$project$Helpers$Helpers$gitHub
@@ -7838,6 +7870,7 @@ var $author$project$Helpers$Helpers$blockNews = function (announces) {
 var $author$project$Page$Home$news = _List_fromArray(
 	['NEWS ', 'Résolution du challenge de Noël:', 'Nouvelle vidéo vous montrant', 'Comment résoudre ce challenge assez difficile!']);
 var $author$project$Page$Home$viewNews = $author$project$Helpers$Helpers$blockNews($author$project$Page$Home$news);
+var $author$project$User$Failure = {$: 'Failure'};
 var $author$project$Message$Profile = {$: 'Profile'};
 var $author$project$Message$Pwd = function (a) {
 	return {$: 'Pwd', a: a};
@@ -8368,6 +8401,34 @@ var $author$project$Main$viewMain = function (model) {
 						$elm$html$Html$Attributes$class('signinPage')
 					]),
 				A2($author$project$Page$SignIn$viewSignIn, model.signinForm, model.userProfile));
+		case 'Stats':
+			return A2(
+				$elm$html$Html$main_,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$div,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text('Stats')
+							]))
+					]));
+		case 'Continue':
+			return A2(
+				$elm$html$Html$main_,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$div,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text('Continue')
+							]))
+					]));
 		case 'Tutos':
 			return A2(
 				$elm$html$Html$main_,

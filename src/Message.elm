@@ -12,6 +12,8 @@ type Msg
     | SignUp
     | Username String
     | Pwd String
+    | ToStats
+    | ToContinue
     | ToTutos
     | ToPictures
     | BackHome

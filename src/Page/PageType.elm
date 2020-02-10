@@ -9,5 +9,7 @@ type Page
     | Home
     | Subscribe
     | SignIn
+    | Stats
+    | Continue
     | Tutos
     | Images

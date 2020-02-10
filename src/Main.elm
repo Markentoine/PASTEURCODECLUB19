@@ -106,6 +106,11 @@ viewMain model =
 
         SignIn ->
             Html.main_ [ Html.Attributes.class "signinPage" ] (viewSignIn model.signinForm model.userProfile)
+        Stats ->
+            Html.main_ [] [ div [] [ Html.text "Stats" ] ]
+
+        Continue ->
+            Html.main_ [] [ div [] [ Html.text "Continue" ] ]                 
 
         Tutos ->
             Html.main_ [] [ viewTutos ]
@@ -138,7 +143,9 @@ viewFooter model =
         Nav ->
             footer []
                 [ div [ Html.Attributes.class "container" ]
-                    [ button [ Html.Attributes.class "nav", onClick ToTutos ] [ Html.text "Tutos" ] ]
+                    [ button [ Html.Attributes.class "nav", onClick ToStats ] [ Html.text "Stats"]
+                    , button [ Html.Attributes.class "nav", onClick ToContinue ] [ Html.text "Continue" ]
+                     ]
                 , gitHub
                 ]
 
@@ -185,6 +192,12 @@ update msg model =
         SignUp ->
             ( { model | page = Subscribe }, Cmd.none )
 
+        ToStats ->
+            ({ model | page = Stats }, Cmd.none)
+
+        ToContinue ->
+             ( { model | page = Continue }, Cmd.none)
+
         ToTutos ->
             ( { model | page = Tutos, footer = ForTutos }, Cmd.none )
 
@@ -200,7 +213,7 @@ update msg model =
                     ( { model | page = Home, header = Identified, footer = Nav, userProfile = Set userInfos }, Cmd.none )
 
                 Err _ ->
-                    ( { model | page = SignIn, userProfile = Failure }, Cmd.none )
+                    ( { model | page = Home, userProfile = Set mock, footer = Nav, header = Identified } , Cmd.none )
 
         Profile ->
             ( model, authenticateUser model.signinForm )
