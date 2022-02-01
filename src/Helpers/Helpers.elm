@@ -33,7 +33,7 @@ blockNews announces =
             (\n ->
                 let
                     lines =
-                        Debug.log "lines" (breakNewsLines n)
+                        breakNewsLines n
                 in
                 section
                     [ Html.Attributes.class "block" ]
